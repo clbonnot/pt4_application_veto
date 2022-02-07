@@ -46,14 +46,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Connexion.Designer.cs">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients.Designer.cs">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maladies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maladies.Designer.cs">
+      <DependentUpon>Maladies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soins.Designer.cs">
+      <DependentUpon>Soins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Statistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistiques.Designer.cs">
+      <DependentUpon>Statistiques.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks.Designer.cs">
+      <DependentUpon>Stocks.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Clients.resx">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Connexion.resx">
+      <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +105,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Soins.resx">
+      <DependentUpon>Soins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistiques.resx">
+      <DependentUpon>Statistiques.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
