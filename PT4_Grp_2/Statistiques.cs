@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Form1 : Form
+    public partial class Statistiques : Form
     {
-        public Form1()
+        public Statistiques()
         {
             InitializeComponent();
         }
