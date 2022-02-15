@@ -54,10 +54,15 @@ namespace PT4_Grp_2
         {
 
         }
-    }
 
-    //Code temporaire (jusqu'à bd) : 
-    public class Staff 
+		private void disconnect_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
+
+	//Code temporaire (jusqu'à bd) : 
+	public class Staff 
     {
         public string firstname = "Annie";
         public string lastname = "Maux";
