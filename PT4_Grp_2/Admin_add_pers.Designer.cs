@@ -38,7 +38,6 @@
 			this.menuStrip2 = new System.Windows.Forms.MenuStrip();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-			this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -58,6 +57,8 @@
 			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.pictureBox13 = new System.Windows.Forms.PictureBox();
 			this.pictureBox14 = new System.Windows.Forms.PictureBox();
+			this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip1.SuspendLayout();
 			this.menuStrip3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -135,9 +136,9 @@
 			this.menuStrip2.BackColor = System.Drawing.Color.DarkGreen;
 			this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip2.ImageScalingSize = new System.Drawing.Size(16, 20);
-			this.menuStrip2.Location = new System.Drawing.Point(151, 24);
+			this.menuStrip2.Location = new System.Drawing.Point(0, 24);
 			this.menuStrip2.Name = "menuStrip2";
-			this.menuStrip2.Size = new System.Drawing.Size(649, 24);
+			this.menuStrip2.Size = new System.Drawing.Size(800, 24);
 			this.menuStrip2.TabIndex = 10;
 			this.menuStrip2.Text = "menuStrip2";
 			// 
@@ -146,9 +147,11 @@
 			this.menuStrip1.BackColor = System.Drawing.Color.DarkGreen;
 			this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
-			this.menuStrip1.Location = new System.Drawing.Point(151, 0);
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adminToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(649, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
 			this.menuStrip1.TabIndex = 9;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -159,19 +162,12 @@
 			this.menuStrip3.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip3.ImageScalingSize = new System.Drawing.Size(16, 20);
 			this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
             this.toolStripMenuItem1});
-			this.menuStrip3.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip3.Location = new System.Drawing.Point(0, 48);
 			this.menuStrip3.Name = "menuStrip3";
-			this.menuStrip3.Size = new System.Drawing.Size(151, 450);
+			this.menuStrip3.Size = new System.Drawing.Size(151, 402);
 			this.menuStrip3.TabIndex = 11;
 			this.menuStrip3.Text = "menuStrip3";
-			// 
-			// adminToolStripMenuItem
-			// 
-			this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-			this.adminToolStripMenuItem.Size = new System.Drawing.Size(138, 19);
-			this.adminToolStripMenuItem.Text = "Admin";
 			// 
 			// toolStripMenuItem1
 			// 
@@ -342,6 +338,13 @@
 			this.pictureBox14.TabIndex = 29;
 			this.pictureBox14.TabStop = false;
 			// 
+			// adminToolStripMenuItem
+			// 
+			this.adminToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+			this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+			this.adminToolStripMenuItem.Text = "Admin";
+			// 
 			// Admin_add_pers
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,12 +375,14 @@
 			this.Controls.Add(this.lastName);
 			this.Controls.Add(this.firstname);
 			this.Controls.Add(this.Deconnexion);
+			this.Controls.Add(this.menuStrip3);
 			this.Controls.Add(this.menuStrip2);
 			this.Controls.Add(this.menuStrip1);
-			this.Controls.Add(this.menuStrip3);
 			this.Name = "Admin_add_pers";
 			this.Text = "Admin_Pers";
 			this.Load += new System.EventHandler(this.Admin_add_pers_Load);
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.menuStrip3.ResumeLayout(false);
 			this.menuStrip3.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -410,7 +415,6 @@
 		private System.Windows.Forms.MenuStrip menuStrip2;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.MenuStrip menuStrip3;
-		private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ProgressBar progressBar2;
@@ -430,5 +434,6 @@
 		private System.Windows.Forms.PictureBox pictureBox12;
 		private System.Windows.Forms.PictureBox pictureBox13;
 		private System.Windows.Forms.PictureBox pictureBox14;
+		private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
 	}
 }

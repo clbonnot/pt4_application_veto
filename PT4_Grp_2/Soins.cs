@@ -16,5 +16,10 @@ namespace PT4_Grp_2
         {
             InitializeComponent();
         }
-    }
+
+		private void progressBar2_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

@@ -35,8 +35,9 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.menuStrip2 = new System.Windows.Forms.MenuStrip();
 			this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-			this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.menuStrip2.SuspendLayout();
 			this.menuStrip3.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -85,9 +86,9 @@
 			this.menuStrip1.BackColor = System.Drawing.Color.DarkGreen;
 			this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
-			this.menuStrip1.Location = new System.Drawing.Point(151, 0);
+			this.menuStrip1.Location = new System.Drawing.Point(0, 24);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(649, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
 			this.menuStrip1.TabIndex = 4;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -96,9 +97,11 @@
 			this.menuStrip2.BackColor = System.Drawing.Color.DarkGreen;
 			this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip2.ImageScalingSize = new System.Drawing.Size(16, 20);
-			this.menuStrip2.Location = new System.Drawing.Point(151, 24);
+			this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adminToolStripMenuItem});
+			this.menuStrip2.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip2.Name = "menuStrip2";
-			this.menuStrip2.Size = new System.Drawing.Size(649, 24);
+			this.menuStrip2.Size = new System.Drawing.Size(800, 24);
 			this.menuStrip2.TabIndex = 5;
 			this.menuStrip2.Text = "menuStrip2";
 			// 
@@ -109,25 +112,25 @@
 			this.menuStrip3.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip3.ImageScalingSize = new System.Drawing.Size(16, 20);
 			this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem,
             this.toolStripMenuItem1});
-			this.menuStrip3.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip3.Location = new System.Drawing.Point(0, 48);
 			this.menuStrip3.Name = "menuStrip3";
-			this.menuStrip3.Size = new System.Drawing.Size(151, 450);
+			this.menuStrip3.Size = new System.Drawing.Size(151, 402);
 			this.menuStrip3.TabIndex = 6;
 			this.menuStrip3.Text = "menuStrip3";
-			// 
-			// adminToolStripMenuItem
-			// 
-			this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-			this.adminToolStripMenuItem.Size = new System.Drawing.Size(138, 19);
-			this.adminToolStripMenuItem.Text = "Admin";
 			// 
 			// toolStripMenuItem1
 			// 
 			this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 			this.toolStripMenuItem1.Size = new System.Drawing.Size(138, 19);
 			this.toolStripMenuItem1.Text = "                                          ";
+			// 
+			// adminToolStripMenuItem
+			// 
+			this.adminToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+			this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+			this.adminToolStripMenuItem.Text = "Admin";
 			// 
 			// Admin
 			// 
@@ -136,17 +139,19 @@
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.Deconnexion);
-			this.Controls.Add(this.menuStrip2);
-			this.Controls.Add(this.menuStrip1);
 			this.Controls.Add(this.detail);
 			this.Controls.Add(this.listStaff);
 			this.Controls.Add(this.add);
 			this.Controls.Add(this.menuStrip3);
+			this.Controls.Add(this.menuStrip1);
+			this.Controls.Add(this.menuStrip2);
 			this.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Admin";
 			this.Text = "Admin";
 			this.Load += new System.EventHandler(this.Admin_Load);
+			this.menuStrip2.ResumeLayout(false);
+			this.menuStrip2.PerformLayout();
 			this.menuStrip3.ResumeLayout(false);
 			this.menuStrip3.PerformLayout();
 			this.ResumeLayout(false);
@@ -163,7 +168,7 @@
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.MenuStrip menuStrip2;
 		private System.Windows.Forms.MenuStrip menuStrip3;
-		private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
 	}
 }
