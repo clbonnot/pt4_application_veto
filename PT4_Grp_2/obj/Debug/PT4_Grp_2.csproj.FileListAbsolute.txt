@@ -30,3 +30,4 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.CoreCompileInputs.cache
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.exe
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.pdb
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Maladies.resources

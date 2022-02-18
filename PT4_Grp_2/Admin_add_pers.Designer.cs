@@ -76,50 +76,23 @@
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// firstname
+			// annuler
 			// 
-			this.firstname.Location = new System.Drawing.Point(278, 251);
-			this.firstname.Name = "firstname";
-			this.firstname.Size = new System.Drawing.Size(100, 20);
-			this.firstname.TabIndex = 0;
-			this.firstname.Text = "Prénom";
-			this.firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.annuler.Location = new System.Drawing.Point(644, 402);
+			this.annuler.Name = "annuler";
+			this.annuler.Size = new System.Drawing.Size(129, 33);
+			this.annuler.TabIndex = 14;
+			this.annuler.Text = "Annuler";
+			this.annuler.UseVisualStyleBackColor = true;
 			// 
-			// lastName
+			// valider
 			// 
-			this.lastName.Location = new System.Drawing.Point(278, 217);
-			this.lastName.Name = "lastName";
-			this.lastName.Size = new System.Drawing.Size(100, 20);
-			this.lastName.TabIndex = 1;
-			this.lastName.Text = "Nom";
-			this.lastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// phone
-			// 
-			this.phone.Location = new System.Drawing.Point(525, 251);
-			this.phone.Name = "phone";
-			this.phone.Size = new System.Drawing.Size(100, 20);
-			this.phone.TabIndex = 3;
-			this.phone.Text = "Téléphone";
-			this.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// address
-			// 
-			this.address.Location = new System.Drawing.Point(525, 289);
-			this.address.Name = "address";
-			this.address.Size = new System.Drawing.Size(100, 20);
-			this.address.TabIndex = 4;
-			this.address.Text = "Adresse";
-			this.address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// role
-			// 
-			this.role.FormattingEnabled = true;
-			this.role.Location = new System.Drawing.Point(278, 288);
-			this.role.Name = "role";
-			this.role.Size = new System.Drawing.Size(121, 21);
-			this.role.TabIndex = 6;
-			this.role.Text = "Rôle";
+			this.valider.Location = new System.Drawing.Point(496, 402);
+			this.valider.Name = "valider";
+			this.valider.Size = new System.Drawing.Size(129, 33);
+			this.valider.TabIndex = 15;
+			this.valider.Text = "Valider";
+			this.valider.UseVisualStyleBackColor = true;
 			// 
 			// Deconnexion
 			// 
@@ -130,6 +103,58 @@
 			this.Deconnexion.TabIndex = 8;
 			this.Deconnexion.Text = "Deconnexion";
 			this.Deconnexion.UseVisualStyleBackColor = true;
+			// 
+			// role
+			// 
+			this.role.FormattingEnabled = true;
+			this.role.Location = new System.Drawing.Point(278, 288);
+			this.role.Name = "role";
+			this.role.Size = new System.Drawing.Size(121, 21);
+			this.role.TabIndex = 6;
+			this.role.Text = "Rôle";
+			// 
+			// firstname
+			// 
+			this.firstname.Location = new System.Drawing.Point(278, 251);
+			this.firstname.Name = "firstname";
+			this.firstname.Size = new System.Drawing.Size(100, 20);
+			this.firstname.TabIndex = 0;
+			this.firstname.Text = "Prénom";
+			this.firstname.ForeColor = System.Drawing.Color.Gray;
+			this.firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// lastName
+			// 
+			this.lastName.Location = new System.Drawing.Point(278, 217);
+			this.lastName.Name = "lastName";
+			this.lastName.Size = new System.Drawing.Size(100, 20);
+			this.lastName.TabIndex = 1;
+			this.lastName.ForeColor = System.Drawing.Color.Gray;
+			this.lastName.Text = "Nom";
+			this.lastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			
+			// 
+			// phone
+			// 
+			this.phone.Location = new System.Drawing.Point(525, 251);
+			this.phone.Name = "phone";
+			this.phone.Size = new System.Drawing.Size(100, 20);
+			this.phone.TabIndex = 3;
+			this.phone.Text = "Téléphone";
+			this.phone.ForeColor = System.Drawing.Color.Gray;
+			this.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// address
+			// 
+			this.address.Location = new System.Drawing.Point(525, 289);
+			this.address.Name = "address";
+			this.address.Size = new System.Drawing.Size(100, 20);
+			this.address.TabIndex = 4;
+			this.address.Text = "Adresse";
+			this.address.ForeColor = System.Drawing.Color.Gray;
+			this.address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			
+			
 			// 
 			// menuStrip2
 			// 
@@ -192,24 +217,7 @@
 			this.progressBar2.Name = "progressBar2";
 			this.progressBar2.Size = new System.Drawing.Size(606, 3);
 			this.progressBar2.TabIndex = 13;
-			// 
-			// annuler
-			// 
-			this.annuler.Location = new System.Drawing.Point(644, 402);
-			this.annuler.Name = "annuler";
-			this.annuler.Size = new System.Drawing.Size(129, 33);
-			this.annuler.TabIndex = 14;
-			this.annuler.Text = "Annuler";
-			this.annuler.UseVisualStyleBackColor = true;
-			// 
-			// valider
-			// 
-			this.valider.Location = new System.Drawing.Point(496, 402);
-			this.valider.Name = "valider";
-			this.valider.Size = new System.Drawing.Size(129, 33);
-			this.valider.TabIndex = 15;
-			this.valider.Text = "Valider";
-			this.valider.UseVisualStyleBackColor = true;
+			
 			// 
 			// pictureBox1
 			// 
