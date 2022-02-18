@@ -61,7 +61,7 @@
 			this.pictureBox12 = new System.Windows.Forms.PictureBox();
 			this.pictureBox13 = new System.Windows.Forms.PictureBox();
 			this.pictureBox14 = new System.Windows.Forms.PictureBox();
-			this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+		
 			this.menuStrip1.SuspendLayout();
 			this.menuStrip3.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -176,8 +176,7 @@
 			this.menuStrip1.BackColor = System.Drawing.Color.DarkGreen;
 			this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adminToolStripMenuItem});
+		
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -404,13 +403,7 @@
 			this.pictureBox14.Size = new System.Drawing.Size(23, 31);
 			this.pictureBox14.TabIndex = 29;
 			this.pictureBox14.TabStop = false;
-			// 
-			// adminToolStripMenuItem
-			// 
-			this.adminToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-			this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-			this.adminToolStripMenuItem.Text = "Admin";
+
 			// 
 			// Admin_add_pers
 			// 
