@@ -16,7 +16,7 @@ namespace PT4_Grp_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin_add_pers());
+            Application.Run(new Maladies());
         }
     }
 }

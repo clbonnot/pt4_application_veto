@@ -72,22 +72,22 @@ namespace PT4_Grp_2
 
             if (lastName.Text.Equals("Nom") && current.Equals("Nom"))
             {
-                lastName.Text = "";
+                lastName.Clear();
                 lastName.ForeColor = SystemColors.WindowText;
             }
             if (address.Text.Equals("Adresse") && current.Equals("Adresse"))
             {
-                address.Text = "";
+                address.Clear();
                 address.ForeColor = SystemColors.WindowText;
             }
             if (phone.Text.Equals("Téléphone") && current.Equals("Téléphone") )
             {
-                phone.Text = "";
+                phone.Clear();
                 phone.ForeColor = SystemColors.WindowText;
             }
             if (firstname.Text.Equals("Prénom") && current.Equals("Prénom") )
             {
-                firstname.Text = "";
+                firstname.Clear();
                 firstname.ForeColor = SystemColors.WindowText;
             }
         }

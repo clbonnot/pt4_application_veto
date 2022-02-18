@@ -147,6 +147,7 @@
 			// 
 			// maladie
 			// 
+			this.maladie.Enabled = false;
 			this.maladie.Location = new System.Drawing.Point(22, 136);
 			this.maladie.Name = "maladie";
 			this.maladie.Size = new System.Drawing.Size(107, 27);

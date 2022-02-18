@@ -146,6 +146,7 @@
 			// 
 			// soin
 			// 
+			this.soin.Enabled = false;
 			this.soin.Location = new System.Drawing.Point(22, 103);
 			this.soin.Name = "soin";
 			this.soin.Size = new System.Drawing.Size(107, 27);
