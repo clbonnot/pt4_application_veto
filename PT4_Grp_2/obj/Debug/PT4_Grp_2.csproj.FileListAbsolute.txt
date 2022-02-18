@@ -2,6 +2,7 @@ Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.
 Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.exe
 Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.pdb
 Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.AssemblyReference.cache
+Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.SuggestedBindingRedirects.cache
 Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin.resources
 Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Clients.resources
 Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Connexion.resources
@@ -29,6 +30,4 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.CoreCompileInputs.cache
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.exe
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.pdb
-Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Maladies.resources
-Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin_detail_pers.resources
-Z:\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Connected_form.resources
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Maladies.resources
