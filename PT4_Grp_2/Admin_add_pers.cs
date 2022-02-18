@@ -17,9 +17,32 @@ namespace PT4_Grp_2
             InitializeComponent();
         }
 
-        private void Admin_add_pers_Load(object sender, EventArgs e)
+        /**
+         * 
+         */
+        private void valider_Click(object sender, EventArgs e)
         {
 
+            if (password.Text == "aaaaaa" || lastName.Text == "Nom" || phone.Text == "Téléphone" || id.Text == "Identifiant")
+            {
+                MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
+            }
+            else if (phone.Text.Length != 10)
+            {
+                MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
+            }
+            else
+            {
+                ajouterPersonnel();
+                MessageBox.Show("Personnel ajouté avec succès !");
+                Close();
+            }
         }
+
+        private void ajouterPersonnel()
+        {
+            //TODO !!
+        }
+   
     }
 }

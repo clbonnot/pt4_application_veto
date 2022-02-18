@@ -21,5 +21,10 @@ namespace PT4_Grp_2
 		{
 
 		}
-	}
+
+        private void Soins_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
