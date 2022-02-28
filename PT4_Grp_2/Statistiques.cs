@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Statistiques : Form
+    public partial class Statistiques : Modele
     {
         public Statistiques()
         {

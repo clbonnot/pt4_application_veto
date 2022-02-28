@@ -20,7 +20,6 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.AssemblyReference.cache
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.SuggestedBindingRedirects.cache
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin.resources
-C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin_add_pers.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Clients.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Connexion.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Properties.Resources.resources
@@ -31,3 +30,8 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.exe
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.pdb
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Maladies.resources
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin_detail_pers.resources
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Modele.resources
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Modele_add_pers.resources
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin_add_pers.resources
+C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Modele_listbox.resources

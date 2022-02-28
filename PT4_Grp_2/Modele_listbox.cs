@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-	public partial class Admin_add_pers : Modele_add_pers
+	public partial class Modele_listbox : Modele
 	{
-		public Admin_add_pers()
+		public Modele_listbox()
 		{
 			InitializeComponent();
 		}

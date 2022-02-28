@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Admin_detail_pers : Form
+    public partial class Admin_detail_pers : Modele
     {
         public Admin_detail_pers(Staff s)
         {

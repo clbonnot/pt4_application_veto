@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Connected_form.Designer.cs">
-      <DependentUpon>Connected_form.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +57,12 @@
     </Compile>
     <Compile Include="Admin_add_pers.Designer.cs">
       <DependentUpon>Admin_add_pers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modele_add_pers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele_add_pers.Designer.cs">
+      <DependentUpon>Modele_add_pers.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin_detail_pers.cs">
       <SubType>Form</SubType>
@@ -88,6 +88,18 @@
     <Compile Include="Maladies.Designer.cs">
       <DependentUpon>Maladies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele.Designer.cs">
+      <DependentUpon>Modele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modele_listbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele_listbox.Designer.cs">
+      <DependentUpon>Modele_listbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,14 +120,14 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Connected_form.resx">
-      <DependentUpon>Connected_form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_add_pers.resx">
       <DependentUpon>Admin_add_pers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modele_add_pers.resx">
+      <DependentUpon>Modele_add_pers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_detail_pers.resx">
       <DependentUpon>Admin_detail_pers.cs</DependentUpon>
@@ -128,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maladies.resx">
       <DependentUpon>Maladies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modele.resx">
+      <DependentUpon>Modele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modele_listbox.resx">
+      <DependentUpon>Modele_listbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

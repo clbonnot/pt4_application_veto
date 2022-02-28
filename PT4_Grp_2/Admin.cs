@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Admin : Form
+    public partial class Admin : Modele
     {
 
         List<Staff> allStaff;
@@ -46,7 +46,7 @@ namespace PT4_Grp_2
         private void add_Click(object sender, EventArgs e)
         {
            
-            Admin_add_pers formAdd = new Admin_add_pers();
+            Modele_add_pers formAdd = new Modele_add_pers();
             formAdd.ShowDialog();
 
         }
@@ -72,7 +72,7 @@ namespace PT4_Grp_2
 
         private void Deconnexion_Click(object sender, EventArgs e)
         {
-            Navigation.deconnexion_Click();
+            //Navigation.deconnexion_Click();
         }
     }
 
