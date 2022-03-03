@@ -33,7 +33,7 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.identifiant = new System.Windows.Forms.TextBox();
 			this.pwd = new System.Windows.Forms.TextBox();
 			this.connect = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,15 +82,15 @@
 			this.pictureBox2.TabIndex = 9;
 			this.pictureBox2.TabStop = false;
 			// 
-			// textBox1
+			// identifiant
 			// 
-			this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-			this.textBox1.Location = new System.Drawing.Point(136, 219);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 20);
-			this.textBox1.TabIndex = 10;
-			this.textBox1.Text = "Identifiant";
-			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.identifiant.BackColor = System.Drawing.SystemColors.Info;
+			this.identifiant.Location = new System.Drawing.Point(136, 219);
+			this.identifiant.Name = "identifiant";
+			this.identifiant.Size = new System.Drawing.Size(100, 20);
+			this.identifiant.TabIndex = 10;
+			this.identifiant.Text = "Identifiant";
+			this.identifiant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// pwd
 			// 
@@ -120,7 +120,7 @@
 			this.ClientSize = new System.Drawing.Size(613, 450);
 			this.Controls.Add(this.connect);
 			this.Controls.Add(this.pwd);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.identifiant);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.menuStrip1);
@@ -140,7 +140,7 @@
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox identifiant;
 		private System.Windows.Forms.TextBox pwd;
 		private System.Windows.Forms.Button connect;
 	}

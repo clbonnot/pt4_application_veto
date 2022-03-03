@@ -32,6 +32,7 @@
 			this.detail = new System.Windows.Forms.Button();
 			this.listStaff = new System.Windows.Forms.ListBox();
 			this.add = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// Deconnexion
@@ -72,12 +73,25 @@
 			this.add.Text = "AJOUTER";
 			this.add.UseVisualStyleBackColor = true;
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.DarkGreen;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.label1.Location = new System.Drawing.Point(338, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(90, 31);
+			this.label1.TabIndex = 67;
+			this.label1.Text = "Admin";
+			// 
 			// Admin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.detail);
 			this.Controls.Add(this.listStaff);
 			this.Controls.Add(this.add);
@@ -87,6 +101,7 @@
 			this.Controls.SetChildIndex(this.add, 0);
 			this.Controls.SetChildIndex(this.listStaff, 0);
 			this.Controls.SetChildIndex(this.detail, 0);
+			this.Controls.SetChildIndex(this.label1, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -97,5 +112,6 @@
 		private System.Windows.Forms.Button detail;
 		private System.Windows.Forms.ListBox listStaff;
 		private System.Windows.Forms.Button add;
+		private System.Windows.Forms.Label label1;
 	}
 }

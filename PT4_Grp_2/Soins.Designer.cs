@@ -34,6 +34,7 @@
 			this.maladie = new System.Windows.Forms.Button();
 			this.soin = new System.Windows.Forms.Button();
 			this.Calendrier = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// Deconnexion
@@ -92,12 +93,25 @@
 			this.Calendrier.Text = "Calendrier";
 			this.Calendrier.UseVisualStyleBackColor = true;
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.BackColor = System.Drawing.Color.DarkGreen;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+			this.label1.Location = new System.Drawing.Point(340, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(82, 31);
+			this.label1.TabIndex = 67;
+			this.label1.Text = "Soins";
+			// 
 			// Soins
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.stats);
 			this.Controls.Add(this.client);
 			this.Controls.Add(this.maladie);
@@ -112,6 +126,7 @@
 			this.Controls.SetChildIndex(this.maladie, 0);
 			this.Controls.SetChildIndex(this.client, 0);
 			this.Controls.SetChildIndex(this.stats, 0);
+			this.Controls.SetChildIndex(this.label1, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -125,5 +140,6 @@
 		private System.Windows.Forms.Button maladie;
 		private System.Windows.Forms.Button soin;
 		private System.Windows.Forms.Button Calendrier;
+		private System.Windows.Forms.Label label1;
 	}
 }

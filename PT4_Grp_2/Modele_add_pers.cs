@@ -20,75 +20,70 @@ namespace PT4_Grp_2
             
         }
 
-		#region hint
-		private void hint()
+        #region hint
+
+        /**
+         * Put text from textbox as a hint
+         */
+        private void hint()
         {
             //Text Box
-            //nom
-            
+            //Name
             this.lastName.Leave += new System.EventHandler(this.text_Leave);
             this.lastName.Enter += new System.EventHandler(this.setCurrent_Nom);
             this.lastName.Enter += new System.EventHandler(this.text_Enter);
-            //addresse
-
+            //address
             this.address.Leave += new System.EventHandler(this.text_Leave);
             this.address.Enter += new System.EventHandler(this.setCurrent_address);
             this.address.Enter += new System.EventHandler(this.text_Enter);
-            //prenom
-
+            //firstname
             this.firstname.Leave += new System.EventHandler(this.text_Leave);
             this.firstname.Enter += new System.EventHandler(this.setCurrent_Prenom);
             this.firstname.Enter += new System.EventHandler(this.text_Enter);
-            //tel
-
+            //phone
             this.phone.Leave += new System.EventHandler(this.text_Leave);
             this.phone.Enter += new System.EventHandler(this.setCurrent_phone);
             this.phone.Enter += new System.EventHandler(this.text_Enter);
 
         }
 
+
+        /**
+        * Initiate the "current" string
+        */
         private void setCurrent_phone(object sender, EventArgs e)
 		{
             current = "Téléphone";
         }
 
-		private void setCurrent_Prenom(object sender, EventArgs e)
+        /**
+        * Initiate the "current" string
+        */
+        private void setCurrent_Prenom(object sender, EventArgs e)
 		{
             current = "Prénom";
         }
 
-		private void setCurrent_address(object sender, EventArgs e)
+        /**
+        * Initiate the "current" string
+        */
+        private void setCurrent_address(object sender, EventArgs e)
 		{
             current = "Adresse";
         }
 
-		private void setCurrent_Nom(object sender, EventArgs e)
+        /**
+        * Initiate the "current" string
+        */
+        private void setCurrent_Nom(object sender, EventArgs e)
 		{
             current = "Nom";
 		}
 
         /**
-         * 
-         */
-        private void valider_Click(object sender, EventArgs e)
-        {
-
-            if (password.Text == "aaaaaa" || lastName.Text == "Nom" || phone.Text == "Téléphone" || id.Text == "Identifiant")
-            {
-                MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
-            }
-            else if (phone.Text.Length != 10)
-            {
-                MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
-            }
-            else
-            {
-                //ajouterPersonnel();
-                MessageBox.Show("Personnel ajouté avec succès !");
-                Close();
-            }
-        }
-		private void text_Enter(object sender, EventArgs e)
+          * Make disappear the text from the textBox on click
+          */
+        private void text_Enter(object sender, EventArgs e)
 		{
 
             if (lastName.Text.Equals("Nom") && current.Equals("Nom"))
@@ -113,7 +108,10 @@ namespace PT4_Grp_2
             }
         }
 
-		private void text_Leave(object sender, EventArgs e)
+        /**
+          * Put a text as which looks like a hint in leave 
+          */
+        private void text_Leave(object sender, EventArgs e)
 		{
             if (lastName.Text.Length == 0)
             {
@@ -136,9 +134,29 @@ namespace PT4_Grp_2
                 firstname.ForeColor = SystemColors.GrayText;
             }
         }
-		#endregion
+        #endregion
 
-		
-   
+        /**
+         * Makes sure every data is valid
+         */
+        private void valider_Click(object sender, EventArgs e)
+        {
+
+            if (password.Text == "aaaaaa" || lastName.Text == "Nom" || phone.Text == "Téléphone" || id.Text == "Identifiant")
+            {
+                MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
+            }
+            else if (phone.Text.Length != 10)
+            {
+                MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
+            }
+            else
+            {
+                //ajouterPersonnel();
+                MessageBox.Show("Personnel ajouté avec succès !");
+                Close();
+            }
+        }
+
     }
 }

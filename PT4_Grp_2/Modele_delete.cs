@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Stocks : Modele_listbox
-    {
-        public Stocks()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class Modele_delete : Form
+	{
+		public Modele_delete()
+		{
+			InitializeComponent();
+		}
+	}
 }
