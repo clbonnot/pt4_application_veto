@@ -33,7 +33,7 @@
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.Delete = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.Update = new System.Windows.Forms.Button();
+			this.update = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -86,13 +86,13 @@
 			// 
 			// Update
 			// 
-			this.Update.BackColor = System.Drawing.Color.DarkSeaGreen;
-			this.Update.Location = new System.Drawing.Point(126, 594);
-			this.Update.Name = "Update";
-			this.Update.Size = new System.Drawing.Size(108, 36);
-			this.Update.TabIndex = 30;
-			this.Update.Text = "Modifier";
-			this.Update.UseVisualStyleBackColor = false;
+			this.update.BackColor = System.Drawing.Color.DarkSeaGreen;
+			this.update.Location = new System.Drawing.Point(126, 594);
+			this.update.Name = "Update";
+			this.update.Size = new System.Drawing.Size(108, 36);
+			this.update.TabIndex = 30;
+			this.update.Text = "Modifier";
+			this.update.UseVisualStyleBackColor = false;
 			// 
 			// Modele_modifier
 			// 
@@ -100,7 +100,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Info;
 			this.ClientSize = new System.Drawing.Size(360, 642);
-			this.Controls.Add(this.Update);
+			this.Controls.Add(this.update);
 			this.Controls.Add(this.Delete);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.progressBar1);
@@ -120,6 +120,6 @@
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.Button Delete;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button Update;
+		private System.Windows.Forms.Button update;
 	}
 }
