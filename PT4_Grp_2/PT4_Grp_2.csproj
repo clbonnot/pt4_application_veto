@@ -58,6 +58,12 @@
     <Compile Include="Admin_add_pers.Designer.cs">
       <DependentUpon>Admin_add_pers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_modifier_pers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_modifier_pers.Designer.cs">
+      <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modele_add_pers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,11 +100,23 @@
     <Compile Include="Modele.Designer.cs">
       <DependentUpon>Modele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modele_delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele_delete.Designer.cs">
+      <DependentUpon>Modele_delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modele_listbox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modele_listbox.Designer.cs">
       <DependentUpon>Modele_listbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modele_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele_modifier.Designer.cs">
+      <DependentUpon>Modele_modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
@@ -120,11 +138,20 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stocks_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks_detail.Designer.cs">
+      <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_add_pers.resx">
       <DependentUpon>Admin_add_pers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_modifier_pers.resx">
+      <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modele_add_pers.resx">
       <DependentUpon>Modele_add_pers.cs</DependentUpon>
@@ -144,8 +171,14 @@
     <EmbeddedResource Include="Modele.resx">
       <DependentUpon>Modele.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modele_delete.resx">
+      <DependentUpon>Modele_delete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modele_listbox.resx">
       <DependentUpon>Modele_listbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modele_modifier.resx">
+      <DependentUpon>Modele_modifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -164,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks_detail.resx">
+      <DependentUpon>Stocks_detail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
