@@ -9,7 +9,7 @@ namespace PT4_Grp_2
 {
     public class Animal 
     {
-        /**
+     
         public Animal(int id, OleDbConnection c)
         {
             OleDbCommand cmd = new OleDbCommand("SELECT Code_Animal FROM Animal WHERE Code_Animal = " + id, c);
@@ -42,7 +42,7 @@ namespace PT4_Grp_2
             get { return note; }
             set { string note = value; }
         }
-    /**    public Race race
+      public string race
         {
             get { return race; }
             set { race = value; }
@@ -53,7 +53,7 @@ namespace PT4_Grp_2
             get { return owner; }
             set { owner = value; }
         }
-    **/
+ 
 
     }
 }
