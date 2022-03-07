@@ -1,0 +1,14 @@
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.AssemblyReference.cache
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.SuggestedBindingRedirects.cache
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Clients.resources
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Connexion.resources
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Properties.Resources.resources
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Soins.resources
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Statistiques.resources
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.GenerateResource.cache
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.CoreCompileInputs.cache
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.exe.config
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.exe
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.pdb
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.exe
+Z:\aa\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.pdb
