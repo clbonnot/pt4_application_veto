@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Stocks : Form
+    public partial class Stocks : Modele_listbox
     {
         public Stocks()
         {

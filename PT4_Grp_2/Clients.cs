@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Clients : Form
+    public partial class Clients : Modele_listbox
     {
         public Clients()
         {

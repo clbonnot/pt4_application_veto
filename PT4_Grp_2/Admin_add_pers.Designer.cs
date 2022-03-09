@@ -1,0 +1,61 @@
+﻿namespace PT4_Grp_2
+{
+	partial class Admin_add_pers
+	{
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Windows Form Designer generated code
+
+		/// <summary>
+		/// Required method for Designer support - do not modify
+		/// the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
+			this.role = new System.Windows.Forms.ComboBox();
+			this.SuspendLayout();
+			// 
+			// role
+			// 
+			this.role.FormattingEnabled = true;
+			this.role.Location = new System.Drawing.Point(276, 251);
+			this.role.Name = "role";
+			this.role.Size = new System.Drawing.Size(121, 21);
+			this.role.TabIndex = 30;
+			this.role.Text = "Rôle";
+			// 
+			// Admin_add_pers
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.role);
+			this.Name = "Admin_add_pers";
+			this.Text = "Admin_add_pers";
+			this.Controls.SetChildIndex(this.role, 0);
+			this.ResumeLayout(false);
+			this.PerformLayout();
+
+		}
+
+		#endregion
+
+		private System.Windows.Forms.ComboBox role;
+	}
+}
