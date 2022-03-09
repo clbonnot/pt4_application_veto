@@ -56,7 +56,7 @@
             this.adminToolStripMenuItem});
 			this.menuStrip2.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip2.Name = "menuStrip2";
-			this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+			this.menuStrip2.Size = new System.Drawing.Size(1033, 24);
 			this.menuStrip2.TabIndex = 9;
 			this.menuStrip2.Text = "menuStrip2";
 			// 
@@ -76,7 +76,7 @@
             this.rôleToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 24);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(1033, 24);
 			this.menuStrip1.TabIndex = 8;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -96,14 +96,14 @@
             this.toolStripMenuItem1});
 			this.menuStrip3.Location = new System.Drawing.Point(0, 48);
 			this.menuStrip3.Name = "menuStrip3";
-			this.menuStrip3.Size = new System.Drawing.Size(151, 402);
+			this.menuStrip3.Size = new System.Drawing.Size(151, 587);
 			this.menuStrip3.TabIndex = 10;
 			this.menuStrip3.Text = "menuStrip3";
 			// 
 			// Deconnexion
 			// 
 			this.Deconnexion.FlatAppearance.BorderSize = 0;
-			this.Deconnexion.Location = new System.Drawing.Point(692, 12);
+			this.Deconnexion.Location = new System.Drawing.Point(928, 12);
 			this.Deconnexion.Name = "Deconnexion";
 			this.Deconnexion.Size = new System.Drawing.Size(81, 24);
 			this.Deconnexion.TabIndex = 7;
@@ -115,7 +115,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Info;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(1033, 635);
 			this.Controls.Add(this.Deconnexion);
 			this.Controls.Add(this.menuStrip3);
 			this.Controls.Add(this.menuStrip1);
