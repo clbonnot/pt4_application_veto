@@ -93,5 +93,50 @@ namespace PT4_Grp_2
         }
         #endregion
 
+        private void connect_Click(object sender, EventArgs e)
+        {
+            string id = identifiant.Text;
+            string password = pwd.Text;
+            string sql = "Select Identifiant, Mot_de_passe from Personnel where LOGIN_ABONNÉ = '" + Utils.manageSingleQuote(id) + "'";
+            OleDbCommand cmd = new OleDbCommand(sql);
+            string motDePasseBDD = "";
+            string motDePasse = pwd.Text.Trim(' ');
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                motDePasseBDD = reader.GetString(0).Trim(' ');
+            }
+            string a = DecryptageDeMotDePasse(motDePasseBDD);
+            if (motDePasse.Equals(DecryptageDeMotDePasse(motDePasseBDD)) && !motDePasse.Equals(""))
+            {
+                string nom = "";
+                string prenom = "";
+                string id = "";
+                string sqlSet = "Select NOM_ABONNÉ, PRÉNOM_ABONNÉ, LOGIN_ABONNÉ, PASSWORD_ABONNÉ from ABONNÉS where LOGIN_ABONNÉ = '" + Utils.manageSingleQuote(pseudoTextBox.Text) + "'";
+                OleDbCommand cmdSet = new OleDbCommand(sqlSet, dbCon);
+                OleDbDataReader readerSet = cmdSet.ExecuteReader();
+                while (readerSet.Read())
+                {
+                    nom = Utils.manageSingleQuote(readerSet.GetString(0));
+
+                    prenom = Utils.manageSingleQuote(readerSet.GetString(1));
+
+                    id = Utils.manageSingleQuote(readerSet.GetString(2));
+                }
+                readerSet.Close();
+
+                this.Close();
+                Abonne_Accueil AbonneAccueil = new Abonne_Accueil(nom, prenom, id);
+                AbonneAccueil.StartPosition = FormStartPosition.CenterScreen;
+                AbonneAccueil.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Le mot de passe ou l'utilisateur est incorrect");
+
+                Console.WriteLine(motDePasse + "     " + DecryptageDeMotDePasse(motDePasseBDD));
+            }
+        }
     }
 }

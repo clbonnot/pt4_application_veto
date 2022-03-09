@@ -8,5 +8,10 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void Deconnexion_Click(object sender, System.EventArgs e)
+        {
+			R
+        }
+    }
 }
