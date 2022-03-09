@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Maladies : Form
+    public partial class Maladies : Modele_listbox
+
     {
         public Maladies()
         {
