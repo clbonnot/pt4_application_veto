@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PT4_Grp_2
 {
-    internal class DB
+    public class DB
     {
 
         public OleDbConnection dbConnection;
@@ -23,6 +23,16 @@ namespace PT4_Grp_2
                
 
 
+        }
+
+        public OleDbDataReader select(String request, String[] args)
+        {
+            OleDbCommand cmd = new OleDbCommand(request, this.dbConnection);
+            foreach(String arg in args)
+            {
+                cmd.Parameters.Add(arg);
+            }
+            return cmd.ExecuteReader();
         }
         
         public OleDbConnection getDbConnection() {

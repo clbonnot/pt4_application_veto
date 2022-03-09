@@ -76,45 +76,5 @@ namespace PT4_Grp_2
         }
     }
 
-    //Code temporaire (jusqu'à bd) : 
-    public class Staff 
-    {
-        public string firstname = "Annie";
-        public string lastname = "Maux";
-        public string role = "Splouch splouch";
-        public string getFirstname()
-        {
-            return firstname;
-        }
-        public string getLastname()
-        {
-            return lastname;
-        }
-        public string getRole()
-        {
-            return role;
-        }
-        public void setLastname(String s)
-        {
-            this.lastname = s;
-        }
-        public void setFirstname(String s)
-        {
-            this.firstname = s;
-        }
-        public void setRole(String s)
-        {
-            this.role = s;
-        }
-        public Staff()
-        {
-
-        }
-        
-        public String toString()
-        {
-            return this.lastname + " | " + this.firstname + " | " + this.role;
-        }
-    
-    }
+ 
 }
