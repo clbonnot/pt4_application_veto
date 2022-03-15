@@ -14,10 +14,13 @@ namespace PT4_Grp_2
     public partial class Connexion : Form
     {
         String current = "";
+
         public Connexion()
         {
             InitializeComponent();
             hint();
+            DB DBcon = new DB("INFO-JOYEUX", "PT4_E2");
+            DBcon.openConnection();
         }
 
         #region hint
@@ -97,46 +100,47 @@ namespace PT4_Grp_2
         {
             string id = identifiant.Text;
             string password = pwd.Text;
-            string sql = "Select Identifiant, Mot_de_passe from Personnel where LOGIN_ABONNÉ = '" + Utils.manageSingleQuote(id) + "'";
-            OleDbCommand cmd = new OleDbCommand(sql);
+            string sqlSet = "Select Identifiant, Mot_de_passe from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
+            OleDbCommand cmd = new OleDbCommand(sqlSet);
             string motDePasseBDD = "";
             string motDePasse = pwd.Text.Trim(' ');
 
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                motDePasseBDD = reader.GetString(0).Trim(' ');
+                motDePasseBDD = reader.GetString(1).Trim(' ');
             }
-            string a = DecryptageDeMotDePasse(motDePasseBDD);
-            if (motDePasse.Equals(DecryptageDeMotDePasse(motDePasseBDD)) && !motDePasse.Equals(""))
+            //string a = DecryptageDeMotDePasse(motDePasseBDD);
+            if (motDePasse.Equals(motDePasseBDD) && !motDePasseBDD.Equals(""))
             {
-                string nom = "";
-                string prenom = "";
-                string id = "";
-                string sqlSet = "Select NOM_ABONNÉ, PRÉNOM_ABONNÉ, LOGIN_ABONNÉ, PASSWORD_ABONNÉ from ABONNÉS where LOGIN_ABONNÉ = '" + Utils.manageSingleQuote(pseudoTextBox.Text) + "'";
-                OleDbCommand cmdSet = new OleDbCommand(sqlSet, dbCon);
+                string sql = "select role, droit from Rôle inner join Personnel on Personnel.CODE_ROLE = Rôle.CODE_ROLE " +
+                "WHERE Personnel.IDENTIFIANT = '" + Utils.manageSingleQuote(id) + "'";
+                OleDbCommand cmdSet = new OleDbCommand(sql);
+                
                 OleDbDataReader readerSet = cmdSet.ExecuteReader();
+                string role ="";
                 while (readerSet.Read())
                 {
-                    nom = Utils.manageSingleQuote(readerSet.GetString(0));
-
-                    prenom = Utils.manageSingleQuote(readerSet.GetString(1));
-
-                    id = Utils.manageSingleQuote(readerSet.GetString(2));
+                    role = Utils.manageSingleQuote(readerSet.GetString(0));
                 }
                 readerSet.Close();
 
                 this.Close();
-                Abonne_Accueil AbonneAccueil = new Abonne_Accueil(nom, prenom, id);
-                AbonneAccueil.StartPosition = FormStartPosition.CenterScreen;
-                AbonneAccueil.ShowDialog();
+                Modele Mod = new Modele();
+                Mod.StartPosition = FormStartPosition.CenterScreen;
+                Mod.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Le mot de passe ou l'utilisateur est incorrect");
 
-                Console.WriteLine(motDePasse + "     " + DecryptageDeMotDePasse(motDePasseBDD));
+                Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
+        }
+
+        private void pwd_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

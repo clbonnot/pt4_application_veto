@@ -35,6 +35,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.Deconnexion = new System.Windows.Forms.Button();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -73,7 +74,8 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rôleToolStripMenuItem});
+            this.rôleToolStripMenuItem,
+            this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 24);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -111,6 +113,11 @@
             this.Deconnexion.UseVisualStyleBackColor = true;
             this.Deconnexion.Click += new System.EventHandler(this.Deconnexion_Click);
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(122, 20);
+            // 
             // Modele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,5 +150,6 @@
 		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 		private System.Windows.Forms.MenuStrip menuStrip3;
 		private System.Windows.Forms.Button Deconnexion;
-	}
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+    }
 }

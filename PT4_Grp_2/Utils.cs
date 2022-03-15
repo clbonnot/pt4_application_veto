@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppliGrpR
+namespace PT4_Grp_2
 {
-    public static class Utils
+    internal class Utils
     {
         /// <summary>
         /// permet de doubler tout les apostrophes

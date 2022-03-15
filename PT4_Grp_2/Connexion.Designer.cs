@@ -101,6 +101,7 @@
             this.pwd.TabIndex = 11;
             this.pwd.Text = "Mot de passe";
             this.pwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pwd.TextChanged += new System.EventHandler(this.pwd_TextChanged);
             // 
             // connect
             // 
