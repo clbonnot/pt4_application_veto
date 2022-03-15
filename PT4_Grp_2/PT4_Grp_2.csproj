@@ -100,6 +100,12 @@
     <Compile Include="Modele.Designer.cs">
       <DependentUpon>Modele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modele_calendrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele_calendrier.Designer.cs">
+      <DependentUpon>Modele_calendrier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modele_delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modele.resx">
       <DependentUpon>Modele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modele_calendrier.resx">
+      <DependentUpon>Modele_calendrier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modele_delete.resx">
       <DependentUpon>Modele_delete.cs</DependentUpon>

@@ -47,7 +47,7 @@
 			this.menuStrip2.ImageScalingSize = new System.Drawing.Size(16, 20);
 			this.menuStrip2.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip2.Name = "menuStrip2";
-			this.menuStrip2.Size = new System.Drawing.Size(613, 24);
+			this.menuStrip2.Size = new System.Drawing.Size(867, 24);
 			this.menuStrip2.TabIndex = 6;
 			this.menuStrip2.Text = "menuStrip2";
 			// 
@@ -58,7 +58,7 @@
 			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
 			this.menuStrip1.Location = new System.Drawing.Point(0, 24);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(613, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(867, 24);
 			this.menuStrip1.TabIndex = 7;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -67,7 +67,7 @@
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.Location = new System.Drawing.Point(12, 61);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(588, 377);
+			this.pictureBox1.Size = new System.Drawing.Size(843, 536);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox1.TabIndex = 8;
 			this.pictureBox1.TabStop = false;
@@ -75,7 +75,7 @@
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(119, 161);
+			this.pictureBox2.Location = new System.Drawing.Point(500, 241);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(138, 173);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -85,7 +85,7 @@
 			// identifiant
 			// 
 			this.identifiant.BackColor = System.Drawing.SystemColors.Info;
-			this.identifiant.Location = new System.Drawing.Point(136, 219);
+			this.identifiant.Location = new System.Drawing.Point(517, 299);
 			this.identifiant.Name = "identifiant";
 			this.identifiant.Size = new System.Drawing.Size(100, 20);
 			this.identifiant.TabIndex = 10;
@@ -95,7 +95,7 @@
 			// pwd
 			// 
 			this.pwd.BackColor = System.Drawing.SystemColors.Info;
-			this.pwd.Location = new System.Drawing.Point(136, 254);
+			this.pwd.Location = new System.Drawing.Point(517, 334);
 			this.pwd.Name = "pwd";
 			this.pwd.Size = new System.Drawing.Size(100, 20);
 			this.pwd.TabIndex = 11;
@@ -105,7 +105,7 @@
 			// connect
 			// 
 			this.connect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.connect.Location = new System.Drawing.Point(150, 294);
+			this.connect.Location = new System.Drawing.Point(531, 374);
 			this.connect.Name = "connect";
 			this.connect.Size = new System.Drawing.Size(75, 23);
 			this.connect.TabIndex = 12;
@@ -117,7 +117,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Info;
-			this.ClientSize = new System.Drawing.Size(613, 450);
+			this.ClientSize = new System.Drawing.Size(867, 609);
 			this.Controls.Add(this.connect);
 			this.Controls.Add(this.pwd);
 			this.Controls.Add(this.identifiant);
