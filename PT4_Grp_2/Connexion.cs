@@ -14,12 +14,13 @@ namespace PT4_Grp_2
     public partial class Connexion : Form
     {
         String current = "";
+        DB DBcon;
 
         public Connexion()
         {
             InitializeComponent();
             hint();
-            DB DBcon = new DB("INFO-JOYEUX", "PT4_E2");
+            this.DBcon = new DB("INFO-JOYEUX", "PT4_E2");
             DBcon.openConnection();
         }
 
@@ -95,13 +96,15 @@ namespace PT4_Grp_2
             }
         }
         #endregion
-
+        /*
+         * This void compare the id and password with the one in the database and get the user's role and rights
+         */
         private void connect_Click(object sender, EventArgs e)
         {
             string id = identifiant.Text;
             string password = pwd.Text;
             string sqlSet = "Select Identifiant, Mot_de_passe from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
-            OleDbCommand cmd = new OleDbCommand(sqlSet);
+            OleDbCommand cmd = new OleDbCommand(sqlSet, DBcon.dbConnection);
             string motDePasseBDD = "";
             string motDePasse = pwd.Text.Trim(' ');
 
@@ -113,20 +116,24 @@ namespace PT4_Grp_2
             //string a = DecryptageDeMotDePasse(motDePasseBDD);
             if (motDePasse.Equals(motDePasseBDD) && !motDePasseBDD.Equals(""))
             {
-                string sql = "select role, droit from Rôle inner join Personnel on Personnel.CODE_ROLE = Rôle.CODE_ROLE " +
+                string sql = "select nom_role, droit from Rôle inner join Personnel on Personnel.CODE_ROLE = Rôle.CODE_ROLE " +
                 "WHERE Personnel.IDENTIFIANT = '" + Utils.manageSingleQuote(id) + "'";
-                OleDbCommand cmdSet = new OleDbCommand(sql);
+                OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.dbConnection);
                 
                 OleDbDataReader readerSet = cmdSet.ExecuteReader();
-                string role ="";
+                string role = "";
+                string droit = "";
                 while (readerSet.Read())
                 {
                     role = Utils.manageSingleQuote(readerSet.GetString(0));
+                    droit = Utils.manageSingleQuote(readerSet.GetString(1));
                 }
                 readerSet.Close();
 
                 this.Close();
                 Modele Mod = new Modele();
+                Mod.SetRole(role);
+                Mod.SetDroit(droit);   
                 Mod.StartPosition = FormStartPosition.CenterScreen;
                 Mod.ShowDialog();
             }
@@ -136,6 +143,7 @@ namespace PT4_Grp_2
 
                 Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
+            DBcon.closeConnection();
         }
 
         private void pwd_TextChanged(object sender, EventArgs e)

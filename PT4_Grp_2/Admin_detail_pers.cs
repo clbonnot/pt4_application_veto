@@ -12,13 +12,10 @@ namespace PT4_Grp_2
 {
     public partial class Admin_detail_pers : Modele
     {
-        public Admin_detail_pers(Staff s)
+        public Admin_detail_pers()
         {
             InitializeComponent();
-            roleV.Text = s.getRole();
-            lastnameV.Text = s.getLastname();
-            firstnameV.Text = s.getFirstname();
-            Refresh();
+            
         }
 
         private void Admin_detail_pers_Load(object sender, EventArgs e)
