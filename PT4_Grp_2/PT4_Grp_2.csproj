@@ -64,6 +64,8 @@
     <Compile Include="Admin_modifier_pers.Designer.cs">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animal.cs" />
+    <Compile Include="DB.cs" />
     <Compile Include="Modele_add_pers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +120,14 @@
     <Compile Include="Modele_modifier.Designer.cs">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="People.cs" />
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Soins.Designer.cs">
       <DependentUpon>Soins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff.cs" />
     <Compile Include="Statistiques.cs">
       <SubType>Form</SubType>
     </Compile>

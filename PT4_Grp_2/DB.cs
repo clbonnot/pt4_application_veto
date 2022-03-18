@@ -25,19 +25,25 @@ namespace PT4_Grp_2
 
         }
 
+
         public OleDbDataReader select(String request, String[] args)
         {
+           
             OleDbCommand cmd = new OleDbCommand(request, this.dbConnection);
-            foreach(String arg in args)
+            if (args != null)
             {
-                cmd.Parameters.Add(arg);
+                foreach (String arg in args)
+                {
+                    cmd.Parameters.AddWithValue("?", arg); 
+                }
             }
+            
+        
             return cmd.ExecuteReader();
         }
         
         public OleDbConnection getDbConnection() {
             return dbConnection;
-
         }
 
         public void openConnection()

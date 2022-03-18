@@ -28,90 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.Deconnexion = new System.Windows.Forms.Button();
-			this.detail = new System.Windows.Forms.Button();
-			this.listStaff = new System.Windows.Forms.ListBox();
-			this.add = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.SuspendLayout();
-			// 
-			// Deconnexion
-			// 
-			this.Deconnexion.FlatAppearance.BorderSize = 0;
-			this.Deconnexion.Location = new System.Drawing.Point(692, 12);
-			this.Deconnexion.Name = "Deconnexion";
-			this.Deconnexion.Size = new System.Drawing.Size(81, 24);
-			this.Deconnexion.TabIndex = 3;
-			this.Deconnexion.Text = "Deconnexion";
-			this.Deconnexion.UseVisualStyleBackColor = true;
-			this.Deconnexion.Click += new System.EventHandler(this.Deconnexion_Click);
-			// 
-			// detail
-			// 
-			this.detail.Location = new System.Drawing.Point(23, 131);
-			this.detail.Name = "detail";
-			this.detail.Size = new System.Drawing.Size(113, 36);
-			this.detail.TabIndex = 13;
-			this.detail.Text = "DETAIL";
-			this.detail.UseVisualStyleBackColor = true;
-			// 
-			// listStaff
-			// 
-			this.listStaff.BackColor = System.Drawing.SystemColors.Info;
-			this.listStaff.FormattingEnabled = true;
-			this.listStaff.Location = new System.Drawing.Point(169, 58);
-			this.listStaff.Name = "listStaff";
-			this.listStaff.Size = new System.Drawing.Size(621, 381);
-			this.listStaff.TabIndex = 12;
-			// 
-			// add
-			// 
-			this.add.Location = new System.Drawing.Point(23, 71);
-			this.add.Name = "add";
-			this.add.Size = new System.Drawing.Size(113, 36);
-			this.add.TabIndex = 11;
-			this.add.Text = "AJOUTER";
-			this.add.UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.DarkGreen;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-			this.label1.Location = new System.Drawing.Point(338, 9);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(90, 31);
-			this.label1.TabIndex = 67;
-			this.label1.Text = "Admin";
-			// 
-			// Admin
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.detail);
-			this.Controls.Add(this.listStaff);
-			this.Controls.Add(this.add);
-			this.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Name = "Admin";
-			this.Text = "Admin";
-			this.Controls.SetChildIndex(this.add, 0);
-			this.Controls.SetChildIndex(this.listStaff, 0);
-			this.Controls.SetChildIndex(this.detail, 0);
-			this.Controls.SetChildIndex(this.label1, 0);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.Deconnexion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // detail
+            // 
+            this.detail.Visible = true;
+            // 
+            // Deconnexion
+            // 
+            this.Deconnexion.FlatAppearance.BorderSize = 0;
+            this.Deconnexion.Location = new System.Drawing.Point(692, 12);
+            this.Deconnexion.Name = "Deconnexion";
+            this.Deconnexion.Size = new System.Drawing.Size(81, 24);
+            this.Deconnexion.TabIndex = 3;
+            this.Deconnexion.Text = "Deconnexion";
+            this.Deconnexion.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkGreen;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(338, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 31);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Admin";
+            // 
+            // Admin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Name = "Admin";
+            this.Text = "Admin";
+            this.Controls.SetChildIndex(this.listbox, 0);
+            this.Controls.SetChildIndex(this.add, 0);
+            this.Controls.SetChildIndex(this.detail, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 		private System.Windows.Forms.Button Deconnexion;
-		private System.Windows.Forms.Button detail;
-		private System.Windows.Forms.ListBox listStaff;
-		private System.Windows.Forms.Button add;
 		private System.Windows.Forms.Label label1;
 	}
 }

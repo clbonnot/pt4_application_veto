@@ -8,36 +8,20 @@ namespace PT4_Grp_2
 {
     public class People
     {
-       
 
-        public int id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        public string lastname
-        {
-            get { return lastname; }
-            set { lastname = value; }
-        }
 
-        public string firstname
-        {
-            get { return firstname; }
-            set { firstname = value; }
-        }
-        public string mail
-        {
-            get { return mail; }
-            set { mail = value; }
-        }
+        private int id;
+        private string lastname;
 
-        public int phone
-        {
-            get { return phone; }
-            set { phone = value; }
-        }
+        private string firstname;
+        private string mail;
 
-       
+        private string phone;
+
+        public int Id { get => id; set => id = value; }
+        public string Lastname { get => lastname; set => lastname = value; }
+        public string Firstname { get => firstname; set => firstname = value; }
+        public string Mail { get => mail; set => mail = value; }
+        public string Phone { get => phone; set => phone = value; }
     }
 }

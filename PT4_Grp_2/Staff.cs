@@ -17,79 +17,80 @@ namespace PT4_Grp_2
 
         public Staff(int id, DB db)
         {
+            
             db.openConnection();
 
-            String[] arg = { "" + id };
-            OleDbDataReader reader = db.select("SELECT Code_Personnel FROM Personnel WHERE Code_Personnel = ?", arg);
-            this.id = id;
+            String[] arg = { id.ToString() };
+            OleDbDataReader reader = db.select("SELECT * FROM Personnel WHERE Code_Personnel = ?;", arg);
+            
             
             if(reader.Read()){
-                id = reader.GetInt32(0);
-                String[] arg2 = { "" + reader.GetInt32(2)};
-                OleDbDataReader readerPeople = db.select("SELECT * FROM Personne WHERE Code_Persone = ?", arg);
+                
+                this.Id = reader.GetInt32(0);
+                this.Identify = reader.GetString(3);
+                Password = reader.GetString(4);
+                
+                Salary = reader.GetInt32(5);
+                Start_date = reader.GetString(6);
+                End_date = reader.GetString(7);
+
+                String[] arg2 = { reader.GetInt32(2).ToString() };
+                OleDbDataReader readerPeople = db.select("SELECT * FROM Personne WHERE Code_Personne = ?", arg2);
                 if (readerPeople.Read())
                 {
-                    lastname = readerPeople.GetString(1);
-                    firstname = readerPeople.GetString(2);
-                    mail = readerPeople.GetString(3);
-                    phone = readerPeople.GetInt32(4);
+                   
+                    Lastname = readerPeople.GetString(1);
+                    Firstname = readerPeople.GetString(2);
+                    Mail = readerPeople.GetString(3);
+                    Phone = readerPeople.GetString(4);
                 }
-                identify = reader.GetString(3);
-                password = reader.GetString(4);
-                salary = reader.GetInt32(5);
-                start_date = reader.GetDateTime(6);
-                end_date = reader.GetDateTime(7);
-
+                String[] arg3 = { reader.GetInt32(1).ToString() };
+                OleDbDataReader readerRole = db.select("SELECT * FROM Rôle WHERE Code_Role = ?", arg3);
+                if (readerRole.Read())
+                {
+                    Role = readerRole.GetString(1);
+                    if(readerRole.GetString(2) == "administrateur")
+                    {
+                        rights = true;
+                    }
+                    else
+                    {
+                        rights = false;
+                    }
+                }
+          
             }
 
             db.closeConnection();
         }
-            
-        
-        public int id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        
-        public string identify
-        {
-            get { return password; }
-            set { password = value; }
-        }
-        public string password
-        {
-            get { return password; }
-            set { password = value; }
-        }
 
-        public float salary
-        {
-            get { return salary; }
-            set { salary = value; }
-        }
 
-        public DateTime start_date
-        {
-            get { return start_date; }
-            set { start_date = value; }
-        }
 
-        public DateTime end_date
-        {
-            get { return end_date; }
-            set { end_date = value; }
-        }
 
-        public Role role
-        {
-            get { return role; }
-            set { role = value; }
-        }
+        private string identify;
+
+        private string password;
+
+        private float salary;
+
+        private string start_date;
+
+        private string end_date;
+
+        private string role;
+
+        private Boolean rights; 
+
+        public string Identify { get => identify; set => identify = value; }
+        public string Password { get => password; set => password = value; }
+        public float Salary { get => salary; set => salary = value; }
+        public string Start_date { get => start_date; set => start_date = value; }
+        public string End_date { get => end_date; set => end_date = value; }
+        public string Role { get => role; set => role = value; }
 
         public String toString()
         {
-            return this.lastname + " | " + this.firstname + " | " + this.role;
+            return this.Lastname + " | " + this.Firstname + " | " + this.Role;
         }
 
     }
