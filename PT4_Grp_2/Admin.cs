@@ -62,15 +62,17 @@ namespace PT4_Grp_2
          */
         public override void add_Click(object sender, EventArgs e)
         {
-           
-            Modele_add_pers formAdd = new Modele_add_pers();
+            
+            Modele_add_pers formAdd = new Admin_add_pers(DBCon);
             formAdd.ShowDialog();
 
         }
 
 
 
-
+        /*
+         * Function that launch a form to see the detail of the staff selected.
+         */
         public override void detail_Click(object sender, EventArgs e)
         {
             Admin_detail_pers formDet = new Admin_detail_pers(allStaff.ToArray()[listbox.SelectedIndex]);

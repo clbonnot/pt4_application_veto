@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modele_add_pers));
-            this.firstname = new System.Windows.Forms.TextBox();
-            this.lastName = new System.Windows.Forms.TextBox();
-            this.phone = new System.Windows.Forms.TextBox();
-            this.address = new System.Windows.Forms.TextBox();
+            this.FirstName = new System.Windows.Forms.TextBox();
+            this.LastName = new System.Windows.Forms.TextBox();
+            this.Phone = new System.Windows.Forms.TextBox();
+            this.Address = new System.Windows.Forms.TextBox();
             this.date = new System.Windows.Forms.TextBox();
             this.salary = new System.Windows.Forms.TextBox();
             this.id = new System.Windows.Forms.TextBox();
@@ -72,45 +72,45 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             this.SuspendLayout();
             // 
-            // firstname
+            // FirstName
             // 
-            this.firstname.ForeColor = System.Drawing.Color.Gray;
-            this.firstname.Location = new System.Drawing.Point(276, 216);
-            this.firstname.Name = "firstname";
-            this.firstname.Size = new System.Drawing.Size(100, 20);
-            this.firstname.TabIndex = 0;
-            this.firstname.Text = "Prénom";
-            this.firstname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FirstName.ForeColor = System.Drawing.Color.Gray;
+            this.FirstName.Location = new System.Drawing.Point(276, 216);
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Size = new System.Drawing.Size(100, 20);
+            this.FirstName.TabIndex = 0;
+            this.FirstName.Text = "Prénom";
+            this.FirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lastName
+            // LastName
             // 
-            this.lastName.ForeColor = System.Drawing.Color.Gray;
-            this.lastName.Location = new System.Drawing.Point(278, 190);
-            this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(100, 20);
-            this.lastName.TabIndex = 1;
-            this.lastName.Text = "Nom";
-            this.lastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.LastName.ForeColor = System.Drawing.Color.Gray;
+            this.LastName.Location = new System.Drawing.Point(278, 190);
+            this.LastName.Name = "LastName";
+            this.LastName.Size = new System.Drawing.Size(100, 20);
+            this.LastName.TabIndex = 1;
+            this.LastName.Text = "Nom";
+            this.LastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // phone
+            // Phone
             // 
-            this.phone.ForeColor = System.Drawing.Color.Gray;
-            this.phone.Location = new System.Drawing.Point(525, 190);
-            this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(100, 20);
-            this.phone.TabIndex = 3;
-            this.phone.Text = "Téléphone";
-            this.phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Phone.ForeColor = System.Drawing.Color.Gray;
+            this.Phone.Location = new System.Drawing.Point(525, 190);
+            this.Phone.Name = "Phone";
+            this.Phone.Size = new System.Drawing.Size(100, 20);
+            this.Phone.TabIndex = 3;
+            this.Phone.Text = "Téléphone";
+            this.Phone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // address
+            // Address
             // 
-            this.address.ForeColor = System.Drawing.Color.Gray;
-            this.address.Location = new System.Drawing.Point(525, 216);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(100, 20);
-            this.address.TabIndex = 4;
-            this.address.Text = "Adresse";
-            this.address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Address.ForeColor = System.Drawing.Color.Gray;
+            this.Address.Location = new System.Drawing.Point(525, 216);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(100, 20);
+            this.Address.TabIndex = 4;
+            this.Address.Text = "Adresse";
+            this.Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // date
             // 
@@ -186,6 +186,7 @@
             this.annuler.TabIndex = 14;
             this.annuler.Text = "Annuler";
             this.annuler.UseVisualStyleBackColor = true;
+            this.annuler.Click += new System.EventHandler(this.annuler_Click);
             // 
             // valider
             // 
@@ -195,6 +196,7 @@
             this.valider.TabIndex = 15;
             this.valider.Text = "Valider";
             this.valider.UseVisualStyleBackColor = true;
+            this.valider.Click += new System.EventHandler(this.valider_Click);
             // 
             // pictureBox1
             // 
@@ -347,16 +349,16 @@
             this.Controls.Add(this.annuler);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.address);
-            this.Controls.Add(this.phone);
-            this.Controls.Add(this.lastName);
-            this.Controls.Add(this.firstname);
+            this.Controls.Add(this.Address);
+            this.Controls.Add(this.Phone);
+            this.Controls.Add(this.LastName);
+            this.Controls.Add(this.FirstName);
             this.Name = "Modele_add_pers";
             this.Text = "Admin_Pers";
-            this.Controls.SetChildIndex(this.firstname, 0);
-            this.Controls.SetChildIndex(this.lastName, 0);
-            this.Controls.SetChildIndex(this.phone, 0);
-            this.Controls.SetChildIndex(this.address, 0);
+            this.Controls.SetChildIndex(this.FirstName, 0);
+            this.Controls.SetChildIndex(this.LastName, 0);
+            this.Controls.SetChildIndex(this.Phone, 0);
+            this.Controls.SetChildIndex(this.Address, 0);
             this.Controls.SetChildIndex(this.progressBar1, 0);
             this.Controls.SetChildIndex(this.progressBar2, 0);
             this.Controls.SetChildIndex(this.annuler, 0);
@@ -399,7 +401,6 @@
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ProgressBar progressBar2;
 		private System.Windows.Forms.Button annuler;
-		private System.Windows.Forms.Button valider;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox3;
@@ -418,9 +419,10 @@
         private System.Windows.Forms.TextBox salary;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox password;
-        public System.Windows.Forms.TextBox firstname;
-        public System.Windows.Forms.TextBox lastName;
-        public System.Windows.Forms.TextBox phone;
-        public System.Windows.Forms.TextBox address;
+        public System.Windows.Forms.TextBox FirstName;
+        public System.Windows.Forms.TextBox LastName;
+        public System.Windows.Forms.TextBox Phone;
+        public System.Windows.Forms.TextBox Address;
+        public System.Windows.Forms.Button valider;
     }
 }

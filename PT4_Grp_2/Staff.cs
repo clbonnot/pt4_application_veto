@@ -10,11 +10,17 @@ namespace PT4_Grp_2
     public class Staff : People
     {
         
+        /**
+         * Basic constructor
+         */
         public Staff()
         {
             
         }
 
+        /**
+         * Constructor of a staff which create it from the database
+         */
         public Staff(int id, DB db)
         {
             
@@ -61,6 +67,28 @@ namespace PT4_Grp_2
           
             }
 
+            db.closeConnection();
+        }
+
+        public void Flush(DB db)
+        {
+            db.openConnection();
+            String[] v = { Lastname, Firstname, Mail, Phone };
+            int idPeople = db.insert("INSERT INTO Personne (NOM,PRENOM,MAIL,TELEPHONE) values (?,?,?,?)", v);
+            int idRole;
+            
+            String[] r = { role };
+            OleDbDataReader readerRole = db.select("SELECT Code_Role FROM Rôle WHERE Nom_role = ?", r);
+            if (readerRole.Read())
+            {
+                idRole = readerRole.GetInt32(0);
+            }
+            else
+            {
+                idRole = 6;
+            }
+            String[] v2 = { idRole.ToString(), idPeople.ToString(), Identify, Password, Salary.ToString(), Start_date, End_date };
+            db.insert("INSERT INTO PERSONNEL (Code_Role, Code_Personne, Identifiant, Mot_De_Passe, Salaire, Date_Embauche, Date_de_fin) values (?, ?, ?, ?, ?, ?,?)", v2);
             db.closeConnection();
         }
 

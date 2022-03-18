@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PT4_Grp_2
 {
     public class DB
@@ -41,7 +42,24 @@ namespace PT4_Grp_2
         
             return cmd.ExecuteReader();
         }
+
+      
         
+        public int insert(string ins, String[] values)
+        {
+            OleDbCommand cmd = new OleDbCommand(ins, this.dbConnection);
+            foreach(String v in values)
+                {
+                    cmd.Parameters.AddWithValue("?", v);
+                }
+            
+
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "Select @@Identity";
+            int id = Int32.Parse(cmd.ExecuteScalar().ToString());
+        
+            return id;
+        }
         public OleDbConnection getDbConnection() {
             return dbConnection;
         }
