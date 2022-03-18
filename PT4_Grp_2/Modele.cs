@@ -14,7 +14,7 @@ namespace PT4_Grp_2
 	public partial class Modele : Form
 	{
 		string role;
-		string droit;
+		Boolean admin;
 		string name;
 		public Modele()
 		{
@@ -29,9 +29,16 @@ namespace PT4_Grp_2
 			RoleName.Text = role;
 		}
 
-		public void SetDroit(string droit)
+		public void SetRights(string right)
 		{
-			this.droit = droit;
+			if(right.Equals("adimistrateur"))
+            {
+				this.admin = true;	
+            }
+			else
+            {
+				this.admin = false;	
+            }
 		}
 
 		public void SetName(string name)
@@ -45,9 +52,9 @@ namespace PT4_Grp_2
 			return role;
         }
 
-		public string GetDroit()
+		public Boolean GetAdmin()
         {
-			return droit;	
+			return admin;	
         }
 
 		public string GetName()
@@ -58,7 +65,7 @@ namespace PT4_Grp_2
 		private void Deconnexion_Click(object sender, System.EventArgs e)
         {
 			this.role = null;
-			this.droit = null;
+			this.admin = false;
 			this.name=null;
 			
 			Connexion connexion = new Connexion();

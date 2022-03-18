@@ -122,11 +122,11 @@ namespace PT4_Grp_2
                 
                 OleDbDataReader readerSet = cmdSet.ExecuteReader();
                 string role = "";
-                string droit = "";
+                string rights = "";
                 while (readerSet.Read())
                 {
                     role = Utils.manageSingleQuote(readerSet.GetString(0));
-                    droit = Utils.manageSingleQuote(readerSet.GetString(1));
+                    rights = Utils.manageSingleQuote(readerSet.GetString(1));
                 }
                 readerSet.Close();
                 string sqlName = "select NOM from Personne inner join Personnel on Personnel.CODE_Personne = Personne.CODE_Personne " +
@@ -143,7 +143,7 @@ namespace PT4_Grp_2
                 DBcon.closeConnection();
                 Modele Mod = new Modele();
                 Mod.SetRole(role);
-                Mod.SetDroit(droit);   
+                Mod.SetRights(rights);   
                 Mod.SetName(name);
                 Mod.StartPosition = FormStartPosition.CenterScreen;
                 Mod.ShowDialog();
