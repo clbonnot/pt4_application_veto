@@ -129,13 +129,26 @@ namespace PT4_Grp_2
                     droit = Utils.manageSingleQuote(readerSet.GetString(1));
                 }
                 readerSet.Close();
+                string sqlName = "select NOM from Personne inner join Personnel on Personnel.CODE_Personne = Personne.CODE_Personne " +
+                "WHERE Personnel.IDENTIFIANT = '" + Utils.manageSingleQuote(id) + "'";
+                OleDbCommand cmdName = new OleDbCommand(sqlName, DBcon.dbConnection);
 
-                this.Close();
+                OleDbDataReader readerName = cmdName.ExecuteReader();
+                string name = "";
+                while (readerName.Read())
+                {
+                    name = Utils.manageSingleQuote(readerName.GetString(0));
+                }
+                readerName.Close();
+                DBcon.closeConnection();
                 Modele Mod = new Modele();
                 Mod.SetRole(role);
                 Mod.SetDroit(droit);   
+                Mod.SetName(name);
                 Mod.StartPosition = FormStartPosition.CenterScreen;
                 Mod.ShowDialog();
+                this.Close();
+                
             }
             else
             {
@@ -143,7 +156,7 @@ namespace PT4_Grp_2
 
                 Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
-            DBcon.closeConnection();
+            
         }
 
         private void pwd_TextChanged(object sender, EventArgs e)
