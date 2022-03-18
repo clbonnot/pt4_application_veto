@@ -88,11 +88,29 @@
     <Compile Include="Calendrier_conge.Designer.cs">
       <DependentUpon>Calendrier_conge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calendrier_modifier_rdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_modifier_rdv.Designer.cs">
+      <DependentUpon>Calendrier_modifier_rdv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calendrier_rdv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Calendrier_rdv.Designer.cs">
       <DependentUpon>Calendrier_rdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_secretaire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_secretaire.Designer.cs">
+      <DependentUpon>Control_secretaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_veto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_veto.Designer.cs">
+      <DependentUpon>Control_veto.cs</DependentUpon>
     </Compile>
     <Compile Include="Modele_add_pers.cs">
       <SubType>Form</SubType>
@@ -201,8 +219,17 @@
     <EmbeddedResource Include="Calendrier_conge.resx">
       <DependentUpon>Calendrier_conge.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_modifier_rdv.resx">
+      <DependentUpon>Calendrier_modifier_rdv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calendrier_rdv.resx">
       <DependentUpon>Calendrier_rdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_secretaire.resx">
+      <DependentUpon>Control_secretaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_veto.resx">
+      <DependentUpon>Control_veto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modele_add_pers.resx">
       <DependentUpon>Modele_add_pers.cs</DependentUpon>

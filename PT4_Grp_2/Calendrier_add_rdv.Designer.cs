@@ -37,11 +37,14 @@
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.listClient = new System.Windows.Forms.ListBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.listDoc = new System.Windows.Forms.ListBox();
 			this.SuspendLayout();
 			// 
 			// progressBar2
@@ -66,7 +69,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(83, 175);
+			this.label5.Location = new System.Drawing.Point(83, 213);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(30, 13);
 			this.label5.TabIndex = 48;
@@ -74,7 +77,7 @@
 			// 
 			// dateStart
 			// 
-			this.dateStart.Location = new System.Drawing.Point(86, 201);
+			this.dateStart.Location = new System.Drawing.Point(86, 239);
 			this.dateStart.Name = "dateStart";
 			this.dateStart.Size = new System.Drawing.Size(200, 20);
 			this.dateStart.TabIndex = 47;
@@ -82,7 +85,7 @@
 			// add
 			// 
 			this.add.BackColor = System.Drawing.Color.DarkSeaGreen;
-			this.add.Location = new System.Drawing.Point(288, 333);
+			this.add.Location = new System.Drawing.Point(288, 345);
 			this.add.Name = "add";
 			this.add.Size = new System.Drawing.Size(108, 36);
 			this.add.TabIndex = 46;
@@ -91,7 +94,7 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(60, 333);
+			this.button1.Location = new System.Drawing.Point(60, 345);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(108, 36);
 			this.button1.TabIndex = 45;
@@ -102,7 +105,7 @@
 			// 
 			this.progressBar1.BackColor = System.Drawing.Color.Honeydew;
 			this.progressBar1.ForeColor = System.Drawing.Color.DarkSeaGreen;
-			this.progressBar1.Location = new System.Drawing.Point(60, 318);
+			this.progressBar1.Location = new System.Drawing.Point(60, 330);
 			this.progressBar1.Name = "progressBar1";
 			this.progressBar1.Size = new System.Drawing.Size(336, 3);
 			this.progressBar1.TabIndex = 44;
@@ -112,7 +115,7 @@
 			this.listClient.FormattingEnabled = true;
 			this.listClient.Location = new System.Drawing.Point(250, 52);
 			this.listClient.Name = "listClient";
-			this.listClient.Size = new System.Drawing.Size(120, 95);
+			this.listClient.Size = new System.Drawing.Size(120, 43);
 			this.listClient.TabIndex = 49;
 			// 
 			// label2
@@ -124,35 +127,28 @@
 			this.label2.TabIndex = 50;
 			this.label2.Text = "Client sélectionné";
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(112, 79);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(67, 13);
-			this.label3.TabIndex = 51;
-			this.label3.Text = "Nom prénom";
-			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(86, 278);
+			this.textBox1.Location = new System.Drawing.Point(86, 301);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(284, 20);
 			this.textBox1.TabIndex = 52;
+			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(83, 262);
+			this.label4.Location = new System.Drawing.Point(83, 285);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(34, 13);
 			this.label4.TabIndex = 53;
 			this.label4.Text = "Détail";
+			this.label4.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(310, 175);
+			this.label6.Location = new System.Drawing.Point(310, 213);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(36, 13);
 			this.label6.TabIndex = 55;
@@ -160,10 +156,41 @@
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(313, 204);
+			this.textBox2.Location = new System.Drawing.Point(313, 242);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(47, 20);
 			this.textBox2.TabIndex = 54;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Location = new System.Drawing.Point(86, 75);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(111, 20);
+			this.textBox3.TabIndex = 56;
+			// 
+			// textBox4
+			// 
+			this.textBox4.Location = new System.Drawing.Point(86, 157);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(111, 20);
+			this.textBox4.TabIndex = 59;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(83, 134);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(114, 13);
+			this.label3.TabIndex = 58;
+			this.label3.Text = "Véterinaire sélectionné";
+			// 
+			// listDoc
+			// 
+			this.listDoc.FormattingEnabled = true;
+			this.listDoc.Location = new System.Drawing.Point(250, 134);
+			this.listDoc.Name = "listDoc";
+			this.listDoc.Size = new System.Drawing.Size(120, 43);
+			this.listDoc.TabIndex = 57;
 			// 
 			// Calendrier_add_rdv
 			// 
@@ -171,11 +198,14 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Info;
 			this.ClientSize = new System.Drawing.Size(462, 389);
+			this.Controls.Add(this.textBox4);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.listDoc);
+			this.Controls.Add(this.textBox3);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.listClient);
 			this.Controls.Add(this.label5);
@@ -203,10 +233,13 @@
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ListBox listClient;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.ListBox listDoc;
 	}
 }
