@@ -30,7 +30,7 @@
 		{
 			this.stats = new System.Windows.Forms.Button();
 			this.client = new System.Windows.Forms.Button();
-			this.maladie = new System.Windows.Forms.Button();
+			this.shop = new System.Windows.Forms.Button();
 			this.stock = new System.Windows.Forms.Button();
 			this.Calendrier = new System.Windows.Forms.Button();
 			this.SuspendLayout();
@@ -53,15 +53,15 @@
 			this.client.Text = "Clients";
 			this.client.UseVisualStyleBackColor = true;
 			// 
-			// maladie
+			// shop
 			// 
-			this.maladie.Enabled = false;
-			this.maladie.Location = new System.Drawing.Point(3, 69);
-			this.maladie.Name = "maladie";
-			this.maladie.Size = new System.Drawing.Size(107, 27);
-			this.maladie.TabIndex = 68;
-			this.maladie.Text = "Maladies";
-			this.maladie.UseVisualStyleBackColor = true;
+			this.shop.Enabled = false;
+			this.shop.Location = new System.Drawing.Point(3, 69);
+			this.shop.Name = "shop";
+			this.shop.Size = new System.Drawing.Size(107, 27);
+			this.shop.TabIndex = 68;
+			this.shop.Text = "Panier";
+			this.shop.UseVisualStyleBackColor = true;
 			// 
 			// stock
 			// 
@@ -88,7 +88,7 @@
 			this.BackColor = System.Drawing.Color.MediumAquamarine;
 			this.Controls.Add(this.stats);
 			this.Controls.Add(this.client);
-			this.Controls.Add(this.maladie);
+			this.Controls.Add(this.shop);
 			this.Controls.Add(this.stock);
 			this.Controls.Add(this.Calendrier);
 			this.Name = "Control_secretaire";
@@ -101,7 +101,7 @@
 
 		private System.Windows.Forms.Button stats;
 		private System.Windows.Forms.Button client;
-		private System.Windows.Forms.Button maladie;
+		private System.Windows.Forms.Button shop;
 		private System.Windows.Forms.Button stock;
 		private System.Windows.Forms.Button Calendrier;
 	}

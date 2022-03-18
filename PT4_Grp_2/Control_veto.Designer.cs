@@ -28,32 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.stats = new System.Windows.Forms.Button();
-			this.client = new System.Windows.Forms.Button();
 			this.maladie = new System.Windows.Forms.Button();
 			this.soin = new System.Windows.Forms.Button();
 			this.Calendrier = new System.Windows.Forms.Button();
+			this.client = new System.Windows.Forms.Button();
 			this.SuspendLayout();
-			// 
-			// stats
-			// 
-			this.stats.Location = new System.Drawing.Point(3, 135);
-			this.stats.Name = "stats";
-			this.stats.Size = new System.Drawing.Size(107, 27);
-			this.stats.TabIndex = 65;
-			this.stats.Text = "Statistiques";
-			this.stats.UseVisualStyleBackColor = true;
-			this.stats.Click += new System.EventHandler(this.stats_Click);
-			// 
-			// client
-			// 
-			this.client.Location = new System.Drawing.Point(3, 102);
-			this.client.Name = "client";
-			this.client.Size = new System.Drawing.Size(107, 27);
-			this.client.TabIndex = 64;
-			this.client.Text = "Clients";
-			this.client.UseVisualStyleBackColor = true;
-			this.client.Click += new System.EventHandler(this.client_Click);
 			// 
 			// maladie
 			// 
@@ -86,28 +65,35 @@
 			this.Calendrier.UseVisualStyleBackColor = true;
 			this.Calendrier.Click += new System.EventHandler(this.Calendrier_Click);
 			// 
+			// client
+			// 
+			this.client.Location = new System.Drawing.Point(3, 102);
+			this.client.Name = "client";
+			this.client.Size = new System.Drawing.Size(107, 27);
+			this.client.TabIndex = 64;
+			this.client.Text = "Clients";
+			this.client.UseVisualStyleBackColor = true;
+			this.client.Click += new System.EventHandler(this.client_Click);
+			// 
 			// Control_veto
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MediumAquamarine;
-			this.Controls.Add(this.stats);
 			this.Controls.Add(this.client);
 			this.Controls.Add(this.maladie);
 			this.Controls.Add(this.soin);
 			this.Controls.Add(this.Calendrier);
 			this.Name = "Control_veto";
-			this.Size = new System.Drawing.Size(115, 170);
+			this.Size = new System.Drawing.Size(115, 137);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button stats;
-		private System.Windows.Forms.Button client;
 		private System.Windows.Forms.Button maladie;
 		private System.Windows.Forms.Button soin;
 		private System.Windows.Forms.Button Calendrier;
+		private System.Windows.Forms.Button client;
 	}
 }
