@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.update = new System.Windows.Forms.Button();
+			this.add = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.progressBar1 = new System.Windows.Forms.ProgressBar();
 			this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -42,15 +42,15 @@
 			this.dateStart = new System.Windows.Forms.DateTimePicker();
 			this.SuspendLayout();
 			// 
-			// update
+			// add
 			// 
-			this.update.BackColor = System.Drawing.Color.DarkSeaGreen;
-			this.update.Location = new System.Drawing.Point(285, 322);
-			this.update.Name = "update";
-			this.update.Size = new System.Drawing.Size(108, 36);
-			this.update.TabIndex = 35;
-			this.update.Text = "Modifier";
-			this.update.UseVisualStyleBackColor = false;
+			this.add.BackColor = System.Drawing.Color.DarkSeaGreen;
+			this.add.Location = new System.Drawing.Point(285, 322);
+			this.add.Name = "add";
+			this.add.Size = new System.Drawing.Size(108, 36);
+			this.add.TabIndex = 35;
+			this.add.Text = "Ajouter";
+			this.add.UseVisualStyleBackColor = false;
 			// 
 			// button1
 			// 
@@ -165,7 +165,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.dateEnd);
 			this.Controls.Add(this.dateStart);
-			this.Controls.Add(this.update);
+			this.Controls.Add(this.add);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.progressBar1);
 			this.Controls.Add(this.progressBar2);
@@ -179,7 +179,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button update;
+		private System.Windows.Forms.Button add;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ProgressBar progressBar2;

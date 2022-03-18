@@ -110,7 +110,7 @@
 			this.Controls.Add(this.dateEnd);
 			this.Controls.Add(this.dateStart);
 			this.Name = "Calendrier_modifier_conge";
-			this.Text = "Calendrier_add_conge";
+			this.Text = "Calendrier_modifier_conge";
 			this.Controls.SetChildIndex(this.dateStart, 0);
 			this.Controls.SetChildIndex(this.dateEnd, 0);
 			this.Controls.SetChildIndex(this.label2, 0);
