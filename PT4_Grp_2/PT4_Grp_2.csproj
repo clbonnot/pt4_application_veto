@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,6 +64,84 @@
     </Compile>
     <Compile Include="Admin_modifier_pers.Designer.cs">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendrier_add_conge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_add_conge.Designer.cs">
+      <DependentUpon>Calendrier_add_conge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendrier_add_rdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_add_rdv.Designer.cs">
+      <DependentUpon>Calendrier_add_rdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendrier_modifier_conge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_modifier_conge.Designer.cs">
+      <DependentUpon>Calendrier_modifier_conge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendrier_conge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_conge.Designer.cs">
+      <DependentUpon>Calendrier_conge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendrier_modifier_rdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_modifier_rdv.Designer.cs">
+      <DependentUpon>Calendrier_modifier_rdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendrier_rdv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calendrier_rdv.Designer.cs">
+      <DependentUpon>Calendrier_rdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_add.Designer.cs">
+      <DependentUpon>Clients_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_modifier.Designer.cs">
+      <DependentUpon>Clients_modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_secretaire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_secretaire.Designer.cs">
+      <DependentUpon>Control_secretaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control_veto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control_veto.Designer.cs">
+      <DependentUpon>Control_veto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maladie_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maladie_add.Designer.cs">
+      <DependentUpon>Maladie_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maladie_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maladie_detail.Designer.cs">
+      <DependentUpon>Maladie_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maladie_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maladie_modifier.Designer.cs">
+      <DependentUpon>Maladie_modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
     <Compile Include="Modele_add_pers.cs">
@@ -101,6 +180,12 @@
     <Compile Include="Modele.Designer.cs">
       <DependentUpon>Modele.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modele_calendrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modele_calendrier.Designer.cs">
+      <DependentUpon>Modele_calendrier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modele_delete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +209,24 @@
     </Compile>
     <Compile Include="Soins.Designer.cs">
       <DependentUpon>Soins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soins_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soins_add.Designer.cs">
+      <DependentUpon>Soins_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soins_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soins_detail.Designer.cs">
+      <DependentUpon>Soins_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soins_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soins_modifier.Designer.cs">
+      <DependentUpon>Soins_modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Statistiques.cs">
       <SubType>Form</SubType>
@@ -155,6 +258,45 @@
     <EmbeddedResource Include="Admin_modifier_pers.resx">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_add_conge.resx">
+      <DependentUpon>Calendrier_add_conge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_add_rdv.resx">
+      <DependentUpon>Calendrier_add_rdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_modifier_conge.resx">
+      <DependentUpon>Calendrier_modifier_conge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_conge.resx">
+      <DependentUpon>Calendrier_conge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_modifier_rdv.resx">
+      <DependentUpon>Calendrier_modifier_rdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calendrier_rdv.resx">
+      <DependentUpon>Calendrier_rdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_add.resx">
+      <DependentUpon>Clients_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_modifier.resx">
+      <DependentUpon>Clients_modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_secretaire.resx">
+      <DependentUpon>Control_secretaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control_veto.resx">
+      <DependentUpon>Control_veto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maladie_add.resx">
+      <DependentUpon>Maladie_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maladie_detail.resx">
+      <DependentUpon>Maladie_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maladie_modifier.resx">
+      <DependentUpon>Maladie_modifier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modele_add_pers.resx">
       <DependentUpon>Modele_add_pers.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modele.resx">
       <DependentUpon>Modele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modele_calendrier.resx">
+      <DependentUpon>Modele_calendrier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modele_delete.resx">
       <DependentUpon>Modele_delete.cs</DependentUpon>
@@ -193,6 +338,15 @@
     </Compile>
     <EmbeddedResource Include="Soins.resx">
       <DependentUpon>Soins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soins_add.resx">
+      <DependentUpon>Soins_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soins_detail.resx">
+      <DependentUpon>Soins_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soins_modifier.resx">
+      <DependentUpon>Soins_modifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Statistiques.resx">
       <DependentUpon>Statistiques.cs</DependentUpon>
