@@ -36,6 +36,10 @@
             // 
             this.detail.Visible = true;
             // 
+            // listbox
+            // 
+            this.listbox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_MouseDoubleClick);
+            // 
             // Deconnexion
             // 
             this.Deconnexion.FlatAppearance.BorderSize = 0;

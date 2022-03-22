@@ -66,6 +66,7 @@ namespace PT4_Grp_2
                 }
                 s.Role = role.SelectedItem.ToString();
                 s.Start_date = DateTime.Now.ToString("yyyy-MM-dd");
+                
                 try{
                     s.Flush(db);
                     MessageBox.Show("Personnel ajouté avec succès !");

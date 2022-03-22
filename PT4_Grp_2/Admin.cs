@@ -65,7 +65,7 @@ namespace PT4_Grp_2
             
             Modele_add_pers formAdd = new Admin_add_pers(DBCon);
             formAdd.ShowDialog();
-
+            Refresh();
         }
 
 
@@ -76,10 +76,14 @@ namespace PT4_Grp_2
         public override void detail_Click(object sender, EventArgs e)
         {
             Admin_detail_pers formDet = new Admin_detail_pers(allStaff.ToArray()[listbox.SelectedIndex]);
-            formDet.ShowDialog();
+            DialogResult result = formDet.ShowDialog();
+            
         }
 
-       
+        private void listbox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            detail_Click(sender, e);
+        }
     }
 
  
