@@ -29,21 +29,21 @@ namespace PT4_Grp_2
         {
             //Text Box
             //Name
-            this.LastName.Leave += new System.EventHandler(this.text_Leave);
-            this.LastName.Enter += new System.EventHandler(this.setCurrent_Nom);
-            this.LastName.Enter += new System.EventHandler(this.text_Enter);
+            this.lastName.Leave += new System.EventHandler(this.text_Leave);
+            this.lastName.Enter += new System.EventHandler(this.setCurrent_Nom);
+            this.lastName.Enter += new System.EventHandler(this.text_Enter);
             //address
-            this.Address.Leave += new System.EventHandler(this.text_Leave);
-            this.Address.Enter += new System.EventHandler(this.setCurrent_address);
-            this.Address.Enter += new System.EventHandler(this.text_Enter);
+            this.address.Leave += new System.EventHandler(this.text_Leave);
+            this.address.Enter += new System.EventHandler(this.setCurrent_address);
+            this.address.Enter += new System.EventHandler(this.text_Enter);
             //firstname
-            this.FirstName.Leave += new System.EventHandler(this.text_Leave);
-            this.FirstName.Enter += new System.EventHandler(this.setCurrent_Prenom);
-            this.FirstName.Enter += new System.EventHandler(this.text_Enter);
+            this.firstname.Leave += new System.EventHandler(this.text_Leave);
+            this.firstname.Enter += new System.EventHandler(this.setCurrent_Prenom);
+            this.firstname.Enter += new System.EventHandler(this.text_Enter);
             //phone
-            this.Phone.Leave += new System.EventHandler(this.text_Leave);
-            this.Phone.Enter += new System.EventHandler(this.setCurrent_phone);
-            this.Phone.Enter += new System.EventHandler(this.text_Enter);
+            this.phone.Leave += new System.EventHandler(this.text_Leave);
+            this.phone.Enter += new System.EventHandler(this.setCurrent_phone);
+            this.phone.Enter += new System.EventHandler(this.text_Enter);
 
         }
 
@@ -86,25 +86,25 @@ namespace PT4_Grp_2
         private void text_Enter(object sender, EventArgs e)
 		{
 
-            if (LastName.Text.Equals("Nom") && current.Equals("Nom"))
+            if (lastName.Text.Equals("Nom") && current.Equals("Nom"))
             {
-                LastName.Clear();
-                LastName.ForeColor = SystemColors.WindowText;
+                lastName.Clear();
+                lastName.ForeColor = SystemColors.WindowText;
             }
-            if (Address.Text.Equals("Adresse") && current.Equals("Adresse"))
+            if (address.Text.Equals("Adresse") && current.Equals("Adresse"))
             {
-                Address.Clear();
-                Address.ForeColor = SystemColors.WindowText;
+                address.Clear();
+                address.ForeColor = SystemColors.WindowText;
             }
-            if (Phone.Text.Equals("Téléphone") && current.Equals("Téléphone") )
+            if (phone.Text.Equals("Téléphone") && current.Equals("Téléphone") )
             {
-                Phone.Clear();
-                Phone.ForeColor = SystemColors.WindowText;
+                phone.Clear();
+                phone.ForeColor = SystemColors.WindowText;
             }
-            if (FirstName.Text.Equals("Prénom") && current.Equals("Prénom") )
+            if (firstname.Text.Equals("Prénom") && current.Equals("Prénom") )
             {
-                FirstName.Clear();
-                FirstName.ForeColor = SystemColors.WindowText;
+                firstname.Clear();
+                firstname.ForeColor = SystemColors.WindowText;
             }
         }
 
@@ -113,25 +113,25 @@ namespace PT4_Grp_2
           */
         private void text_Leave(object sender, EventArgs e)
 		{
-            if (LastName.Text.Length == 0)
+            if (lastName.Text.Length == 0)
             {
-                LastName.Text = "Nom";
-                LastName.ForeColor = SystemColors.GrayText;
+                lastName.Text = "Nom";
+                lastName.ForeColor = SystemColors.GrayText;
             }
-            if (Address.Text.Length == 0)
+            if (address.Text.Length == 0)
             {
-                Address.Text = "Adresse";
-                Address.ForeColor = SystemColors.GrayText;
+                address.Text = "Adresse";
+                address.ForeColor = SystemColors.GrayText;
             }
-            if (Phone.Text.Length == 0)
+            if (phone.Text.Length == 0)
             {
-                Phone.Text = "Téléphone";
-                Phone.ForeColor = SystemColors.GrayText;
+                phone.Text = "Téléphone";
+                phone.ForeColor = SystemColors.GrayText;
             }
-            if (FirstName.Text.Length == 0)
+            if (firstname.Text.Length == 0)
             {
-                FirstName.Text = "Prénom";
-                FirstName.ForeColor = SystemColors.GrayText;
+                firstname.Text = "Prénom";
+                firstname.ForeColor = SystemColors.GrayText;
             }
         }
         #endregion
@@ -139,16 +139,24 @@ namespace PT4_Grp_2
         /**
          * Makes sure every data is valid
          */
-
-
-        private void annuler_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        public virtual void valider_Click(object sender, EventArgs e)
+        private void valider_Click(object sender, EventArgs e)
         {
 
+            if (password.Text == "aaaaaa" || lastName.Text == "Nom" || phone.Text == "Téléphone" || id.Text == "Identifiant")
+            {
+                MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
+            }
+            else if (phone.Text.Length != 10)
+            {
+                MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
+            }
+            else
+            {
+                //ajouterPersonnel();
+                MessageBox.Show("Personnel ajouté avec succès !");
+                Close();
+            }
         }
+
     }
 }
