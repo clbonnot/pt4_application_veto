@@ -141,10 +141,17 @@ namespace PT4_Grp_2
                 }
                 readerName.Close();
                 DBcon.closeConnection();
+                
                 Modele Mod = new Modele();
                 Mod.SetRole(role);
                 Mod.SetRights(rights);   
                 Mod.SetName(name);
+                if (Mod.GetAdmin())
+                {
+                    Admin admin = new Admin();
+                    admin.StartPosition = FormStartPosition.CenterScreen;
+                    Mod.ShowDialog();
+                }
                 Mod.StartPosition = FormStartPosition.CenterScreen;
                 Mod.ShowDialog();
                 this.Close();
