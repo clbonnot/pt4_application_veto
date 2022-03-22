@@ -64,4 +64,3 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 \\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.exe.config
 \\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.exe
 \\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\bin\Debug\PT4_Grp_2.pdb
-\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.AssemblyReference.cache
