@@ -14,10 +14,14 @@ namespace PT4_Grp_2
     public partial class Connexion : Form
     {
         String current = "";
+        DB DBcon;
+
         public Connexion()
         {
             InitializeComponent();
             hint();
+            this.DBcon = new DB("INFO-JOYEUX", "PT4_E2");
+            DBcon.openConnection();
         }
 
         #region hint
@@ -92,6 +96,79 @@ namespace PT4_Grp_2
             }
         }
         #endregion
+        /*
+         * This void compare the id and password with the one in the database and get the user's role and rights
+         */
+        private void connect_Click(object sender, EventArgs e)
+        {
+            string id = identifiant.Text;
+            string password = pwd.Text;
+            string sqlSet = "Select Identifiant, Mot_de_passe from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
+            OleDbCommand cmd = new OleDbCommand(sqlSet, DBcon.dbConnection);
+            string motDePasseBDD = "";
+            string motDePasse = pwd.Text.Trim(' ');
 
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                motDePasseBDD = reader.GetString(1).Trim(' ');
+            }
+            //string a = DecryptageDeMotDePasse(motDePasseBDD);
+            if (motDePasse.Equals(motDePasseBDD) && !motDePasseBDD.Equals(""))
+            {
+                string sql = "select nom_role, droit from Rôle inner join Personnel on Personnel.CODE_ROLE = Rôle.CODE_ROLE " +
+                "WHERE Personnel.IDENTIFIANT = '" + Utils.manageSingleQuote(id) + "'";
+                OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.dbConnection);
+                
+                OleDbDataReader readerSet = cmdSet.ExecuteReader();
+                string role = "";
+                string rights = "";
+                while (readerSet.Read())
+                {
+                    role = Utils.manageSingleQuote(readerSet.GetString(0));
+                    rights = Utils.manageSingleQuote(readerSet.GetString(1));
+                }
+                readerSet.Close();
+                string sqlName = "select NOM from Personne inner join Personnel on Personnel.CODE_Personne = Personne.CODE_Personne " +
+                "WHERE Personnel.IDENTIFIANT = '" + Utils.manageSingleQuote(id) + "'";
+                OleDbCommand cmdName = new OleDbCommand(sqlName, DBcon.dbConnection);
+
+                OleDbDataReader readerName = cmdName.ExecuteReader();
+                string name = "";
+                while (readerName.Read())
+                {
+                    name = Utils.manageSingleQuote(readerName.GetString(0));
+                }
+                readerName.Close();
+                DBcon.closeConnection();
+                
+                Modele Mod = new Modele();
+                Mod.SetRole(role);
+                Mod.SetRights(rights);   
+                Mod.SetName(name);
+                if (Mod.GetAdmin())
+                {
+                    Admin admin = new Admin();
+                    admin.StartPosition = FormStartPosition.CenterScreen;
+                    Mod.ShowDialog();
+                }
+                Mod.StartPosition = FormStartPosition.CenterScreen;
+                Mod.ShowDialog();
+                this.Close();
+                
+            }
+            else
+            {
+                MessageBox.Show("Le mot de passe ou l'utilisateur est incorrect");
+
+                Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
+            }
+            
+        }
+
+        private void pwd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -64,6 +64,7 @@
     <Compile Include="Admin_modifier_pers.Designer.cs">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB.cs" />
     <Compile Include="Modele_add_pers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +145,7 @@
     <Compile Include="Stocks_detail.Designer.cs">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
