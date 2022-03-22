@@ -70,6 +70,7 @@
     <Compile Include="Admin_modifier_pers.Designer.cs">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animal.cs" />
     <Compile Include="Modele_add_pers.cs">
       <SubType>Form</SubType>
     </Compile>
