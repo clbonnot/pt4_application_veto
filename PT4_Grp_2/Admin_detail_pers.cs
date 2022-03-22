@@ -16,8 +16,8 @@ namespace PT4_Grp_2
         {
             InitializeComponent();
             //roleV.Text = s.getRole();
-            lastnameV.Text = s.getLastname();
-            firstnameV.Text = s.getFirstname();
+            //lastnameV.Text = s.getLastname();
+            //firstnameV.Text = s.getFirstname();
             Refresh();
         }
 
