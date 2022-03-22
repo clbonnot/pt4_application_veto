@@ -101,6 +101,18 @@
     <Compile Include="Calendrier_rdv.Designer.cs">
       <DependentUpon>Calendrier_rdv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clients_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_add.Designer.cs">
+      <DependentUpon>Clients_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_modifier.Designer.cs">
+      <DependentUpon>Clients_modifier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control_secretaire.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calendrier_rdv.resx">
       <DependentUpon>Calendrier_rdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_add.resx">
+      <DependentUpon>Clients_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_modifier.resx">
+      <DependentUpon>Clients_modifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control_secretaire.resx">
       <DependentUpon>Control_secretaire.cs</DependentUpon>
