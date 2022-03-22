@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace PT4_Grp_2
 {
-    public class DB
+    internal class DB
     {
 
         public OleDbConnection dbConnection;
@@ -25,43 +24,10 @@ namespace PT4_Grp_2
 
 
         }
-
-
-        public OleDbDataReader select(String request, String[] args)
-        {
-           
-            OleDbCommand cmd = new OleDbCommand(request, this.dbConnection);
-            if (args != null)
-            {
-                foreach (String arg in args)
-                {
-                    cmd.Parameters.AddWithValue("?", arg); 
-                }
-            }
-            
         
-            return cmd.ExecuteReader();
-        }
-
-      
-        
-        public int insert(string ins, String[] values)
-        {
-            OleDbCommand cmd = new OleDbCommand(ins, this.dbConnection);
-            foreach(String v in values)
-                {
-                    cmd.Parameters.AddWithValue("?", v);
-                }
-            
-
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = "Select @@Identity";
-            int id = Int32.Parse(cmd.ExecuteScalar().ToString());
-        
-            return id;
-        }
         public OleDbConnection getDbConnection() {
             return dbConnection;
+
         }
 
         public void openConnection()
