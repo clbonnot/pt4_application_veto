@@ -15,9 +15,15 @@ namespace PT4_Grp_2
         public Admin_detail_pers()
         {
             InitializeComponent();
-            //roleV.Text = s.getRole();
-            //lastnameV.Text = s.getLastname();
-            //firstnameV.Text = s.getFirstname();
+            roleV.Text = s.Role;
+            lastnameV.Text = s.Lastname;
+            firstnameV.Text = s.Firstname;
+            date.Text = s.Start_date;
+            salary.Text = s.Salary.ToString();
+            phone.Text = s.Phone;
+            address.Text = s.Mail;
+
+
             Refresh();
         }
 
@@ -30,10 +36,5 @@ namespace PT4_Grp_2
         {
 
         }
-
-		private void label9_Click(object sender, EventArgs e)
-		{
-
-		}
-	}
+    }
 }

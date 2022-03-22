@@ -29,21 +29,21 @@ namespace PT4_Grp_2
         {
             //Text Box
             //Name
-            this.lastName.Leave += new System.EventHandler(this.text_Leave);
-            this.lastName.Enter += new System.EventHandler(this.setCurrent_Nom);
-            this.lastName.Enter += new System.EventHandler(this.text_Enter);
+            this.LastName.Leave += new System.EventHandler(this.text_Leave);
+            this.LastName.Enter += new System.EventHandler(this.setCurrent_Nom);
+            this.LastName.Enter += new System.EventHandler(this.text_Enter);
             //address
-            this.address.Leave += new System.EventHandler(this.text_Leave);
-            this.address.Enter += new System.EventHandler(this.setCurrent_address);
-            this.address.Enter += new System.EventHandler(this.text_Enter);
+            this.Address.Leave += new System.EventHandler(this.text_Leave);
+            this.Address.Enter += new System.EventHandler(this.setCurrent_address);
+            this.Address.Enter += new System.EventHandler(this.text_Enter);
             //firstname
-            this.firstname.Leave += new System.EventHandler(this.text_Leave);
-            this.firstname.Enter += new System.EventHandler(this.setCurrent_Prenom);
-            this.firstname.Enter += new System.EventHandler(this.text_Enter);
+            this.FirstName.Leave += new System.EventHandler(this.text_Leave);
+            this.FirstName.Enter += new System.EventHandler(this.setCurrent_Prenom);
+            this.FirstName.Enter += new System.EventHandler(this.text_Enter);
             //phone
-            this.phone.Leave += new System.EventHandler(this.text_Leave);
-            this.phone.Enter += new System.EventHandler(this.setCurrent_phone);
-            this.phone.Enter += new System.EventHandler(this.text_Enter);
+            this.Phone.Leave += new System.EventHandler(this.text_Leave);
+            this.Phone.Enter += new System.EventHandler(this.setCurrent_phone);
+            this.Phone.Enter += new System.EventHandler(this.text_Enter);
 
         }
 
@@ -86,25 +86,25 @@ namespace PT4_Grp_2
         private void text_Enter(object sender, EventArgs e)
 		{
 
-            if (lastName.Text.Equals("Nom") && current.Equals("Nom"))
+            if (LastName.Text.Equals("Nom") && current.Equals("Nom"))
             {
-                lastName.Clear();
-                lastName.ForeColor = SystemColors.WindowText;
+                LastName.Clear();
+                LastName.ForeColor = SystemColors.WindowText;
             }
-            if (address.Text.Equals("Adresse") && current.Equals("Adresse"))
+            if (Address.Text.Equals("Adresse") && current.Equals("Adresse"))
             {
-                address.Clear();
-                address.ForeColor = SystemColors.WindowText;
+                Address.Clear();
+                Address.ForeColor = SystemColors.WindowText;
             }
-            if (phone.Text.Equals("Téléphone") && current.Equals("Téléphone") )
+            if (Phone.Text.Equals("Téléphone") && current.Equals("Téléphone") )
             {
-                phone.Clear();
-                phone.ForeColor = SystemColors.WindowText;
+                Phone.Clear();
+                Phone.ForeColor = SystemColors.WindowText;
             }
-            if (firstname.Text.Equals("Prénom") && current.Equals("Prénom") )
+            if (FirstName.Text.Equals("Prénom") && current.Equals("Prénom") )
             {
-                firstname.Clear();
-                firstname.ForeColor = SystemColors.WindowText;
+                FirstName.Clear();
+                FirstName.ForeColor = SystemColors.WindowText;
             }
         }
 
@@ -113,25 +113,25 @@ namespace PT4_Grp_2
           */
         private void text_Leave(object sender, EventArgs e)
 		{
-            if (lastName.Text.Length == 0)
+            if (LastName.Text.Length == 0)
             {
-                lastName.Text = "Nom";
-                lastName.ForeColor = SystemColors.GrayText;
+                LastName.Text = "Nom";
+                LastName.ForeColor = SystemColors.GrayText;
             }
-            if (address.Text.Length == 0)
+            if (Address.Text.Length == 0)
             {
-                address.Text = "Adresse";
-                address.ForeColor = SystemColors.GrayText;
+                Address.Text = "Adresse";
+                Address.ForeColor = SystemColors.GrayText;
             }
-            if (phone.Text.Length == 0)
+            if (Phone.Text.Length == 0)
             {
-                phone.Text = "Téléphone";
-                phone.ForeColor = SystemColors.GrayText;
+                Phone.Text = "Téléphone";
+                Phone.ForeColor = SystemColors.GrayText;
             }
-            if (firstname.Text.Length == 0)
+            if (FirstName.Text.Length == 0)
             {
-                firstname.Text = "Prénom";
-                firstname.ForeColor = SystemColors.GrayText;
+                FirstName.Text = "Prénom";
+                FirstName.ForeColor = SystemColors.GrayText;
             }
         }
         #endregion
@@ -139,24 +139,16 @@ namespace PT4_Grp_2
         /**
          * Makes sure every data is valid
          */
-        private void valider_Click(object sender, EventArgs e)
-        {
 
-            if (password.Text == "aaaaaa" || lastName.Text == "Nom" || phone.Text == "Téléphone" || id.Text == "Identifiant")
-            {
-                MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
-            }
-            else if (phone.Text.Length != 10)
-            {
-                MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
-            }
-            else
-            {
-                //ajouterPersonnel();
-                MessageBox.Show("Personnel ajouté avec succès !");
-                Close();
-            }
+
+        private void annuler_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
+        public virtual void valider_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
