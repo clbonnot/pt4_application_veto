@@ -204,6 +204,7 @@
     <Compile Include="Modele_modifier.Designer.cs">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="People.cs" />
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +229,7 @@
     <Compile Include="Soins_modifier.Designer.cs">
       <DependentUpon>Soins_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff.cs" />
     <Compile Include="Statistiques.cs">
       <SubType>Form</SubType>
     </Compile>
