@@ -107,6 +107,24 @@
     <Compile Include="Clients_add.Designer.cs">
       <DependentUpon>Clients_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clients_Animal_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Animal_add.Designer.cs">
+      <DependentUpon>Clients_Animal_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_Animal_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Animal_modifier.Designer.cs">
+      <DependentUpon>Clients_Animal_modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_details.Designer.cs">
+      <DependentUpon>Clients_details.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clients_modifier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,11 +260,29 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stockss_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stockss_add.Designer.cs">
+      <DependentUpon>Stockss_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stocks_detail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stocks_detail.Designer.cs">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stocks_Fournisseur_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks_Fournisseur_add.Designer.cs">
+      <DependentUpon>Stocks_Fournisseur_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stocks_modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks_modifier.Designer.cs">
+      <DependentUpon>Stocks_modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Admin.resx">
@@ -278,6 +314,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clients_add.resx">
       <DependentUpon>Clients_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Animal_add.resx">
+      <DependentUpon>Clients_Animal_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Animal_modifier.resx">
+      <DependentUpon>Clients_Animal_modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_details.resx">
+      <DependentUpon>Clients_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clients_modifier.resx">
       <DependentUpon>Clients_modifier.cs</DependentUpon>
@@ -354,8 +399,17 @@
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stockss_add.resx">
+      <DependentUpon>Stockss_add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stocks_detail.resx">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks_Fournisseur_add.resx">
+      <DependentUpon>Stocks_Fournisseur_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks_modifier.resx">
+      <DependentUpon>Stocks_modifier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
