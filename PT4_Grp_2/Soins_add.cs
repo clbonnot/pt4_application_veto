@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace PT4_Grp_2
 {
 	public partial class Soins_add : Form
 	{
+		DB DBcon;
 		public Soins_add()
 		{
 			InitializeComponent();
+			this.DBcon = new DB("INFO-JOYEUX", "PT4_E2");
+			DBcon.openConnection();
 		}
 
 		private void description_Click(object sender, EventArgs e)
@@ -56,5 +60,20 @@ namespace PT4_Grp_2
 		{
 
 		}
-	}
+
+        private void add_Click(object sender, EventArgs e)
+        {
+			string name = NameMedic.Text;
+			string mark = Mark.Text;
+			double price = Convert.ToDouble(Price.Text);
+			string desc = Desc.Text;
+			int quantity = Convert.ToInt32(Quantity.Text);
+			if (!mark.Equals("") && !price.Equals("") && !name.Equals("") && quantity != 0 && price != 0)
+            {
+				string sql = "Insert Into Produit(Nom, Descrip, Quantite, Prix, Marque) values(" + name + "," + desc + "," + quantity + "," + price + "," + mark + ")";
+				OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.dbConnection);
+				cmdSet.ExecuteNonQuery();
+			}
+        }
+    }
 }
