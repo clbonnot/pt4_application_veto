@@ -84,11 +84,11 @@
 			this.button1.Text = "Annuler";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// Update
+			// update
 			// 
 			this.update.BackColor = System.Drawing.Color.DarkSeaGreen;
 			this.update.Location = new System.Drawing.Point(126, 594);
-			this.update.Name = "Update";
+			this.update.Name = "update";
 			this.update.Size = new System.Drawing.Size(108, 36);
 			this.update.TabIndex = 30;
 			this.update.Text = "Modifier";
@@ -118,8 +118,8 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ProgressBar progressBar2;
 		private System.Windows.Forms.ProgressBar progressBar1;
-		private System.Windows.Forms.Button Delete;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button update;
+		public System.Windows.Forms.Button Delete;
+		public System.Windows.Forms.Button button1;
+		public System.Windows.Forms.Button update;
 	}
 }
