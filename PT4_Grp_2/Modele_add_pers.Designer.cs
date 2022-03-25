@@ -395,16 +395,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox firstname;
-        private System.Windows.Forms.TextBox lastName;
-        private System.Windows.Forms.TextBox phone;
-        private System.Windows.Forms.TextBox address;
 		private System.Windows.Forms.Button Deconnexion;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ProgressBar progressBar2;
-		private System.Windows.Forms.Button annuler;
-		private System.Windows.Forms.Button valider;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox3;
@@ -423,5 +416,11 @@
         private System.Windows.Forms.TextBox salary;
         private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.TextBox password;
-    }
+		public System.Windows.Forms.TextBox firstname;
+		public System.Windows.Forms.TextBox lastName;
+		public System.Windows.Forms.TextBox phone;
+		public System.Windows.Forms.TextBox address;
+		public System.Windows.Forms.Button annuler;
+		public System.Windows.Forms.Button valider;
+	}
 }

@@ -222,6 +222,12 @@
     <Compile Include="Modele_modifier.Designer.cs">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paniers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paniers.Designer.cs">
+      <DependentUpon>Paniers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modele_modifier.resx">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paniers.resx">
+      <DependentUpon>Paniers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

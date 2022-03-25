@@ -91,9 +91,9 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Button add;
 		private System.Windows.Forms.ProgressBar progressBar2;
 		public System.Windows.Forms.Button detail;
 		public System.Windows.Forms.ListBox listbox;
+		public System.Windows.Forms.Button add;
 	}
 }

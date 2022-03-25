@@ -104,11 +104,10 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.MonthCalendar monthCalendar1;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.ProgressBar progressBar2;
-		private System.Windows.Forms.Button update;
-		private System.Windows.Forms.Button add;
+		public System.Windows.Forms.MonthCalendar monthCalendar1;
+		public System.Windows.Forms.Button update;
+		public System.Windows.Forms.Button add;
 	}
 }
