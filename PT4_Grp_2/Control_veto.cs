@@ -17,29 +17,31 @@ namespace PT4_Grp_2
 			InitializeComponent();
 		}
 
-		private void stats_Click(object sender, EventArgs e)
-		{
 
-		}
 
 		private void client_Click(object sender, EventArgs e)
 		{
-
+			Clients clients = new Clients();
+			clients.StartPosition = FormStartPosition.CenterScreen;
 		}
 
 		private void maladie_Click(object sender, EventArgs e)
 		{
+			Maladies maladies = new Maladies();
+			maladies.StartPosition = FormStartPosition.CenterScreen;
 
 		}
 
 		private void soin_Click(object sender, EventArgs e)
 		{
-
+			Soins soins = new Soins();
+			soins.StartPosition = FormStartPosition.CenterScreen;
 		}
 
 		private void Calendrier_Click(object sender, EventArgs e)
 		{
-
+			Calendrier_rdv cal = new Calendrier_rdv();
+			cal.StartPosition = FormStartPosition.CenterScreen;
 		}
 	}
 }
