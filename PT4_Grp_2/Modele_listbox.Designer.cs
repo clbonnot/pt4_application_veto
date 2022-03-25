@@ -42,7 +42,6 @@
 			this.detail.TabIndex = 24;
 			this.detail.Text = "DETAIL";
 			this.detail.UseVisualStyleBackColor = true;
-			this.detail.Visible = false;
 			// 
 			// add
 			// 
@@ -92,10 +91,9 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Button detail;
 		private System.Windows.Forms.Button add;
-		private System.Windows.Forms.ListBox listbox;
 		private System.Windows.Forms.ProgressBar progressBar2;
+		public System.Windows.Forms.Button detail;
+		public System.Windows.Forms.ListBox listbox;
 	}
 }
