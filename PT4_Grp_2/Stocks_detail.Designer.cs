@@ -47,6 +47,13 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.addFourn = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
+			this.label7 = new System.Windows.Forms.Label();
+			this.button5 = new System.Windows.Forms.Button();
+			this.button6 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.product_pic)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -73,7 +80,7 @@
 			// 
 			this.label_buy.AutoSize = true;
 			this.label_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label_buy.Location = new System.Drawing.Point(181, 397);
+			this.label_buy.Location = new System.Drawing.Point(180, 408);
 			this.label_buy.Name = "label_buy";
 			this.label_buy.Size = new System.Drawing.Size(115, 24);
 			this.label_buy.TabIndex = 13;
@@ -101,7 +108,7 @@
 			// 
 			// minus_buy
 			// 
-			this.minus_buy.Location = new System.Drawing.Point(325, 395);
+			this.minus_buy.Location = new System.Drawing.Point(324, 406);
 			this.minus_buy.Name = "minus_buy";
 			this.minus_buy.Size = new System.Drawing.Size(38, 33);
 			this.minus_buy.TabIndex = 17;
@@ -110,7 +117,7 @@
 			// 
 			// plus_buy
 			// 
-			this.plus_buy.Location = new System.Drawing.Point(415, 395);
+			this.plus_buy.Location = new System.Drawing.Point(414, 406);
 			this.plus_buy.Name = "plus_buy";
 			this.plus_buy.Size = new System.Drawing.Size(38, 33);
 			this.plus_buy.TabIndex = 18;
@@ -120,7 +127,7 @@
 			// quantity_buy
 			// 
 			this.quantity_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.quantity_buy.Location = new System.Drawing.Point(370, 397);
+			this.quantity_buy.Location = new System.Drawing.Point(369, 408);
 			this.quantity_buy.Name = "quantity_buy";
 			this.quantity_buy.Size = new System.Drawing.Size(39, 30);
 			this.quantity_buy.TabIndex = 19;
@@ -130,7 +137,7 @@
 			// validate_buy
 			// 
 			this.validate_buy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.validate_buy.Location = new System.Drawing.Point(482, 395);
+			this.validate_buy.Location = new System.Drawing.Point(481, 406);
 			this.validate_buy.Name = "validate_buy";
 			this.validate_buy.Size = new System.Drawing.Size(76, 32);
 			this.validate_buy.TabIndex = 20;
@@ -233,11 +240,86 @@
 			this.addFourn.Text = "Nouveau";
 			this.addFourn.UseVisualStyleBackColor = true;
 			// 
+			// button2
+			// 
+			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button2.Location = new System.Drawing.Point(481, 368);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(76, 32);
+			this.button2.TabIndex = 35;
+			this.button2.Text = "Valider";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// textBox1
+			// 
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox1.Location = new System.Drawing.Point(369, 370);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(39, 30);
+			this.textBox1.TabIndex = 34;
+			this.textBox1.Text = "0";
+			this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(414, 368);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(38, 33);
+			this.button3.TabIndex = 33;
+			this.button3.Text = "+";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this.button4.Location = new System.Drawing.Point(324, 368);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(38, 33);
+			this.button4.TabIndex = 32;
+			this.button4.Text = "-";
+			this.button4.UseVisualStyleBackColor = true;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(180, 370);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(64, 24);
+			this.label7.TabIndex = 31;
+			this.label7.Text = "Panier";
+			// 
+			// button5
+			// 
+			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button5.Location = new System.Drawing.Point(26, 68);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(99, 38);
+			this.button5.TabIndex = 36;
+			this.button5.Text = "Retour";
+			this.button5.UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button6.Location = new System.Drawing.Point(26, 114);
+			this.button6.Name = "button6";
+			this.button6.Size = new System.Drawing.Size(99, 38);
+			this.button6.TabIndex = 37;
+			this.button6.Text = "Modifier";
+			this.button6.UseVisualStyleBackColor = true;
+			// 
 			// Stocks_detail
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.button6);
+			this.Controls.Add(this.button5);
+			this.Controls.Add(this.button2);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.button3);
+			this.Controls.Add(this.button4);
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.addFourn);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
@@ -278,6 +360,13 @@
 			this.Controls.SetChildIndex(this.label5, 0);
 			this.Controls.SetChildIndex(this.label6, 0);
 			this.Controls.SetChildIndex(this.addFourn, 0);
+			this.Controls.SetChildIndex(this.label7, 0);
+			this.Controls.SetChildIndex(this.button4, 0);
+			this.Controls.SetChildIndex(this.button3, 0);
+			this.Controls.SetChildIndex(this.textBox1, 0);
+			this.Controls.SetChildIndex(this.button2, 0);
+			this.Controls.SetChildIndex(this.button5, 0);
+			this.Controls.SetChildIndex(this.button6, 0);
 			((System.ComponentModel.ISupportInitialize)(this.product_pic)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -305,5 +394,12 @@
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button addFourn;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Label label7;
+		public System.Windows.Forms.Button button5;
+		public System.Windows.Forms.Button button6;
 	}
 }
