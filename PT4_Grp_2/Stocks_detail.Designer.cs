@@ -46,6 +46,7 @@
 			this.listFournisseur = new System.Windows.Forms.ListBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
+			this.addFourn = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.product_pic)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -222,11 +223,22 @@
 			this.label6.TabIndex = 29;
 			this.label6.Text = "3€";
 			// 
+			// addFourn
+			// 
+			this.addFourn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.addFourn.Location = new System.Drawing.Point(412, 246);
+			this.addFourn.Name = "addFourn";
+			this.addFourn.Size = new System.Drawing.Size(92, 28);
+			this.addFourn.TabIndex = 30;
+			this.addFourn.Text = "Nouveau";
+			this.addFourn.UseVisualStyleBackColor = true;
+			// 
 			// Stocks_detail
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.addFourn);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.listFournisseur);
@@ -265,6 +277,7 @@
 			this.Controls.SetChildIndex(this.listFournisseur, 0);
 			this.Controls.SetChildIndex(this.label5, 0);
 			this.Controls.SetChildIndex(this.label6, 0);
+			this.Controls.SetChildIndex(this.addFourn, 0);
 			((System.ComponentModel.ISupportInitialize)(this.product_pic)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -291,5 +304,6 @@
 		private System.Windows.Forms.ListBox listFournisseur;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Button addFourn;
 	}
 }

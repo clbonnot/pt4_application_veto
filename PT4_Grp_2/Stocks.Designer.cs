@@ -28,59 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.stats = new System.Windows.Forms.Button();
-			this.client = new System.Windows.Forms.Button();
-			this.maladie = new System.Windows.Forms.Button();
-			this.soin = new System.Windows.Forms.Button();
-			this.Calendrier = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
-			// 
-			// stats
-			// 
-			this.stats.Location = new System.Drawing.Point(22, 277);
-			this.stats.Name = "stats";
-			this.stats.Size = new System.Drawing.Size(107, 27);
-			this.stats.TabIndex = 65;
-			this.stats.Text = "Statistiques";
-			this.stats.UseVisualStyleBackColor = true;
-			// 
-			// client
-			// 
-			this.client.Location = new System.Drawing.Point(22, 244);
-			this.client.Name = "client";
-			this.client.Size = new System.Drawing.Size(107, 27);
-			this.client.TabIndex = 64;
-			this.client.Text = "Clients";
-			this.client.UseVisualStyleBackColor = true;
-			// 
-			// maladie
-			// 
-			this.maladie.Enabled = false;
-			this.maladie.Location = new System.Drawing.Point(22, 211);
-			this.maladie.Name = "maladie";
-			this.maladie.Size = new System.Drawing.Size(107, 27);
-			this.maladie.TabIndex = 63;
-			this.maladie.Text = "Maladies";
-			this.maladie.UseVisualStyleBackColor = true;
-			// 
-			// soin
-			// 
-			this.soin.Location = new System.Drawing.Point(22, 178);
-			this.soin.Name = "soin";
-			this.soin.Size = new System.Drawing.Size(107, 27);
-			this.soin.TabIndex = 62;
-			this.soin.Text = "Soins";
-			this.soin.UseVisualStyleBackColor = true;
-			// 
-			// Calendrier
-			// 
-			this.Calendrier.Location = new System.Drawing.Point(22, 145);
-			this.Calendrier.Name = "Calendrier";
-			this.Calendrier.Size = new System.Drawing.Size(107, 27);
-			this.Calendrier.TabIndex = 61;
-			this.Calendrier.Text = "Calendrier";
-			this.Calendrier.UseVisualStyleBackColor = true;
 			// 
 			// label1
 			// 
@@ -100,18 +49,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.stats);
-			this.Controls.Add(this.client);
-			this.Controls.Add(this.maladie);
-			this.Controls.Add(this.soin);
-			this.Controls.Add(this.Calendrier);
 			this.Name = "Stocks";
 			this.Text = "Stocks";
-			this.Controls.SetChildIndex(this.Calendrier, 0);
-			this.Controls.SetChildIndex(this.soin, 0);
-			this.Controls.SetChildIndex(this.maladie, 0);
-			this.Controls.SetChildIndex(this.client, 0);
-			this.Controls.SetChildIndex(this.stats, 0);
 			this.Controls.SetChildIndex(this.label1, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -119,12 +58,6 @@
         }
 
 		#endregion
-
-		private System.Windows.Forms.Button stats;
-		private System.Windows.Forms.Button client;
-		private System.Windows.Forms.Button maladie;
-		private System.Windows.Forms.Button soin;
-		private System.Windows.Forms.Button Calendrier;
 		private System.Windows.Forms.Label label1;
 	}
 }

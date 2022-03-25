@@ -35,7 +35,6 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Admin_add_pers.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Modele_listbox.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Stocks.resources
-C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.AssemblyReference.cache
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Modele_delete.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Modele_modifier.resources
 C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Stocks_detail.resources
