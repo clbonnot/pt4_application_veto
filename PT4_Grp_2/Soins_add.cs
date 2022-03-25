@@ -65,15 +65,42 @@ namespace PT4_Grp_2
         {
 			string name = NameMedic.Text;
 			string mark = Mark.Text;
-			double price = Convert.ToDouble(Price.Text);
+			double price = 0;
+			try
+			{
+				price = Convert.ToDouble(Price.Text);
+				
+			}
+			catch (FormatException ef)
+			{
+				HintBox.Text = "Veuillez entrer un prix valide";
+			}
 			string desc = Desc.Text;
-			int quantity = Convert.ToInt32(Quantity.Text);
+			int quantity = 0;
+			try
+			{
+				 quantity = Convert.ToInt32(Quantity.Text);
+			}
+			catch (FormatException ef)
+			{
+				HintBox.Text = "Veuillez entrer un prix valide";
+			}
 			if (!mark.Equals("") && !price.Equals("") && !name.Equals("") && quantity != 0 && price != 0)
             {
-				string sql = "Insert Into Produit(Nom, Descrip, Quantite, Prix, Marque) values(" + name + "," + desc + "," + quantity + "," + price + "," + mark + ")";
-				OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.dbConnection);
-				cmdSet.ExecuteNonQuery();
+				if(!mark.Equals("") && !price.Equals("") && !name.Equals(""))
+                {
+					
+					string sql = "Insert Into Produit(Nom, Descrip, Quantite, Prix, Marque) values('" + name + "','" + desc + "'," + quantity + "," + price + ",'" + mark + "')";
+					OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.getDbConnection());
+					cmdSet.ExecuteNonQuery();
+					HintBox.Text = "Produit ajouté avec succès";
+                }
+				else
+				{
+					HintBox.Text = "Seule la description peut être vide, veuillez vérifier que tous les champs nécessaires ont bien été remplis";
+				}
 			}
+			
         }
     }
 }

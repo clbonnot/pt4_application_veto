@@ -44,6 +44,7 @@
             this.Desc = new System.Windows.Forms.TextBox();
             this.Quantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.HintBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -182,7 +183,7 @@
             // 
             // Quantity
             // 
-            this.Quantity.Location = new System.Drawing.Point(90, 423);
+            this.Quantity.Location = new System.Drawing.Point(90, 412);
             this.Quantity.Name = "Quantity";
             this.Quantity.Size = new System.Drawing.Size(209, 20);
             this.Quantity.TabIndex = 51;
@@ -191,11 +192,22 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 403);
+            this.label4.Location = new System.Drawing.Point(87, 392);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 50;
             this.label4.Text = "Quantité";
+            // 
+            // HintBox
+            // 
+            this.HintBox.AutoEllipsis = true;
+            this.HintBox.AutoSize = true;
+            this.HintBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HintBox.Location = new System.Drawing.Point(22, 458);
+            this.HintBox.Name = "HintBox";
+            this.HintBox.Size = new System.Drawing.Size(284, 17);
+            this.HintBox.TabIndex = 52;
+            this.HintBox.Text = "Veuillez remplir les champs avant de valider";
             // 
             // Soins_add
             // 
@@ -203,6 +215,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(406, 568);
+            this.Controls.Add(this.HintBox);
             this.Controls.Add(this.Quantity);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Desc);
@@ -244,5 +257,6 @@
 		private System.Windows.Forms.TextBox Desc;
         private System.Windows.Forms.TextBox Quantity;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label HintBox;
     }
 }
