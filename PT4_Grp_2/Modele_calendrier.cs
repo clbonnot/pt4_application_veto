@@ -21,5 +21,10 @@ namespace PT4_Grp_2
         {
 
         }
+
+        public virtual void update_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
