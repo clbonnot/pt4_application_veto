@@ -21,6 +21,8 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
             refreshLists();
+            ConsultClient();
+            ConsultDocs();
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -92,8 +94,16 @@ namespace PT4_Grp_2
             docs.Clear();
             listClient.Items.Clear();
             listDoc.Items.Clear();
-            ConsultClient();
-            ConsultDocs();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

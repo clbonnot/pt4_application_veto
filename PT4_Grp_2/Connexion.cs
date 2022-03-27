@@ -142,7 +142,7 @@ namespace PT4_Grp_2
                 readerName.Close();
                 DBcon.closeConnection();
                 
-                Modele Mod = new Modele();
+                Modele_calendrier Mod = new Calendrier_rdv();
                 Mod.SetRole(role);
                 Mod.SetRights(rights);   
                 Mod.SetName(name);
