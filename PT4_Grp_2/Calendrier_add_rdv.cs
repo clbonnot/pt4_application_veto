@@ -105,31 +105,138 @@ namespace PT4_Grp_2
             string jour = dateStart.Value.ToString().Substring(0,dateStart.Value.ToString().IndexOf('/')).Trim();
             string mois = dateStart.Value.ToString().Substring(dateStart.Value.ToString().IndexOf('/')+1,2).Trim();
             string annee = dateStart.Value.ToString().Substring(dateStart.Value.ToString().LastIndexOf('/')+1,4).Trim();
-            string heures = dateStart.Value.ToString().Substring(dateStart.Value.ToString().IndexOf(':') - 2).Trim();
-            string date = annee + "-" + mois + "-" + jour + " " + heures;
-            Console.WriteLine(date);
-            /* string request = "insert into Rendez_vous(CODE_ABONNÉ,CODE_ALBUM,DATE_EMPRUNT,DATE_RETOUR_ATTENDUE) " +
-                             "values(" + codeAbo + ", ?, GETDATE(),DATEADD(Day,?,GETDATE()))";
-             OleDbCommand cmdTwo = new OleDbCommand(request, dbCon);
-             cmdTwo.Parameters.Add("CODE_ALBUM", OleDbType.Integer).Value = codeAlbum;
-             cmdTwo.Parameters.Add("CODE_ALBUM", OleDbType.Integer).Value = delayNumber;
-             cmdTwo.ExecuteNonQuery(); */
+            string date = annee + "-" + mois + "-" + jour + " ";
+            int codeAnimal = -1;
+            int codePersonne = -1;
+            int codePersonnel = -1;
 
+            if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && textBox6.Text != string.Empty)
+            {
+                string heure="";
+                string minutes="";
+                if (textBox2.Text.Trim().Length.Equals(1))
+                {
+                   heure = "0" + textBox2.Text.Trim();
+                }
+                if (textBox6.Text.Trim().Length.Equals(1))
+                {
+                    minutes = "0" + textBox6.Text.Trim();
+                }
+                Console.WriteLine(textBox3.Text.Substring(0, textBox3.Text.IndexOf(' ')));
+                Console.WriteLine(textBox3.Text.Substring(textBox3.Text.IndexOf(' ') + 1));
+                string sqlAnimal = "select Animal.Code_animal from Animal " +
+                "inner join Personne on Animal.Code_Personne = Personne.CODE_PERSONNE " +
+                "WHERE Personne.CODE_PERSONNE = (SELECT CODE_PERSONNE FROM PERSONNE WHERE Personne.NOM = '"+
+                "" + textBox3.Text.Substring(0, textBox3.Text.IndexOf(' ')) + "' " +
+                "and Personne.PRENOM='" + textBox3.Text.Substring(textBox3.Text.IndexOf(' ') + 1) + "') and Animal.Nom_Animal = '" + textBox5.Text.Trim() + "'";
+
+                string sqlPersonne = "select Personne.Code_Personne from Personne " +
+                "WHERE Personne.NOM = '" +
+                "" + textBox3.Text.Substring(0, textBox3.Text.IndexOf(' ')) + "' " +
+                "and Personne.PRENOM='" + textBox3.Text.Substring(textBox3.Text.IndexOf(' ') + 1) + "'";
+
+                string sqlDoc = "select Personnel.Code_Personnel from Personnel " +
+                "inner join Personne on Personnel.CODE_PERSONNE = Personne.CODE_PERSONNE" +
+                " where Personne.NOM = '" + textBox4.Text.Substring(0, textBox4.Text.IndexOf(' ')) + "'";
+
+                string dateComplète = date + heure +":" + minutes +":"+"00";
+
+                OleDbCommand cmdReadAnimal = new OleDbCommand(sqlAnimal, DBcon.dbConnection);
+                OleDbDataReader readerAnimal = cmdReadAnimal.ExecuteReader();
+                while (readerAnimal.Read())
+                {
+                    codeAnimal = readerAnimal.GetInt32(0);
+                }
+
+                OleDbCommand cmdReadPersonne = new OleDbCommand(sqlPersonne, DBcon.dbConnection);
+                OleDbDataReader readerPersonne = cmdReadPersonne.ExecuteReader();
+                while (readerPersonne.Read())
+                {
+                    codePersonne = readerPersonne.GetInt32(0);
+                }
+
+                OleDbCommand cmdReadDoc = new OleDbCommand(sqlDoc, DBcon.dbConnection);
+                OleDbDataReader readerDoc = cmdReadDoc.ExecuteReader();
+                while (readerDoc.Read())
+                {
+                    codePersonnel = readerDoc.GetInt32(0);
+                }
+
+                string request = "insert into Rendez_vous(Code_Animal,Code_Personne,Code_Personnel,Date_rdv,motif) " +
+                    "values (?, ?,?, convert(datetime,'"+dateComplète+"',20),'"+ Utils.manageSingleQuote(textBox1.Text) +"')";
+                OleDbCommand cmdRequest = new OleDbCommand(request, DBcon.dbConnection);
+
+                cmdRequest.Parameters.Add("Code_Animal", OleDbType.Integer).Value = codeAnimal;
+                cmdRequest.Parameters.Add("Code_Personne", OleDbType.Integer).Value = codePersonne;
+                cmdRequest.Parameters.Add("Code_Personnel", OleDbType.Integer).Value = codePersonnel;
+
+                Console.WriteLine(codeAnimal);
+                Console.WriteLine(codePersonne);
+                Console.WriteLine(codePersonnel);
+                Console.WriteLine(Utils.manageSingleQuote(textBox1.Text));
+                cmdRequest.ExecuteNonQuery();
+            }
+            else
+            {
+                MessageBox.Show("Un élément nécessaire à l'ajout du RDV est manquant!");
+            }
+
+            Console.WriteLine(date);
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+            private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         private void listClient_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textBox5.Clear();
+            animauxClient.Clear();
+            listBoxAnimal.Items.Clear();
             textBox3.Text = listClient.Text;
+            string sql = "select Animal.Nom_Animal from Animal " +
+                "inner join Personne on Animal.Code_Personne = Personne.CODE_PERSONNE " +
+                "WHERE Personne.CODE_PERSONNE = (SELECT CODE_PERSONNE FROM PERSONNE WHERE Personne.NOM = '" +
+                ""+textBox3.Text.Substring(0, textBox3.Text.IndexOf(' ')) + "' " +
+                "and Personne.PRENOM='"+textBox3.Text.Substring(textBox3.Text.IndexOf(' ')+1)+"')";
+            OleDbDataReader reader = null;
+
+            OleDbCommand cmdRead = new OleDbCommand(sql, DBcon.dbConnection);
+            try
+            {
+                OleDbDataReader reader1 = cmdRead.ExecuteReader();
+                reader = reader1;
+            }
+            catch (Exception ex)
+            {
+            }
+            if (reader != null)
+            {
+                while (reader.Read())
+                {
+                    string nom = reader.GetString(0).Trim();
+                    animauxClient.Add(nom);
+                }
+
+                foreach (string element in animauxClient)
+                {
+                    listBoxAnimal.Items.Add(element);
+                }
+                reader.Close();
+            }
         }
+    
 
         private void listDoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox4.Text = listDoc.Text;
+        }
+
+        private void listBoxAnimal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox5.Text = listBoxAnimal.Text;
         }
     }
 }
