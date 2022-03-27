@@ -45,6 +45,9 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.listDoc = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.listBoxAnimal = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // progressBar2
@@ -119,6 +122,7 @@
             this.listClient.Name = "listClient";
             this.listClient.Size = new System.Drawing.Size(120, 43);
             this.listClient.TabIndex = 49;
+            this.listClient.SelectedIndexChanged += new System.EventHandler(this.listClient_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -172,7 +176,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(86, 157);
+            this.textBox4.Location = new System.Drawing.Point(86, 167);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(111, 20);
             this.textBox4.TabIndex = 59;
@@ -180,7 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(83, 134);
+            this.label3.Location = new System.Drawing.Point(83, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 13);
             this.label3.TabIndex = 58;
@@ -189,10 +193,35 @@
             // listDoc
             // 
             this.listDoc.FormattingEnabled = true;
-            this.listDoc.Location = new System.Drawing.Point(250, 134);
+            this.listDoc.Location = new System.Drawing.Point(250, 167);
             this.listDoc.Name = "listDoc";
             this.listDoc.Size = new System.Drawing.Size(120, 43);
             this.listDoc.TabIndex = 57;
+            this.listDoc.SelectedIndexChanged += new System.EventHandler(this.listDoc_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(83, 98);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 13);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Son animal";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(86, 114);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(111, 20);
+            this.textBox5.TabIndex = 61;
+            // 
+            // listBoxAnimal
+            // 
+            this.listBoxAnimal.FormattingEnabled = true;
+            this.listBoxAnimal.Location = new System.Drawing.Point(250, 101);
+            this.listBoxAnimal.Name = "listBoxAnimal";
+            this.listBoxAnimal.Size = new System.Drawing.Size(120, 43);
+            this.listBoxAnimal.TabIndex = 62;
             // 
             // Calendrier_add_rdv
             // 
@@ -200,6 +229,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(462, 389);
+            this.Controls.Add(this.listBoxAnimal);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.listDoc);
@@ -243,5 +275,8 @@
 		private System.Windows.Forms.TextBox textBox4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ListBox listDoc;
-	}
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ListBox listBoxAnimal;
+    }
 }

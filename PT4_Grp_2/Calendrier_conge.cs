@@ -16,5 +16,11 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
 		}
+
+        public override void add_Click(object sender, EventArgs e)
+        {
+			Calendrier_add_conge ajout = new Calendrier_add_conge();
+        }
+
 	}
 }

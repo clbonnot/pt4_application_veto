@@ -28,10 +28,10 @@ namespace PT4_Grp_2
 
 		}
 
-		private void add_Click(object sender, EventArgs e)
-        {
-			Calendrier_add_rdv ajouter = new Calendrier_add_rdv();
-			ajouter.ShowDialog();
+		public override void add_Click(object sender, EventArgs e)
+		{
+			Calendrier_add_rdv ajout = new Calendrier_add_rdv();
+			ajout.ShowDialog();
 		}
 	}
 }

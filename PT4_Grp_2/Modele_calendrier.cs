@@ -16,5 +16,10 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
 		}
-	}
+
+        public virtual void add_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
