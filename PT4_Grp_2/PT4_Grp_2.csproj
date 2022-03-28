@@ -228,6 +228,7 @@
     <Compile Include="Paniers.Designer.cs">
       <DependentUpon>Paniers.cs</DependentUpon>
     </Compile>
+    <Compile Include="People.cs" />
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +253,7 @@
     <Compile Include="Soins_modifier.Designer.cs">
       <DependentUpon>Soins_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff.cs" />
     <Compile Include="Statistiques.cs">
       <SubType>Form</SubType>
     </Compile>

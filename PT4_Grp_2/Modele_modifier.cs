@@ -16,5 +16,20 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+			Close();
+        }
+
+        public virtual void update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
