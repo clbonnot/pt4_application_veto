@@ -4,6 +4,7 @@ using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
@@ -36,7 +37,7 @@ namespace PT4_Grp_2
             if (reader.Read())
             {
 
-                this.Id = reader.GetInt32(0);
+                this.Id = reader.GetInt32(2);
                 this.Identify = reader.GetString(3);
                 Password = reader.GetString(4);
 
@@ -58,7 +59,9 @@ namespace PT4_Grp_2
                 OleDbDataReader readerRole = db.select("SELECT * FROM Rôle WHERE Code_Role = ?", arg3);
                 if (readerRole.Read())
                 {
+                    IdRole = readerRole.GetInt32(0);
                     Role = readerRole.GetString(1);
+
                     if (readerRole.GetString(2) == "administrateur")
                     {
                         rights = true;
@@ -75,14 +78,45 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Function that delete the current instance from the database
+         * Function that update the current instance in the database with the attribute of an another staff
+         * 
+         * @param db the databse
+         * @param s the another staff
+         */
+        public void Update(DB db, Staff s)
+        {
+            db.openConnection();
+            String[] vStaff = { s.IdRole.ToString(), s.Identify, s.Salary.ToString(), s.Start_date.ToString(), s.End_date.ToString(), IdStaff.ToString() };
+            String[] vPeople = { s.Lastname, s.Firstname, s.Mail, s.Phone, Id.ToString() };
+
+
+            db.nonSelect("UPDATE Personnel " +
+                "SET code_role = ?," +
+                "identifiant = ?," +
+                "salaire = ?," +
+                "date_embauche = ?," +
+                "date_de_fin = ? " +
+                "WHERE code_personnel = ?",vStaff);
+            db.nonSelect("UPDATE Personne " +
+                "SET nom = ?," +
+                "prenom = ?," +
+                "mail = ?," +
+                "telephone = ? " +
+                "WHERE code_personne = ?", vPeople);
+            db.closeConnection();
+        }
+        /**
+         * Function that delete the current instance in the database
          */
         public void Delete(DB db)
         {
             db.openConnection();
- 
+            
+            
             String[] v = { IdStaff.ToString() };
+            //TODO ajoutez la suppression du rendez vous.
             db.nonSelect("DELETE FROM personnel where code_personnel = ?", v);
+      
             String[] v2 = { Id.ToString() };
             try
             {
@@ -103,7 +137,7 @@ namespace PT4_Grp_2
         {
             db.openConnection();
             String[] v = { Lastname, Firstname, Mail, Phone };
-            int idPeople = db.insert("INSERT INTO Personne (NOM,PRENOM,MAIL,TELEPHONE) values (?,?,?,?)", v);
+            int idPeople = db.insert("INSERT INTO Personne (NOM,PRENOM,MAIL,TELEPHONE) values (?,?,?,?)", v) ;
             int idRole;
 
             String[] r = { role };
@@ -117,7 +151,7 @@ namespace PT4_Grp_2
                 idRole = 6;
             }
             String[] v2 = { idRole.ToString(), idPeople.ToString(), Identify, Password, Salary.ToString(), Start_date, End_date };
-            db.insert("INSERT INTO PERSONNEL (Code_Role, Code_Personne, Identifiant, Mot_De_Passe, Salaire, Date_Embauche, Date_de_fin) values (?, ?, ?, ?, ?, ?,?)", v2);
+            db.nonSelect("INSERT INTO PERSONNEL (Code_Role, Code_Personne, Identifiant, Mot_De_Passe, Salaire, Date_Embauche, Date_de_fin) values (?, ?, ?, ?, ?, ?,?)", v2);
             db.closeConnection();
         }
 
@@ -126,6 +160,7 @@ namespace PT4_Grp_2
 
         private string identify;
         private int idStaff;
+        private int idRole;
         private string password;
 
         private float salary;
@@ -145,6 +180,7 @@ namespace PT4_Grp_2
         public string End_date { get => end_date; set => end_date = value; }
         public string Role { get => role; set => role = value; }
         public int IdStaff { get => idStaff; set => idStaff = value; }
+        public int IdRole { get => idRole; set => idRole = value; }
 
         public String toString()
         {

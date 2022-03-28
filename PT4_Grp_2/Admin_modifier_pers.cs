@@ -38,7 +38,8 @@ namespace PT4_Grp_2
 
 
 			db.closeConnection();
-
+			date.MaxDate = DateTime.Now;
+			dateEnd.MinDate = date.Value.AddDays(1);
 			nameTV.Text = s.Lastname;
 			firstnameTV.Text = s.Firstname;
 			phoneTV.Text = s.Phone;
@@ -61,7 +62,7 @@ namespace PT4_Grp_2
 				MessageBox.Show(ex.Message + "  y =  " + y.ToString() + "   " + m.ToString() + "  " + dd.ToString() );
 				Close();
             }
-			dateEnd.MinDate = date.Value;
+		
 			currentSalary = s.Salary;
 			actualizeSalary();
 			
@@ -93,7 +94,7 @@ namespace PT4_Grp_2
 		 */
         public override void update_Click(object sender, EventArgs e)
         {
-			staff.Delete(db);
+			
 			Staff s = new Staff();
 			s.Firstname = firstnameTV.Text;
 			s.Lastname = nameTV.Text;
@@ -101,18 +102,29 @@ namespace PT4_Grp_2
 			s.Mail = addressTV.Text;
 			s.Password = staff.Password;
 			s.Role = roles.SelectedItem.ToString();
+			String[] role = { s.Role };
+			db.openConnection();
+			OleDbDataReader oddr = db.select("select code_role from rôle where nom_role = ?", role);
+            if (oddr.Read())
+            {
+				s.IdRole = oddr.GetInt32(0);
+            }
+            else
+            {
+				s.IdRole = 6;
+            }
+			db.closeConnection();
 			s.Identify = idTV.Text;
 			s.Start_date = date.Value.ToString("yyyy-MM-dd");
 			s.End_date = dateEnd.Value.ToString("yyyy-MM-dd");
 			s.Salary = currentSalary;
             try
             {
-				s.Flush(db);
+				staff.Update(db, s);
             }
             catch(Exception exc)
             {
 				MessageBox.Show("Erreur lors de la modification du personnel. Veuillez réessayer avec des attributs valides et/ou, veuillez contacter un technicien en cas d'erreur logiciel. Message d'erreur : " + exc.Message);
-				staff.Flush(db);
 				return;
             }
 

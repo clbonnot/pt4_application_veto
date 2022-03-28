@@ -34,7 +34,6 @@
             // 
             // listbox
             // 
-            this.listbox.Sorted = true;
             this.listbox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listbox_MouseDoubleClick);
             // 
             // Deconnexion

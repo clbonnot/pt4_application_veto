@@ -46,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
-  
             // 
             // nameTV
             // 
@@ -83,7 +82,7 @@
             // date
             // 
             this.date.Location = new System.Drawing.Point(32, 274);
-            this.date.MaxDate = new System.DateTime(2022, 3, 25, 0, 0, 0, 0);
+            this.date.MaxDate = new System.DateTime(2022, 3, 28, 0, 0, 0, 0);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(200, 20);
             this.date.TabIndex = 35;
