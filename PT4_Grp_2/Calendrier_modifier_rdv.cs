@@ -60,10 +60,10 @@ namespace PT4_Grp_2
         {
             if(labelnom.Text.Length > 0 && labelrdv.Text.Length > 0)
             {
-                string sql = "delete from rendez_vous date_rdvwhere date_rdv = '" + labelrdv.Text + "'";
+                string sql = "delete from rendez_vous where date_rdv = '" + labelrdv.Text + "'";
             
                 OleDbCommand cmd = new OleDbCommand(sql, DBcon.dbConnection);
-                DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment modifier ce RDV ?", "Suppression", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment supprimer ce RDV ?", "Suppression", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     cmd.ExecuteNonQuery();
@@ -114,7 +114,7 @@ namespace PT4_Grp_2
                     minutes = textBox3.Text.Trim();
                 }
                 string dateComplète = date + heure + ":" + minutes+":00";
-                string sql = "update rendez_vous set date_rdv ='"+dateComplète+"'"+" where date_rdv = '" + labelrdv.Text + "'";
+                string sql = "update rendez_vous set date_rdv = convert(datetime,'"+dateComplète+"',20) where date_rdv = '" + labelrdv.Text + "'";
 
                 OleDbCommand cmd = new OleDbCommand(sql, DBcon.dbConnection);
                 DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment modifier ce RDV ?", "Modification", MessageBoxButtons.YesNo);
@@ -143,7 +143,10 @@ namespace PT4_Grp_2
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelrdv.Text= listBox1.SelectedItem.ToString();
+            if (listBox1.SelectedItem != null)
+            {
+                labelrdv.Text = listBox1.SelectedItem.ToString();
+            }
         }
 
         public void ConsultRDV()
