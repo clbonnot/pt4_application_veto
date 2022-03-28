@@ -1,4 +1,6 @@
-﻿namespace PT4_Grp_2
+﻿using System.Windows.Forms;
+
+namespace PT4_Grp_2
 {
     partial class Modele_add_pers
     {
@@ -401,7 +403,9 @@
 		private System.Windows.Forms.Button Deconnexion;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ProgressBar progressBar2;
-		private System.Windows.Forms.PictureBox pictureBox1;
+        private Button annuler;
+        private Button valider;
+        private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox3;
 		private System.Windows.Forms.PictureBox pictureBox4;
