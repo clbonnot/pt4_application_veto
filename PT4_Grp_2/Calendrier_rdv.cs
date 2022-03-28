@@ -81,5 +81,9 @@ namespace PT4_Grp_2
 			reader.Close();
 		}
 
-	}
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+
+        }
+    }
 }

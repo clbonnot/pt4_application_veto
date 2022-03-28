@@ -38,6 +38,11 @@
             this.personnel = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
             // date
             // 
             this.date.AutoSize = true;
