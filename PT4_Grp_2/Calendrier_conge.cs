@@ -13,7 +13,7 @@ namespace PT4_Grp_2
 {
 	public partial class Calendrier_conge : Modele_calendrier
 	{
-		List<string> conges = new List<string>();
+		List<string> congesAffichage = new List<string>();
 		List<string> personnel = new List<string>();
 		DB DBcon;
 		public Calendrier_conge()
@@ -21,7 +21,7 @@ namespace PT4_Grp_2
 			InitializeComponent();
 			this.DBcon = new DB("INFO-JOYEUX", "PT4_E2");
 			DBcon.openConnection();
-			conges.Clear();
+			congesAffichage.Clear();
 			personnel.Clear();
 		}
 
@@ -31,26 +31,60 @@ namespace PT4_Grp_2
 			ajout.Show();
         }
 
-        private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
-        {
-			conges.Clear();
+		private void monthCalendar1_DateChanged_1(object sender, DateRangeEventArgs e)
+		{
+			congesAffichage.Clear();
 			personnel.Clear();
 			listConges.Items.Clear();
 			listPersonnel.Items.Clear();
 			string date = monthCalendar1.ToString().Substring(monthCalendar1.ToString().IndexOf('/') - 2, 10);
-			Console.WriteLine(date);
 			string jours = date.Substring(0, date.IndexOf('/'));
 			string mois = date.Substring(date.IndexOf('/') + 1, 2);
 			string annee = date.Substring(date.LastIndexOf('/') + 1, 4);
 
 
-			/*string sql = "select Personne.NOM,Personne.PRENOM,Animal.Nom_Animal,Rendez_vous.Date_rdv FROM " +
-				"Rendez_vous inner join Personne on Personne.CODE_PERSONNE = Rendez_vous.Code_Personne " +
-				"inner join Animal on Animal.Code_Personne = Personne.CODE_PERSONNE " +
-				"WHERE(DATEPART(yy, Date_rdv) = " + annee + " AND DATEPART(mm, Date_rdv) = " + mois + " AND DATEPART(dd, Date_rdv) = " + jours + ")";
+			string sql = "select Personne.NOM,Personne.PRENOM,Horaire.debut,Horaire.fin,Code_Horaire,Code_Personnel from Horaire " +
+				"INNER JOIN Congé ON Congé.CODE_HORAIRE = Horaire.CODE_HORAIRE " +
+				"INNER JOIN Personnel ON Personnel.CODE_PERSONNEL = Congé.CODE_PERSONNEL " +
+				"INNER JOIN Personne ON Personne.CODE_PERSONNE = Personnel.CODE_PERSONNE "+
+				"WHERE(DATEPART(yy, Horaire.debut) = " + annee + " AND DATEPART(mm, Horaire.debut) = " + mois + ")";
 
 			OleDbCommand cmdRead = new OleDbCommand(sql, DBcon.dbConnection);
-			OleDbDataReader reader = cmdRead.ExecuteReader();*/
+			OleDbDataReader reader = cmdRead.ExecuteReader();
+
+			while (reader.Read())
+			{
+				string yDebut = reader.GetString(2).Substring(0, reader.GetString(2).IndexOf('-'));
+				string mDebut = reader.GetString(2).Substring(reader.GetString(2).IndexOf('-')+1,2);
+				string dDebut = reader.GetString(2).Substring(reader.GetString(2).LastIndexOf('-')+1,2);
+				string dateDebut = dDebut + "/" + mDebut + "/" + yDebut;
+
+				string yFin = reader.GetString(3).Substring(0, reader.GetString(3).IndexOf('-'));
+				string mFin = reader.GetString(3).Substring(reader.GetString(3).IndexOf('-') + 1, 2);
+				string dFin = reader.GetString(3).Substring(reader.GetString(3).LastIndexOf('-') + 1, 2);
+				string dateFin = dFin + "/" + mFin + "/" + yFin;	
+
+				string info = reader.GetString(1).Trim()+" est en congé depuis le "+dateDebut+" jusqu'en "+dateFin;
+				congesAffichage.Add(info);
+				personnel.Add(reader.GetString(0)+" "+ reader.GetString(1));
+			}
+
+			foreach (string element in congesAffichage)
+			{
+				listConges.Items.Add(element);
+			}
+
+			foreach (string element in personnel)
+			{
+				listPersonnel.Items.Add(element);
+			}
+			reader.Close();
+	
 		}
+
+        private void listConges_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

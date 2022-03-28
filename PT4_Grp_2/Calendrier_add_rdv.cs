@@ -170,10 +170,6 @@ namespace PT4_Grp_2
                 cmdRequest.Parameters.Add("Code_Personne", OleDbType.Integer).Value = codePersonne;
                 cmdRequest.Parameters.Add("Code_Personnel", OleDbType.Integer).Value = codePersonnel;
 
-                Console.WriteLine(codeAnimal);
-                Console.WriteLine(codePersonne);
-                Console.WriteLine(codePersonnel);
-                Console.WriteLine(Utils.manageSingleQuote(textBox1.Text));
                 cmdRequest.ExecuteNonQuery();
             }
             else

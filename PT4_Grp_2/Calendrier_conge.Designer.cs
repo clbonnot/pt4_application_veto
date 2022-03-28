@@ -38,13 +38,14 @@
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.Location = new System.Drawing.Point(564, 57);
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label1.Location = new System.Drawing.Point(354, 137);
+            this.label1.Location = new System.Drawing.Point(361, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 17);
             this.label1.TabIndex = 90;
@@ -75,10 +76,11 @@
             // listConges
             // 
             this.listConges.FormattingEnabled = true;
-            this.listConges.Location = new System.Drawing.Point(357, 166);
+            this.listConges.Location = new System.Drawing.Point(357, 228);
             this.listConges.Name = "listConges";
-            this.listConges.Size = new System.Drawing.Size(145, 199);
+            this.listConges.Size = new System.Drawing.Size(381, 199);
             this.listConges.TabIndex = 87;
+            this.listConges.SelectedIndexChanged += new System.EventHandler(this.listConges_SelectedIndexChanged);
             // 
             // listPersonnel
             // 
@@ -129,7 +131,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label date;
 		private System.Windows.Forms.ListBox listConges;
-		private System.Windows.Forms.ListBox listPersonnel;
 		private System.Windows.Forms.Label label2;
-	}
+        private System.Windows.Forms.ListBox listPersonnel;
+    }
 }

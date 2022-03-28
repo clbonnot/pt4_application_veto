@@ -36,10 +36,11 @@
             this.nbJours = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dayLeft = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateEnd = new System.Windows.Forms.DateTimePicker();
             this.dateStart = new System.Windows.Forms.DateTimePicker();
+            this.listPersonnel = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // add
@@ -104,7 +105,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(123, 129);
+            this.label5.Location = new System.Drawing.Point(54, 128);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 43;
@@ -113,21 +114,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 191);
+            this.label4.Location = new System.Drawing.Point(54, 192);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 42;
             this.label4.Text = "Date de fin";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // dayLeft
-            // 
-            this.dayLeft.AutoSize = true;
-            this.dayLeft.Location = new System.Drawing.Point(67, 90);
-            this.dayLeft.Name = "dayLeft";
-            this.dayLeft.Size = new System.Drawing.Size(72, 13);
-            this.dayLeft.TabIndex = 41;
-            this.dayLeft.Text = "Jours restants";
             // 
             // label2
             // 
@@ -141,7 +133,7 @@
             // 
             // dateEnd
             // 
-            this.dateEnd.Location = new System.Drawing.Point(126, 219);
+            this.dateEnd.Location = new System.Drawing.Point(57, 218);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(200, 20);
             this.dateEnd.TabIndex = 39;
@@ -149,10 +141,27 @@
             // 
             // dateStart
             // 
-            this.dateStart.Location = new System.Drawing.Point(126, 155);
+            this.dateStart.Location = new System.Drawing.Point(57, 156);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(200, 20);
             this.dateStart.TabIndex = 38;
+            // 
+            // listPersonnel
+            // 
+            this.listPersonnel.FormattingEnabled = true;
+            this.listPersonnel.Location = new System.Drawing.Point(285, 59);
+            this.listPersonnel.Name = "listPersonnel";
+            this.listPersonnel.Size = new System.Drawing.Size(145, 199);
+            this.listPersonnel.TabIndex = 92;
+            this.listPersonnel.SelectedIndexChanged += new System.EventHandler(this.listPersonnel_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(89, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 93;
             // 
             // Calendrier_add_conge
             // 
@@ -160,10 +169,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(456, 386);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.listPersonnel);
             this.Controls.Add(this.nbJours);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dayLeft);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateEnd);
             this.Controls.Add(this.dateStart);
@@ -189,9 +199,10 @@
 		private System.Windows.Forms.Label nbJours;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label dayLeft;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DateTimePicker dateEnd;
 		private System.Windows.Forms.DateTimePicker dateStart;
-	}
+        private System.Windows.Forms.ListBox listPersonnel;
+        private System.Windows.Forms.Label label3;
+    }
 }

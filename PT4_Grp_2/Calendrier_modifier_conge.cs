@@ -12,8 +12,11 @@ namespace PT4_Grp_2
 {
 	public partial class Calendrier_modifier_conge : Modele_modifier
 	{
-		public Calendrier_modifier_conge()
+		int codeConge;
+
+		public Calendrier_modifier_conge(int codeConge)
 		{
+			this.codeConge = codeConge;
 			InitializeComponent();
 		}
 	}
