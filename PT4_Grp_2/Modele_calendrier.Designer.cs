@@ -73,7 +73,6 @@
             this.update.TabIndex = 79;
             this.update.Text = "MODIFIER";
             this.update.UseVisualStyleBackColor = true;
-            this.update.Visible = false;
             this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // add

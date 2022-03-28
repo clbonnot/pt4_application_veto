@@ -43,7 +43,7 @@ namespace PT4_Grp_2
 
         private void listRDV_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+			
         }
 
         public override void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -84,6 +84,12 @@ namespace PT4_Grp_2
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
 
+        }
+
+        public override void update_Click(object sender, EventArgs e)
+        {
+			Modele_modifier edit = new Calendrier_modifier_rdv();
+			edit.ShowDialog();
         }
     }
 }

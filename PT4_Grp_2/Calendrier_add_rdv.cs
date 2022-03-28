@@ -118,9 +118,16 @@ namespace PT4_Grp_2
                 {
                    heure = "0" + textBox2.Text.Trim();
                 }
+                else
+                {
+                    heure = textBox2.Text.Trim();
+                }
                 if (textBox6.Text.Trim().Length.Equals(1))
                 {
                     minutes = "0" + textBox6.Text.Trim();
+                } else
+                {
+                    minutes = textBox6.Text.Trim();
                 }
                 Console.WriteLine(textBox3.Text.Substring(0, textBox3.Text.IndexOf(' ')));
                 Console.WriteLine(textBox3.Text.Substring(textBox3.Text.IndexOf(' ') + 1));
