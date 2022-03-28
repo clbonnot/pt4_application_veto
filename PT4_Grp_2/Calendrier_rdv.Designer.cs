@@ -52,10 +52,11 @@
             // listRDV
             // 
             this.listRDV.FormattingEnabled = true;
-            this.listRDV.Location = new System.Drawing.Point(265, 166);
+            this.listRDV.Location = new System.Drawing.Point(154, 166);
             this.listRDV.Name = "listRDV";
-            this.listRDV.Size = new System.Drawing.Size(145, 199);
+            this.listRDV.Size = new System.Drawing.Size(324, 199);
             this.listRDV.TabIndex = 83;
+            this.listRDV.SelectedIndexChanged += new System.EventHandler(this.listRDV_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -73,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label1.Location = new System.Drawing.Point(262, 130);
+            this.label1.Location = new System.Drawing.Point(229, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 17);
             this.label1.TabIndex = 86;
@@ -110,6 +111,7 @@
             this.Name = "Calendrier_rdv";
             this.Text = "Calendrier_rdv";
             this.Click += new System.EventHandler(this.add_Click);
+            this.Controls.SetChildIndex(this.monthCalendar1, 0);
             this.Controls.SetChildIndex(this.listRDV, 0);
             this.Controls.SetChildIndex(this.date, 0);
             this.Controls.SetChildIndex(this.label1, 0);

@@ -26,5 +26,10 @@ namespace PT4_Grp_2
         {
 
         }
+
+        public virtual void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }
