@@ -16,5 +16,20 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
 		}
-	}
+
+        public virtual void add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public virtual void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+    }
 }

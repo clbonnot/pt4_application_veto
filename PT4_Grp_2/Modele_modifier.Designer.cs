@@ -32,7 +32,7 @@
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.Delete = new System.Windows.Forms.Button();
-            this.cancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -76,15 +76,15 @@
             this.Delete.UseVisualStyleBackColor = false;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // cancel
+            // button1
             // 
-            this.cancel.Location = new System.Drawing.Point(12, 594);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(108, 36);
-            this.cancel.TabIndex = 28;
-            this.cancel.Text = "Annuler";
-            this.cancel.UseVisualStyleBackColor = true;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            this.button1.Location = new System.Drawing.Point(12, 594);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 36);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Annuler";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // update
             // 
@@ -105,7 +105,7 @@
             this.ClientSize = new System.Drawing.Size(360, 642);
             this.Controls.Add(this.update);
             this.Controls.Add(this.Delete);
-            this.Controls.Add(this.cancel);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.label1);
@@ -121,8 +121,8 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ProgressBar progressBar2;
 		private System.Windows.Forms.ProgressBar progressBar1;
-		private System.Windows.Forms.Button cancel;
-        public System.Windows.Forms.Button Delete;
-        public System.Windows.Forms.Button update;
-    }
+		private System.Windows.Forms.Button Delete;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button update;
+	}
 }

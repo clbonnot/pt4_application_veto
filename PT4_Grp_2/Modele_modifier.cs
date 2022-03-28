@@ -17,9 +17,9 @@ namespace PT4_Grp_2
 			InitializeComponent();
 		}
 
-        private void cancel_Click(object sender, EventArgs e)
+        public virtual void button1_Click(object sender, EventArgs e)
         {
-			Close();
+
         }
 
         public virtual void update_Click(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace PT4_Grp_2
 
         public virtual void Delete_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
