@@ -42,7 +42,7 @@ namespace PT4_Grp_2
             client.Clear();
             listClient.Items.Clear();           
             string sql = "select NOM,PRENOM from Personne " +
-                "left outer JOIN Personnel ON Personne.CODE_PERSONNE = Personnel.CODE_PERSONNEL " +
+                "left outer JOIN Personnel ON Personne.CODE_PERSONNE = Personnel.CODE_PERSONNE " +
                 "WHERE Personnel.CODE_PERSONNEL is null ";
 
 

@@ -43,7 +43,7 @@ namespace PT4_Grp_2
 			string annee = date.Substring(date.LastIndexOf('/') + 1, 4);
 
 
-			string sql = "select Personne.NOM,Personne.PRENOM,Horaire.debut,Horaire.fin,Code_Horaire,Code_Personnel from Horaire " +
+			string sql = "select Personne.NOM,Personne.PRENOM,Horaire.debut,Horaire.fin,Horaire.Code_Horaire,Personnel.Code_Personnel from Horaire " +
 				"INNER JOIN Congé ON Congé.CODE_HORAIRE = Horaire.CODE_HORAIRE " +
 				"INNER JOIN Personnel ON Personnel.CODE_PERSONNEL = Congé.CODE_PERSONNEL " +
 				"INNER JOIN Personne ON Personne.CODE_PERSONNE = Personnel.CODE_PERSONNE "+
@@ -82,9 +82,60 @@ namespace PT4_Grp_2
 	
 		}
 
-        private void listConges_SelectedIndexChanged(object sender, EventArgs e)
-        {
+		private void listConges_SelectedIndexChanged(object sender, EventArgs e)
+		{
 
-        }
+			if (listConges.Items.Count > 0)
+			{
+				int codePerso=-1, codeHoraire =-1;
+				string item = listConges.SelectedItem.ToString();
+				string datedebut = item.Substring(item.IndexOf('/') - 2, 10).Trim();
+				string datefin = item.Substring(item.LastIndexOf('/') - 5).Trim();
+
+				string jD = datedebut.Substring(0, datedebut.IndexOf('/'));
+				string mD = datedebut.Substring(datedebut.IndexOf('/') + 1, 2);
+				string aD = datedebut.Substring(datedebut.LastIndexOf('/') + 1, 4);
+
+				string jE = datefin.Substring(0, datefin.IndexOf('/'));
+				string mE = datefin.Substring(datefin.IndexOf('/') + 1, 2);
+				string aE = datefin.Substring(datefin.LastIndexOf('/') + 1, 4);
+
+				Console.WriteLine(datedebut + " " + datefin);
+				string sqlPerso = "select code_personnel from personnel inner join personne on personnel.code_personne = personne.code_personne" +
+					" where personne.prenom ='" + item.Substring(0, item.IndexOf(' ')).Trim()+"'";
+
+				string sqlHoraire = "select code_horaire from horaire where debut = '" + aD + "-" + mD + "-" + jD + "'" + " and fin ='" + aE + "-" + mE + "-" + jE + "'";
+
+				OleDbCommand cmdRead = new OleDbCommand(sqlPerso, DBcon.dbConnection);
+				OleDbDataReader reader = cmdRead.ExecuteReader();
+
+				while (reader.Read())
+				{
+					codePerso = reader.GetInt32(0);
+				}
+
+				OleDbCommand cmdHoraire = new OleDbCommand(sqlHoraire, DBcon.dbConnection);
+				OleDbDataReader readerHoraire = cmdHoraire.ExecuteReader();
+
+				while (readerHoraire.Read())
+				{
+					codeHoraire = readerHoraire.GetInt32(0);
+				}
+
+				if(codePerso > 0 && codeHoraire > 0)
+                {
+					Modele_modifier edit = new Calendrier_modifier_conge(codeHoraire, codePerso);
+					edit.Show();		
+                }
+                else
+                {
+					MessageBox.Show("Erreur lors de la tentative de modification du congé !");
+                }
+
+			} else
+            {
+				MessageBox.Show("Impossible de modifier un congé si la liste est vide !");
+            }
+		}
     }
 }
