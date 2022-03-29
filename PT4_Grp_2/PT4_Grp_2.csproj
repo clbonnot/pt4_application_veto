@@ -65,6 +65,7 @@
     <Compile Include="Admin_modifier_pers.Designer.cs">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animal.cs" />
     <Compile Include="Calendrier_add_conge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,23 +102,30 @@
     <Compile Include="Calendrier_rdv.Designer.cs">
       <DependentUpon>Calendrier_rdv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs" />
     <Compile Include="Clients_add.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clients_add.Designer.cs">
       <DependentUpon>Clients_add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients_Animal_add.cs">
+    <Compile Include="Clients_Animal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clients_Animal_add.Designer.cs">
-      <DependentUpon>Clients_Animal_add.cs</DependentUpon>
+    <Compile Include="Clients_Animal.Designer.cs">
+      <DependentUpon>Clients_Animal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients_Animal_modifier.cs">
+    <Compile Include="Clients_Animal_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clients_Animal_modifier.Designer.cs">
-      <DependentUpon>Clients_Animal_modifier.cs</DependentUpon>
+    <Compile Include="Clients_Animal_Add.Designer.cs">
+      <DependentUpon>Clients_Animal_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_Animal_Modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Animal_Modifier.Designer.cs">
+      <DependentUpon>Clients_Animal_Modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Clients_details.cs">
       <SubType>Form</SubType>
@@ -130,6 +138,18 @@
     </Compile>
     <Compile Include="Clients_modifier.Designer.cs">
       <DependentUpon>Clients_modifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_Race_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Race_add.designer.cs">
+      <DependentUpon>Clients_Race_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_Type_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Type_add.designer.cs">
+      <DependentUpon>Clients_Type_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Control_secretaire.cs">
       <SubType>UserControl</SubType>
@@ -323,17 +343,26 @@
     <EmbeddedResource Include="Clients_add.resx">
       <DependentUpon>Clients_add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clients_Animal_add.resx">
-      <DependentUpon>Clients_Animal_add.cs</DependentUpon>
+    <EmbeddedResource Include="Clients_Animal.resx">
+      <DependentUpon>Clients_Animal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clients_Animal_modifier.resx">
-      <DependentUpon>Clients_Animal_modifier.cs</DependentUpon>
+    <EmbeddedResource Include="Clients_Animal_Add.resx">
+      <DependentUpon>Clients_Animal_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Animal_Modifier.resx">
+      <DependentUpon>Clients_Animal_Modifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clients_details.resx">
       <DependentUpon>Clients_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clients_modifier.resx">
       <DependentUpon>Clients_modifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Race_add.resx">
+      <DependentUpon>Clients_Race_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Type_add.resx">
+      <DependentUpon>Clients_Type_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control_secretaire.resx">
       <DependentUpon>Control_secretaire.cs</DependentUpon>

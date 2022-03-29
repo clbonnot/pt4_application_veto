@@ -28,17 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.SuspendLayout();
-			// 
-			// Clients
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Name = "Clients";
-			this.Text = "Clients";
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.SuspendLayout();
+    
+            // 
+            // listbox
+            // 
+            this.listbox.DoubleClick += new System.EventHandler(this.listbox_DoubleClick);
+            // 
+            // Deconnexion
+            // 
+            this.Deconnexion.FlatAppearance.BorderSize = 0;
+            // 
+            // Clients
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Clients";
+            this.Text = "Clients";
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
