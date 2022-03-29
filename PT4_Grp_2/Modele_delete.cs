@@ -16,5 +16,16 @@ namespace PT4_Grp_2
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void ok_Click(object sender, EventArgs e)
+        {
+			this.DialogResult = DialogResult.OK;
+			Close();
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+			Close();
+        }
+    }
 }

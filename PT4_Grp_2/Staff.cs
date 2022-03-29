@@ -114,7 +114,7 @@ namespace PT4_Grp_2
             
             
             String[] v = { IdStaff.ToString() };
-            //TODO ajoutez la suppression du rendez vous.
+            //TODO ajouter la suppression du rendez vous.
             db.nonSelect("DELETE FROM personnel where code_personnel = ?", v);
       
             String[] v2 = { Id.ToString() };
