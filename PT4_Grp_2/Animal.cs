@@ -62,6 +62,7 @@ namespace PT4_Grp_2
 
         }
 
+        
         /**
          * Function that add the current instance in the database
          * 
@@ -77,6 +78,12 @@ namespace PT4_Grp_2
 
         }
 
+        /**
+         * Function that update the current instance of the animal with the attribute of an another animal. It also update it in the database.
+         * 
+         * @Param db the database
+         * @Param a the another animal
+         */
         public void update(DB db, Animal a)
         {
             String[] values = { a.name, a.date_birth, a.mass.ToString(), a.sex, a.note, a.Idrace.ToString(), a.Owner.Id.ToString() , this.Id.ToString()};
@@ -103,6 +110,11 @@ namespace PT4_Grp_2
            
         }
 
+        /**
+         * Function that delete the current instance in the database.
+         * 
+         * @Param db the database.
+         */
         public void delete(DB db)
         {
             db.openConnection();
@@ -112,7 +124,8 @@ namespace PT4_Grp_2
             Owner.Animals.Remove(this);
             
         }
-        
+
+        #region forLater
         public static String[] raceInfo(int Idrace, DB DBCon)
         {
             String[] infos = new string[2];
@@ -141,6 +154,8 @@ namespace PT4_Grp_2
             DBCon.closeConnection();
             return infos;
         }
+        #endregion
+
         /**
          * Function that return the informations of a race.
          * 

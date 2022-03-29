@@ -8,7 +8,12 @@ namespace PT4_Grp_2
 
         Client client;
 
-
+        /**
+         * Constructor of the class.
+         * 
+         * @Param db the database
+         * @Param c the animal owner's
+         */
         public Clients_Animal_Add(DB db, Client c) : base(db)
         {
             InitializeComponent();
@@ -17,7 +22,9 @@ namespace PT4_Grp_2
         }
 
 
-
+        /**
+         * Function that try to add the animal in the database. If it can, it closes the form and set the DialogResult to Ok. If it can't, it shows an error message.
+         */
         private void add_Click(object sender, EventArgs e)
         {
             Animal a = validateAnimal();

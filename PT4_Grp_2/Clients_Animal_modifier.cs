@@ -14,6 +14,12 @@ namespace PT4_Grp_2
     {
         Animal animal;
         
+        /**
+         * Constructor of the class
+         * 
+         * @Param db the database
+         * @Param a the animal to mmodify 
+         */
         public Clients_Animal_Modifier(DB db, Animal a) : base(db)
         {
             InitializeComponent();
@@ -34,6 +40,10 @@ namespace PT4_Grp_2
 
         }
 
+
+        /**
+         * Function that try to update the animal. If it can, close the form and set the DialogResult to ok.
+         */
         private void update_Click(object sender, EventArgs e)
         {
             Animal a = validateAnimal();
@@ -61,6 +71,9 @@ namespace PT4_Grp_2
             
         }
 
+        /**
+         * Function that try to delete the animal of the database, with the same concequences as the function above.
+         */
         private void delete_Click(object sender, EventArgs e)
         {
             Modele_delete form = new Modele_delete();

@@ -15,6 +15,10 @@ namespace PT4_Grp_2
     {
         DB DBCon;
         List<Client> allClients;
+        
+        /**
+         * Constructor of the class.
+         */
         public Clients()
         {
             InitializeComponent();
@@ -22,6 +26,11 @@ namespace PT4_Grp_2
             makeListBox();
         }
 
+        /**
+         * Function that create a list of all the clients in the database.
+         * 
+         * @Return List<Client> that list
+         */
         private List<Client> makeListClients()
         {
             List<Client> lc = new List<Client>();
@@ -34,6 +43,11 @@ namespace PT4_Grp_2
             DBCon.closeConnection();
             return lc;
         }
+
+        /**
+         * Function that generate the listBox of the form
+         * 
+         */
         private void makeListBox()
         {
             listbox.Items.Clear();
@@ -45,6 +59,9 @@ namespace PT4_Grp_2
             listbox.Refresh();
         }
 
+        /**
+         * Function that launch a form to see all the details of the client.
+         */
         public override void detail_Click(object sender, EventArgs e)
         {
             Clients_details form = new Clients_details(allClients.ToArray()[listbox.SelectedIndex], DBCon);
@@ -54,11 +71,17 @@ namespace PT4_Grp_2
             }
         }
 
+        /**
+         * Function that launch the detail_Click function.
+         */
         private void listbox_DoubleClick(object sender, EventArgs e)
         {
             detail_Click(sender, e);
         }
 
+        /**
+         * Function that launch a form to add a client in the database.
+         */
         public override void add_Click(object sender, EventArgs e)
         {
             Clients_add form = new Clients_add(DBCon);
@@ -66,6 +89,29 @@ namespace PT4_Grp_2
             {
                 makeListBox();
             }
+        }
+
+        /**
+         * Function that launch a form to ask the user if he wants to delete the client selected in the database.
+         */
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            Modele_delete form = new Modele_delete();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    allClients.ToArray()[listbox.SelectedIndex].Delete(DBCon);
+                    this.DialogResult = DialogResult.Yes;
+                    MessageBox.Show("Client supprimé avec succés !");
+
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("Echec lors de la suppression. Contactez un technicien. Message d'erreur : " + exc);
+                }
+            }
+            makeListBox();
         }
     }
 }

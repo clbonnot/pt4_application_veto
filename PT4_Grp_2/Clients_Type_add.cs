@@ -14,6 +14,12 @@ namespace PT4_Grp_2
     {
 
         DB db;
+
+        /**
+         * Constructo of the class.
+         * 
+         * @Param db
+         */
         public Clients_Type_add(DB db)
         {
             
@@ -22,6 +28,10 @@ namespace PT4_Grp_2
 
 
         }
+
+        /**
+         * Function that tries to insert the species in the database. If it can, it sets the DialogResult to ok and close the form. If it can't, it shows an error.
+         */
         private void validate_Click(object sender, EventArgs e)
         {
             db.openConnection();

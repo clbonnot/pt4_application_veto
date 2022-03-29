@@ -14,6 +14,13 @@ namespace PT4_Grp_2
 	{
 		Client client;
 		DB DBCon;
+
+		/**
+		 * Constructor of the class
+		 * 
+		 * @Param db the database
+		 * @Param c the client to modify
+		 */
 		public Clients_modifier(DB db, Client c)
 		{
 			InitializeComponent();
@@ -26,6 +33,10 @@ namespace PT4_Grp_2
 
 		}
 
+		/**
+		 * Function that tries to update the client. If it can, it sets the DialogResult to ok and close the form. If it can't, it shows an error.
+		 * 
+		 */
         public override void update_Click(object sender, EventArgs e)
         {
 			Client c = new Client();
@@ -52,7 +63,10 @@ namespace PT4_Grp_2
             
         }
 
-        public override void Delete_Click(object sender, EventArgs e)
+		/**
+		 * Function that tries to delete the client. If it can, it sets the DialogResult to yes and close the form. If it can't, it shows an error.
+		 */
+		public override void Delete_Click(object sender, EventArgs e)
         {
 			Modele_delete form = new Modele_delete();
 			if (form.ShowDialog() == DialogResult.OK)

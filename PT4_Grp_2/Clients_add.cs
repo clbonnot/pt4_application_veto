@@ -13,13 +13,22 @@ namespace PT4_Grp_2
 	public partial class Clients_add : Modele_add_pers
 	{
 		DB db;
+
+		/**
+		 * Constructor of the class.
+		 * 
+		 * @Param db the database
+		 */
 		public Clients_add(DB db )
 		{
 			InitializeComponent();
 			this.db = db;
 		}
 
-        public override void valider_Click(object sender, EventArgs e)
+        /**
+         * Function that validate the add of the client in the database, and close the form if it can. If it can't, it shows an error.
+         */
+		public override void valider_Click(object sender, EventArgs e)
         {
 			Client c = new Client();
 			if (LastName.Text == null || FirstName.Text == null || Phone.Text == null || Address.Text == null)

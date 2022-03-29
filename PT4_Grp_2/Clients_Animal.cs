@@ -19,7 +19,9 @@ namespace PT4_Grp_2
         public List<int> allRacesIndexes;
 
    
- 
+        /**
+         * Constructor of the class.
+         */
         public Clients_Animal(DB db)
         {
             InitializeComponent();
@@ -28,17 +30,23 @@ namespace PT4_Grp_2
             species.Refresh();
         
         }
-
+        
+        /**
+         * Function that calcule the age of the animal.
+         */
         public void makeAge()
         {
             age.Text = "" + Math.Floor((DateTime.Now - date.Value).Days / 365.25) + " ans et " + Math.Floor((DateTime.Now - date.Value).Days%365.25 / 30.5) + " mois";
             age.Refresh();
         }
 
+        /**
+         * Function that fill the combobox of the species with all the species in the database.
+         */
         private void makeSpecies()
         {
             species.Items.Clear();
-            List<int> lt = new List<int>();
+           
             db.openConnection();
             allTypesIndexes = new List<int>();
             OleDbDataReader reader = db.select("select code_espèce, nomespèce from espèce", null);
@@ -49,11 +57,13 @@ namespace PT4_Grp_2
             }
             db.closeConnection();
             species.SelectedIndex = 0;
-   
-
-
         }
 
+        /**
+         * Function that create an animal with all the attribute filled.
+         * 
+         * @Return the animal.
+         */
         public Animal validateAnimal()
         {
             Animal a = new Animal();
@@ -93,6 +103,10 @@ namespace PT4_Grp_2
             
             return a;
         }
+
+        /**
+         * Function that filled the combobox of the races with all the races present in the database.
+         */
         private void makeRaces(int idType)
         {
             races.Items.Clear();

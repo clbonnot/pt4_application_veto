@@ -15,6 +15,12 @@ namespace PT4_Grp_2
     {
         DB db;
         List<int> allIndexes; 
+        
+        /**
+         * Constructor of the class
+         *
+         * @Param db the database
+         */
         public Clients_Race_add(DB db)
         {
             InitializeComponent();
@@ -23,6 +29,10 @@ namespace PT4_Grp_2
             makeComboBox();
         }
 
+        /**
+         * Function that fills the ComboBox of species with all the species present in the database. 
+         * 
+         */
         private void makeComboBox()
         {
             db.openConnection();
@@ -36,6 +46,9 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that launch a form to add a species in the database.
+         */
         private void addType_Click(object sender, EventArgs e)
         {
             Clients_Type_add form = new Clients_Type_add(db);
@@ -48,6 +61,9 @@ namespace PT4_Grp_2
             }
         }
 
+        /**
+         * Function that tries to add the race in the database. If it can, it sets the DialogResult to OK and close the form. If it can't, it shows an error.
+         */
         private void validate_Click(object sender, EventArgs e)
         {
             db.openConnection();

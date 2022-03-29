@@ -17,6 +17,12 @@ namespace PT4_Grp_2
             animals = new List<Animal>();
         }
 
+        /**
+       * Constructor of a client, which create it from the database.
+       * 
+       * @param id the id of the client in the database
+       * @param db the database
+       */
         public Client(int id, DB db)
         {
             db.openConnection();
@@ -43,6 +49,11 @@ namespace PT4_Grp_2
 
         }
 
+        /**
+        * Function that add the current instance in the database
+         * 
+         * @Param db the database
+        */
         public void Flush(DB db)
         {
             db.openConnection();
@@ -51,6 +62,11 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that delete the current instance in the database
+         * 
+         * @Param db the database
+         */
         public void Delete(DB db)
         {
             db.openConnection();
@@ -60,6 +76,13 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+
+        /**
+         * Function that update the current instance of the client with the attribute of an another client. It also update it in the database.
+         * 
+         * @Param db the database
+         * @Param a the another client
+         */
         public void Update(DB db, Client c)
         {
             String[] v = { c.Lastname, c.Firstname, c.Mail, c.Phone, this.Id.ToString() };
@@ -77,6 +100,9 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that convert the instance to a String.
+         */
         public override String ToString()
         {
             return this.Lastname + " | " + this.Firstname;
