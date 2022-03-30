@@ -13,9 +13,9 @@ namespace PT4_Grp_2
 {
 	public partial class Modele : Form
 	{
-		string role;
-		Boolean admin;
-		string name;
+		public string roleUser;
+		public Boolean admin;
+		public string nameUser;
 		/*
 		 * Create a new model for all the other forms
 		*/
@@ -30,7 +30,7 @@ namespace PT4_Grp_2
 		 */
 		public void SetRole(string role)
         {
-			this.role = role;
+			this.roleUser = role;
 			RoleName.Text = role;
 		}
 		/*
@@ -52,7 +52,7 @@ namespace PT4_Grp_2
 		 */
 		public void SetName(string name)
 		{
-			this.name = name;
+			this.nameUser = name;
 			Person.Text = name;
 		}
 		/*
@@ -60,7 +60,7 @@ namespace PT4_Grp_2
 		 */
 		public string GetRole()
         {
-			return role;
+			return roleUser;
         }
 		/*
 		 * Get the rights of the current user
@@ -74,16 +74,16 @@ namespace PT4_Grp_2
 		 */
 		public string GetName()
         {
-			return name;	
+			return nameUser;	
         }
 		/*
 		 * Disconnect the user and start the connection page
 		 */
 		private void Deconnexion_Click(object sender, System.EventArgs e)
         {
-			this.role = null;
+			this.roleUser = null;
 			this.admin = false;
-			this.name=null;
+			this.nameUser=null;
 			
 			Connexion connexion = new Connexion();
 			connexion.StartPosition = FormStartPosition.CenterScreen;

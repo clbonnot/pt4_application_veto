@@ -35,7 +35,7 @@ namespace PT4_Grp_2
         {
             List<Client> lc = new List<Client>();
             DBCon.openConnection();
-            OleDbDataReader reader = DBCon.select("Select Code_Personne from personne", null);
+            OleDbDataReader reader = DBCon.select("Select Code_Personne from personne order by nom asc", null);
             while (reader.Read())
             {
                 lc.Add(new Client(reader.GetInt32(0), DBCon));
@@ -64,10 +64,13 @@ namespace PT4_Grp_2
          */
         public override void detail_Click(object sender, EventArgs e)
         {
-            Clients_details form = new Clients_details(allClients.ToArray()[listbox.SelectedIndex], DBCon);
-            if(form.ShowDialog() == DialogResult.OK)
+            if (listbox.Items.Count > 0)
             {
-                makeListBox();
+                Clients_details form = new Clients_details(allClients.ToArray()[listbox.SelectedIndex], DBCon);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    makeListBox();
+                }
             }
         }
 

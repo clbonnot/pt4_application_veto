@@ -8,6 +8,11 @@ namespace PT4_Grp_2
 
         Client client;
 
+
+        public Clients_Animal_Add()
+        {
+
+        }
         /**
          * Constructor of the class.
          * 

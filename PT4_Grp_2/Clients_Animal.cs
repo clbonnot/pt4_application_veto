@@ -18,7 +18,11 @@ namespace PT4_Grp_2
         public List<int> allTypesIndexes;
         public List<int> allRacesIndexes;
 
-   
+
+        public Clients_Animal(){
+         
+        }
+
         /**
          * Constructor of the class.
          */
@@ -32,7 +36,7 @@ namespace PT4_Grp_2
         }
         
         /**
-         * Function that calcule the age of the animal.
+         * Function that calcule the age of the animal and refresh the value of the age's label.
          */
         public void makeAge()
         {
@@ -134,6 +138,9 @@ namespace PT4_Grp_2
             
         }
 
+        /**
+         * Function that launch a form to add a race in the database. If the add succeed, it actualize the comboBoxes.
+         */
         private void addRace_Click(object sender, EventArgs e)
         {
             Clients_Race_add form = new Clients_Race_add(db);
@@ -145,6 +152,9 @@ namespace PT4_Grp_2
             }
         }
 
+        /**
+         * Function that launch a form to add a species in the database. If the add succeed, it actualise the comboBoxes and select the new species.
+         */
         private void addSpecies_Click(object sender, EventArgs e)
         {
             Clients_Type_add form = new Clients_Type_add(db);
@@ -160,18 +170,26 @@ namespace PT4_Grp_2
             
         }
 
+        /**
+         * Function that actualise the combobox of races with the species selected.
+         */
         private void species_SelectedIndexChanged(object sender, EventArgs e)
         {
             
             makeRaces(allTypesIndexes.ToArray()[species.SelectedIndex]);
         }
 
-   
+        /**
+         * Function that close the form.
+         */
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /**
+         * Function that call makeAge()
+         */
         private void date_ValueChanged(object sender, EventArgs e)
         {
             makeAge();

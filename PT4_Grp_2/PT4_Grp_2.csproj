@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -249,6 +255,7 @@
       <DependentUpon>Paniers.cs</DependentUpon>
     </Compile>
     <Compile Include="People.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,17 +295,23 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stockss_add.cs">
+    <Compile Include="Stocks_add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stockss_add.Designer.cs">
-      <DependentUpon>Stockss_add.cs</DependentUpon>
+    <Compile Include="Stocks_add.Designer.cs">
+      <DependentUpon>Stocks_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Stocks_detail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stocks_detail.Designer.cs">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stocks_Formulaire_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks_Formulaire_new.Designer.cs">
+      <DependentUpon>Stocks_Formulaire_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Stocks_Fournisseur_add.cs">
       <SubType>Form</SubType>
@@ -312,6 +325,7 @@
     <Compile Include="Stocks_modifier.Designer.cs">
       <DependentUpon>Stocks_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Supplier.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -439,11 +453,14 @@
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stockss_add.resx">
-      <DependentUpon>Stockss_add.cs</DependentUpon>
+    <EmbeddedResource Include="Stocks_add.resx">
+      <DependentUpon>Stocks_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks_detail.resx">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks_Formulaire_new.resx">
+      <DependentUpon>Stocks_Formulaire_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks_Fournisseur_add.resx">
       <DependentUpon>Stocks_Fournisseur_add.cs</DependentUpon>
@@ -451,6 +468,7 @@
     <EmbeddedResource Include="Stocks_modifier.resx">
       <DependentUpon>Stocks_modifier.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
