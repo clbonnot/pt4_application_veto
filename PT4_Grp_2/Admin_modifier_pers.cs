@@ -98,9 +98,19 @@ namespace PT4_Grp_2
 			Staff s = new Staff();
 			s.Firstname = firstnameTV.Text;
 			s.Lastname = nameTV.Text;
+			if (idTV.Text == "" || nameTV.Text == "" || firstnameTV.Text == "")
+			{
+				MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
+				return;
+			}
+			else if (phoneTV.Text.Length != 10 || !int.TryParse(phoneTV.Text, out int d))
+			{
+				MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
+				return;
+			}
 			s.Phone = phoneTV.Text;
 			s.Mail = addressTV.Text;
-			s.Password = staff.Password;
+			
 			s.Role = roles.SelectedItem.ToString();
 			String[] role = { s.Role };
 			db.openConnection();

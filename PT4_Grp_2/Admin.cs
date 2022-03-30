@@ -37,7 +37,7 @@ namespace PT4_Grp_2
         {
             DBCon.openConnection();
             List<Staff> ls = new List<Staff>();
-            OleDbDataReader r = DBCon.select("Select code_personnel from personnel;", null);
+            OleDbDataReader r = DBCon.select("Select code_personnel from personnel order by nom asc;", null);
 
             while (r.Read())
             {
@@ -89,11 +89,14 @@ namespace PT4_Grp_2
          */
         public override void detail_Click(object sender, EventArgs e)
         {
-            Admin_detail_pers formDet = new Admin_detail_pers(allStaff.ToArray()[listbox.SelectedIndex], DBCon);
-            if( formDet.ShowDialog() == DialogResult.OK)
+            if (listbox.Items.Count > 0)
             {
-                listbox.Items.Clear();
-                this.makeListBox();
+                Admin_detail_pers formDet = new Admin_detail_pers(allStaff.ToArray()[listbox.SelectedIndex], DBCon);
+                if (formDet.ShowDialog() == DialogResult.OK)
+                {
+                    listbox.Items.Clear();
+                    this.makeListBox();
+                }
             }
 
         }

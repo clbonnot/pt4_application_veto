@@ -65,9 +65,9 @@ namespace PT4_Grp_2
         {
 			string name = NameMedic.Text;
 			string mark = Mark.Text;
-			double price = Convert.ToDouble(Price.Text);
-			string desc = Desc.Text;
-			int quantity = Convert.ToInt32(Quantity.Text);
+			double price = Convert.ToDouble(this.Price.Text);
+			string desc = this.Desc.Text;
+			int quantity = Convert.ToInt32(this.Quantity.Text);
 			if (!mark.Equals("") && !price.Equals("") && !name.Equals("") && quantity != 0 && price != 0)
             {
 				string sql = "Insert Into Produit(Nom, Descrip, Quantite, Prix, Marque) values(" + name + "," + desc + "," + quantity + "," + price + "," + mark + ")";

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Deconnexion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -39,12 +38,7 @@
             // Deconnexion
             // 
             this.Deconnexion.FlatAppearance.BorderSize = 0;
-            this.Deconnexion.Location = new System.Drawing.Point(692, 12);
-            this.Deconnexion.Name = "Deconnexion";
-            this.Deconnexion.Size = new System.Drawing.Size(81, 24);
-            this.Deconnexion.TabIndex = 3;
-            this.Deconnexion.Text = "Deconnexion";
-            this.Deconnexion.UseVisualStyleBackColor = true;
+            this.Deconnexion.Location = new System.Drawing.Point(707, 16);
             // 
             // label1
             // 
@@ -68,6 +62,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Admin";
             this.Text = "Admin";
+            this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.listbox, 0);
             this.Controls.SetChildIndex(this.add, 0);
@@ -78,7 +73,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button Deconnexion;
+    
         private System.Windows.Forms.Label label1;
     }
 }

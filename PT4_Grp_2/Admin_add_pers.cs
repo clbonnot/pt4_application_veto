@@ -44,14 +44,15 @@ namespace PT4_Grp_2
             {
 
 
-                if (password.Text == "" || LastName.Text == "" || FirstName.Text == "" || Identify.Text == "")
-                {
-                    MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
-                }
-                else if (Phone.Text.Length != 10)
-                {
+            if (password.Text == "" || LastName.Text == "" || FirstName.Text == "" || Identify.Text == "")
+            {
+                MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
+                
+            }
+            else if (Phone.Text.Length != 10 || !int.TryParse(Phone.Text, out int d))
+            {
                     MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
-                }
+            }
 
                 else
                 {

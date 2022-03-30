@@ -37,7 +37,7 @@ namespace PT4_Grp_2
                 Phone = reader.GetString(4);
             }
             animals = new List<Animal>();
-            OleDbDataReader readerAnimals = db.select("select code_animal from animal where code_personne = ?", v);
+            OleDbDataReader readerAnimals = db.select("select code_animal from animal where code_personne = ? order by nom_animal asc", v);
             
             while (readerAnimals.Read())
             {
