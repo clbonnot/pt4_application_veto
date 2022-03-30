@@ -13,7 +13,12 @@ namespace PT4_Grp_2
     public partial class Clients_Animal_Modifier : Clients_Animal
     {
         Animal animal;
-        
+
+        public Clients_Animal_Modifier()
+        {
+
+        }
+
         /**
          * Constructor of the class
          * 

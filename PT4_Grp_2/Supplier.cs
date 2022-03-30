@@ -14,12 +14,20 @@ namespace PT4_Grp_2
         string phone;
         string web;
 
-
+        /**
+         * Basic constructor of the class
+         */
         public Supplier()
         {
 
         }
 
+        /**
+         * Constructor of the class, that create a supplier from the database.
+         * 
+         * @Param i the id of the supplier in the database
+         * @Param db the database.
+         */
         public Supplier(int i, DB db)
         {
             db.openConnection();
@@ -41,6 +49,11 @@ namespace PT4_Grp_2
             return Name + " | " + Phone + " | " + Web;
         }
 
+        /**
+         * Function that add the current instance in the database.
+         * 
+         * @param db the database.
+         */
         public void Flush(DB db)
         {
             db.openConnection();

@@ -14,6 +14,13 @@ namespace PT4_Grp_2
 	{
         DB db;
         Product product;
+
+        /**
+         * Constructor of the class.
+         * 
+         * @Param db the database
+         * @Param p the product to modify
+         */
 		public Stocks_modifier(DB db, Product p)
 		{
 			InitializeComponent();
@@ -26,6 +33,9 @@ namespace PT4_Grp_2
             brand.Text = p.Brand.ToString();
 		}
 
+        /**
+         * Function that delete the product of the database. If it can, it sets the dialogresult to yes and closes the form. If it can't, it shows an error.
+         */
         public override void Delete_Click(object sender, EventArgs e)
         {
             try
@@ -40,6 +50,10 @@ namespace PT4_Grp_2
                 MessageBox.Show("Erreur lors de la suppression du produit de la base de données. Contactez un technicien. Message d'erreur : " + exc);
             }
         }
+
+        /**
+         * Function that update the product with all the attributes filled. If it can, it sets the dialogresult to ok and closes the form. If it can't, it shows an error.
+         */
         public override void update_Click(object sender, EventArgs e)
         {
             if (name.Text == null || description.Text == null || quantity.Text == null || price.Text == null || brand.Text == null)

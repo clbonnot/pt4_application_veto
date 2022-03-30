@@ -13,15 +13,20 @@ namespace PT4_Grp_2
 {
 	public partial class Stocks_add : Form
 	{
+
 		DB db;
+        /**
+         * Constructor of the class.
+         */
 		public Stocks_add(DB db)
 		{
 			InitializeComponent();
 			this.db = db;
 		}
 
-
-
+        /**
+         * Function that try to add a product in the database with all the attributes filled. If it can't, it show an error. If it can, it close the form and set the DialogResult to OK
+         */
         private void add_Click(object sender, EventArgs e)
         {
 

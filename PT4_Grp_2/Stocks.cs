@@ -15,6 +15,10 @@ namespace PT4_Grp_2
     {
         List<Product> allProduct;
         DB db;
+
+        /**
+         * Constructor of the class
+         */
         public Stocks()
         {
             InitializeComponent();
@@ -22,6 +26,9 @@ namespace PT4_Grp_2
             makeListBox();
         }
 
+        /**
+         * Function that fills the list of products with all the product in the database ordered by their name.
+         */
         private void makeAllProduct()
         {
             allProduct = new List<Product>();
@@ -34,6 +41,10 @@ namespace PT4_Grp_2
             db.closeConnection();
 
         }
+
+        /**
+       * Function that fills the listbox with all the product 
+       */
         private void makeListBox()
         {
             listbox.Items.Clear();
@@ -45,6 +56,10 @@ namespace PT4_Grp_2
             listbox.Refresh(); 
         }
 
+        
+        /**
+         * Function that launches a form to see the details of a product.
+         */
         public override void detail_Click(object sender, EventArgs e)
         {
             if (listbox.Items.Count > 0 && listbox.SelectedIndex != -1)
@@ -57,7 +72,10 @@ namespace PT4_Grp_2
             }
          
         }
-
+        
+        /**
+         * Function that launches a form to add a product in the database.
+         */
         public override void add_Click(object sender, EventArgs e)
         {
             Stocks_add form = new Stocks_add(db);
@@ -67,6 +85,9 @@ namespace PT4_Grp_2
             }
         }
 
+        /**
+         * Function that launches detail_Click
+         */
         private void listbox_DoubleClick(object sender, EventArgs e)
         {
             detail_Click(sender, e);

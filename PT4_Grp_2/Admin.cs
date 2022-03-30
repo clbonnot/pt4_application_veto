@@ -37,7 +37,7 @@ namespace PT4_Grp_2
         {
             DBCon.openConnection();
             List<Staff> ls = new List<Staff>();
-            OleDbDataReader r = DBCon.select("Select code_personnel from personnel order by nom asc;", null);
+            OleDbDataReader r = DBCon.select("Select code_personnel from personnel inner join personne on personnel.code_personne = personne.code_personne order by nom asc;", null);
 
             while (r.Read())
             {

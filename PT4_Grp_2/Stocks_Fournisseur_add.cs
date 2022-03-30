@@ -17,6 +17,10 @@ namespace PT4_Grp_2
 		DB db;
 		Product product;
 		List<Supplier> allSuppliers;
+
+		/**
+		 * Constructor of the class.
+		 */
 		public Stocks_Fournisseur_add(DB db, Product p)
 		{
 			InitializeComponent();
@@ -25,7 +29,9 @@ namespace PT4_Grp_2
 			makeComboBox();
 		}
 
-
+		/**
+		 * Function that fill the list of suppliers with all the suppliers that are not already suppliers of the product.
+		 */
 		private void makeAllSuppliers()
         {
 			allSuppliers = new List<Supplier>();
@@ -44,6 +50,9 @@ namespace PT4_Grp_2
 			db.closeConnection();
 		}
 
+		/**
+		 * Function that fill the combobox with our list of suppliers.
+		 */
 		private void makeComboBox()
         {
 			comboBox.Items.Clear();
@@ -58,11 +67,17 @@ namespace PT4_Grp_2
 		
         }
 
+		/**
+		 * Function that close the form
+		 */
         private void button1_Click(object sender, EventArgs e)
         {
 			Close();
         }
 
+		/**
+		 * Function that try to add the supplier to the product. If it can, it sets the DialogResult to OK and closes the form. If it can't, it shows an error.
+		 */
         private void add_Click(object sender, EventArgs e)
         {
 			if (comboBox.SelectedIndex != -1)

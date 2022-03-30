@@ -55,6 +55,7 @@
             this.validate.TabIndex = 34;
             this.validate.Text = "Valider";
             this.validate.UseVisualStyleBackColor = false;
+            this.validate.Click += new System.EventHandler(this.validate_Click);
             // 
             // clear
             // 
@@ -66,6 +67,7 @@
             this.clear.TabIndex = 33;
             this.clear.Text = "Vider";
             this.clear.UseVisualStyleBackColor = false;
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // remove
             // 
@@ -93,6 +95,7 @@
             this.listArticles.Name = "listArticles";
             this.listArticles.Size = new System.Drawing.Size(611, 212);
             this.listArticles.TabIndex = 35;
+            this.listArticles.DoubleClick += new System.EventHandler(this.listArticles_DoubleClick);
             // 
             // name
             // 

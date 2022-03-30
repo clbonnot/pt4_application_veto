@@ -28,6 +28,12 @@ namespace PT4_Grp_2
 
         }
 
+        /**
+         * Constructor of the class that create a product from the database.
+         * 
+         * @param int i the id of the product in the database
+         * @param db the database
+         */
         public Product(int i, DB db)
         {
             db.openConnection();
@@ -61,6 +67,12 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that add a supplier to the product, to the current instance and in the database.
+         * 
+         * @Param db the database
+         * @Param supplier the supplier to add
+         */
         public void AddSupplier(DB db, Supplier supplier)
         {
             AllSuppliers.Add(supplier);
@@ -70,6 +82,12 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that remove a supplier to the product, to the current instance and in the database.
+         * 
+         * @Param db the database
+         * @Param supplier the supplier to remove
+         */
         public void RemoveSupplier(DB db, Supplier supplier)
         {
             AllSuppliers.Remove(supplier);
@@ -79,6 +97,13 @@ namespace PT4_Grp_2
             db.closeConnection();
 
         }
+
+        /**
+        * Function that update the current instance in the database with the attribute of an another product
+        * 
+        * @param db the databse
+        * @param p the another product
+        */
         public void Update(DB db, Product p)
         {
             db.openConnection();
@@ -99,6 +124,12 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that updates the quantity of a product in the database and to the current instance.
+         * 
+         * @Param db the database
+         * @Param q the number to remove to the quantity
+         */
         public int UpdateQuantity(DB db, int q)
         {    
             if(Quantity - q < 0)
@@ -114,8 +145,13 @@ namespace PT4_Grp_2
            
         }
 
-        
+       
 
+        /**
+         * Function that deletes the current instance from the database.
+         * 
+         * @Param db the database
+         */
         public void Delete(DB db)
         {
             db.openConnection();
@@ -125,6 +161,11 @@ namespace PT4_Grp_2
             db.closeConnection();
         }
 
+        /**
+         * Function that adds the current instance in the database
+         * 
+         * @Param db the database
+         */
         public void Flush(DB db)
         {
             db.openConnection();
@@ -133,6 +174,7 @@ namespace PT4_Grp_2
             db.nonSelect("insert into produit (nom, descrip, quantite, prix, marque) values (?,?,?,?,?)", v);
             db.closeConnection();
         }
+        
         public override string ToString()
         {
             return Name + " | " + Quantity.ToString() + " en stock";

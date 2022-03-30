@@ -1,7 +1,6 @@
 ﻿
 
-using PdfSharp;
-using PdfSharp.Pdf;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +20,8 @@ namespace PT4_Grp_2
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Paniers());
+            Application.Run(new Connexion());
+      
 
         }
     }

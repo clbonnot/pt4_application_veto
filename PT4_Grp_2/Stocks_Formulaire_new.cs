@@ -13,6 +13,12 @@ namespace PT4_Grp_2
     public partial class Stocks_Formulaire_new : Form
     {
         DB db;
+
+        /**
+         * Constructor of the class
+         * 
+         * @param db the database
+         */
         public Stocks_Formulaire_new(DB db)
         {
             InitializeComponent();
@@ -20,7 +26,9 @@ namespace PT4_Grp_2
         }
 
    
-
+        /**
+         * Function that try to add the supplier to the product. If it can, it set the DialogResult to OK and close the form. If it can't, it shows an error.
+         */
         private void add_Click(object sender, EventArgs e)
         {
             Supplier s = new Supplier();
