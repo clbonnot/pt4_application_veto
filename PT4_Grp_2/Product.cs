@@ -129,6 +129,7 @@ namespace PT4_Grp_2
          * 
          * @Param db the database
          * @Param q the number to remove to the quantity
+         * @Return the new quantity
          */
         public int UpdateQuantity(DB db, int q)
         {    

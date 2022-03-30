@@ -268,11 +268,14 @@ namespace PT4_Grp_2
 		 */
         private void listArticles_DoubleClick(object sender, EventArgs e)
         {
-			Product p = cart.Keys.ToArray()[listArticles.SelectedIndex];
-			Stocks_detail form = new Stocks_detail(db, p);
-			if(form.ShowDialog() == DialogResult.OK)
-            {
-				listArticles.Items[listArticles.SelectedIndex] = p.Name + " | " + cart[p];
+			if (listArticles.SelectedIndex != -1)
+			{
+				Product p = cart.Keys.ToArray()[listArticles.SelectedIndex];
+				Stocks_detail form = new Stocks_detail(db, p);
+				if (form.ShowDialog() == DialogResult.OK)
+				{
+					listArticles.Items[listArticles.SelectedIndex] = p.Name + " | " + cart[p];
+				}
 			}
 		}
 
