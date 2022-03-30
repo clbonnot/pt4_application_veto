@@ -110,7 +110,10 @@ namespace PT4_Grp_2
             int codePersonne = -1;
             int codePersonnel = -1;
 
-            if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty && textBox5.Text != string.Empty && textBox6.Text != string.Empty)
+            if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty && textBox4.Text != string.Empty 
+                && textBox5.Text != string.Empty && textBox6.Text != string.Empty
+                && Convert.ToInt32(textBox2.Text.Trim()) < 25 && Convert.ToInt32(textBox2.Text.Trim()) >= 0
+                && Convert.ToInt32(textBox6.Text.Trim()) < 60 && Convert.ToInt32(textBox6.Text.Trim()) >= 0)
             {
                 string heure="";
                 string minutes="";
