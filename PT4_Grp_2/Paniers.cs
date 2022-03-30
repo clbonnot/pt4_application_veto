@@ -22,6 +22,7 @@ namespace PT4_Grp_2
 		List<Product> allProducts;
 		Dictionary<Product, int> cart;
 		decimal tPrice;
+		List<Client> allClients;
 
 		/**
 		 * Constructor of the class.
@@ -33,6 +34,7 @@ namespace PT4_Grp_2
 			cart = new Dictionary<Product, int>();
 			makeComboBox();
 			tPrice = 0;
+			makeListClients();
 		}
 
 		/**
@@ -50,6 +52,27 @@ namespace PT4_Grp_2
 			total.Refresh();
         }
 
+		/**
+		 * Function that fill the list and the combobox of clients with all the clients in the database, ordered by their name.
+		 */
+		private void makeListClients()
+        {
+			allClients = new List<Client>();
+			client.Items.Clear();
+			db.openConnection();
+			client.Items.Add("Aucun client choisi");
+			OleDbDataReader reader = db.select("select code_personne from personne order by nom asc",null);
+            while (reader.Read())
+            {
+				Client c = new Client(reader.GetInt32(0), db);
+				allClients.Add(c);
+				client.Items.Add(c.ToString());
+            }
+			db.closeConnection();
+			client.Refresh();
+        }
+
+	
 		/**
 		 * Function that fill the list of products with all the products in the database without the ones in the cart.
 		 */
@@ -205,6 +228,14 @@ namespace PT4_Grp_2
 		 */
         private void validate_Click(object sender, EventArgs e)
         {
+			Client selectedClient;
+			if (client.SelectedIndex != 0) {
+				 selectedClient = allClients.ToArray()[client.SelectedIndex - 1];
+			}
+            else
+            {
+				selectedClient = null;
+            }
 			//string outputTempFile = Path.Combine(Application.StartupPath, "facture_temp.pdf");
 			string outputFile = "facture.pdf";
 			Document document = new Document();
@@ -215,7 +246,11 @@ namespace PT4_Grp_2
 			Paragraph p = new Paragraph("--------------------------------");
 			p.Alignment = Element.ALIGN_CENTER;
 			document.Add(p);
-			document.Add(new Paragraph("\n\n      Vendeu.r.se : Mr/mme " + nameUser , FontFactory.GetFont(FontFactory.COURIER, 12)));
+			document.Add(new Paragraph("\n\n      Vendeu.r.se : Mr/Mme " + nameUser + "\n" , FontFactory.GetFont(FontFactory.COURIER, 12)));
+			if(selectedClient != null)
+            {
+				document.Add(new Paragraph("      Client.e : Mr/Mme " + selectedClient.Lastname, FontFactory.GetFont(FontFactory.COURIER, 12)));
+            }
 			document.Add(p);
 			foreach(KeyValuePair<Product, int> kvp in cart)
             {
@@ -225,6 +260,10 @@ namespace PT4_Grp_2
 				price.Alignment = Element.ALIGN_RIGHT;
 				document.Add(price);
 				prod.UpdateQuantity(db, kvp.Value);
+				if (selectedClient != null)
+				{
+					prod.SetSale(db, selectedClient, kvp.Value);
+				}
             }
 			document.Add(p);
 			Paragraph tva = new Paragraph("TVA : 20%", FontFactory.GetFont(FontFactory.COURIER, 12));
@@ -237,9 +276,10 @@ namespace PT4_Grp_2
 			document.Add(t);
 			document.Add(tprice);
 			document.Close();
-
+			
 			MessageBox.Show("Vente effectuée avec succés ! ");
 			clearListArticles();
+			
 			Process.Start("facture.pdf");
 
 
