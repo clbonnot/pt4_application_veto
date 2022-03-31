@@ -132,7 +132,7 @@ namespace PT4_Grp_2
                 {
                     role = Utils.manageSingleQuote(readerSet.GetString(0));
                     rights = Utils.manageSingleQuote(readerSet.GetString(1));
-                   
+
                 }
                 readerSet.Close();
                 string sqlName = "select NOM from Personne inner join Personnel on Personnel.CODE_Personne = Personne.CODE_Personne " +
@@ -145,7 +145,7 @@ namespace PT4_Grp_2
                 while (readerName.Read())
                 {
                     name = Utils.manageSingleQuote(readerName.GetString(0));
-                    
+
 
                 }
                 readerName.Close();
@@ -157,7 +157,8 @@ namespace PT4_Grp_2
                 {
                     Mod = new Admin();
                 }
-                else{
+                else
+                {
                     Mod = new Clients();
                 }
                 Mod.SetIdStaff(idStaff);
@@ -171,7 +172,7 @@ namespace PT4_Grp_2
                     Admin admin = new Admin();
                     admin.StartPosition = FormStartPosition.CenterScreen;
                     admin.FormClosed += (s, args) => this.Close();
-                   
+
 
                     admin.ShowDialog();
                 }
@@ -182,10 +183,11 @@ namespace PT4_Grp_2
                     Mod.FormClosed += (s, args) => this.Close();
 
 
-                Mod.ShowDialog();
-                this.Dispose();
-                this.Close();
+                    Mod.ShowDialog();
+                    this.Dispose();
+                    this.Close();
 
+                }
             }
             else
             {
