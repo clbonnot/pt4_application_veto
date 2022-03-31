@@ -241,7 +241,7 @@ namespace PT4_Grp_2
 				selectedClient = null;
             }
 
-			invoice.Staff = new Staff(this.GetId(), db);
+			invoice.Staff = new Staff(this.GetIdStaff(), db);
 			invoice.Date = DateTime.Now.ToString("yyyy-MM-dd");
 			foreach(KeyValuePair<Product, int> kvp in cart)
             {

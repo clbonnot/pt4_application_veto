@@ -44,9 +44,24 @@ namespace PT4_Grp_2
          */
         private void modif_pers_Click(object sender, EventArgs e)
         {
-            Admin_modifier_pers amp = new Admin_modifier_pers(staff, DBCon);
-            if(amp.ShowDialog() == DialogResult.OK)
+            Admin_modifier_pers amp;
+            Boolean b = this.GetIdStaff() == staff.IdStaff;
+            if (b)
             {
+                amp = new Admin_modifier_pers(staff, DBCon, true);
+            }
+            else
+            {
+                amp = new Admin_modifier_pers(staff, DBCon, false);
+              
+            }
+            if (amp.ShowDialog() == DialogResult.OK)
+            {
+                if (b)
+                {
+                    this.SetName(staff.Lastname);
+                    this.SetRole(staff.Role);
+                }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

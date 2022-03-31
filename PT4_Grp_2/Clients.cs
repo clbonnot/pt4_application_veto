@@ -99,22 +99,29 @@ namespace PT4_Grp_2
          */
         private void Delete_Click(object sender, EventArgs e)
         {
-            Modele_delete form = new Modele_delete();
-            if (form.ShowDialog() == DialogResult.OK)
+            Client c = allClients.ToArray()[listbox.SelectedIndex];
+            if (this.GetId() != c.Id)
             {
-                try
+                Modele_delete form = new Modele_delete();
+                if (form.ShowDialog() == DialogResult.OK)
                 {
-                    allClients.ToArray()[listbox.SelectedIndex].Delete(DBCon);
-                    this.DialogResult = DialogResult.Yes;
-                    MessageBox.Show("Client supprimé avec succés !");
+                    try
+                    {
+                        c.Delete(DBCon);
+                        MessageBox.Show("Client supprimé avec succés !");
 
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show("Echec lors de la suppression. Contactez un technicien. Message d'erreur : " + exc);
+                    }
                 }
-                catch (Exception exc)
-                {
-                    MessageBox.Show("Echec lors de la suppression. Contactez un technicien. Message d'erreur : " + exc);
-                }
+                makeListBox();
             }
-            makeListBox();
+            else
+            {
+                MessageBox.Show("Vous ne pouvez pas vous supprimer vous même ! ");
+            }
         }
     }
 }

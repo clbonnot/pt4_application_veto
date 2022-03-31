@@ -170,7 +170,7 @@ namespace PT4_Grp_2
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(606, 3);
             this.progressBar1.TabIndex = 12;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            
             // 
             // progressBar2
             // 

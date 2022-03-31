@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,17 +18,20 @@ namespace PT4_Grp_2
 		Staff staff;
 		float currentSalary;
 		DB db;
+		Boolean himself;
 
 		/**
 		 * Constructor of the class, that initialize all the fields.
 		 * 
 		 * @Param s the staff to modify
 		 * @Param d the database
+		 * @Param h true if the user modify himself
 		 */
-		public Admin_modifier_pers(Staff s, DB d)
+		public Admin_modifier_pers(Staff s, DB d, Boolean h)
 		{
 			InitializeComponent();
 			this.staff = s;
+			himself = h;
 			db = d;
 			db.openConnection();
 			OleDbDataReader r = db.select("Select Nom_role from rôle", null);
@@ -74,19 +78,28 @@ namespace PT4_Grp_2
 		 * Function that delete the staff
 		 * 
 		 */
-        public override void Delete_Click(object sender, EventArgs e)
-        {
-			try
+		public override void Delete_Click(object sender, EventArgs e)
+		{
+			if (!himself)
 			{
-				staff.Delete(db);
-				MessageBox.Show("Suppression effectuée avec succés.");
-				this.DialogResult = DialogResult.OK;
-				this.Close();
+				try
+				{
+					staff.Delete(db);
+					MessageBox.Show("Suppression effectuée avec succés.");
+					this.DialogResult = DialogResult.OK;
+					this.Close();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Erreur lors de la suppression du personnel, contactez un technicien. Message d'erreur : " + ex.Message);
+				}
 			}
-			catch (Exception ex)
+            else
             {
-				MessageBox.Show("Erreur lors de la suppression du personnel, contactez un technicien. Message d'erreur : " + ex.Message);
+				MessageBox.Show("Vous ne pouvez pas vous supprimer vous même de la base de données !");
             }
+			
+
         }
 		
 		/**
@@ -103,10 +116,13 @@ namespace PT4_Grp_2
 				MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
 				return;
 			}
-			else if (phoneTV.Text.Length != 10 || !int.TryParse(phoneTV.Text, out int d))
+			else if (phoneTV.Text.Length != 10 || !int.TryParse(phoneTV.Text, out int d) || phoneTV.Text[0] != '0')
 			{
-				MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
-				return;
+				MessageBox.Show("Veuillez renseigner un numéro de téléphone valide (10 chiffres, commence par 0)");
+			}
+			else if (!new Regex("\\S+\\@\\S+\\.\\S+").IsMatch(addressTV.Text))
+			{
+				MessageBox.Show("Veuillez renseigner une adresse mail valide (exemple@ex.fr)");
 			}
 			s.Phone = phoneTV.Text;
 			s.Mail = addressTV.Text;

@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -47,11 +48,15 @@ namespace PT4_Grp_2
             if (password.Text == "" || LastName.Text == "" || FirstName.Text == "" || Identify.Text == "")
             {
                 MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
-                
+
             }
-            else if (Phone.Text.Length != 10 || !int.TryParse(Phone.Text, out int d))
+            else if (Phone.Text.Length != 10 || !int.TryParse(Phone.Text, out int d) || Phone.Text[0] != '0')
             {
-                    MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
+                    MessageBox.Show("Veuillez renseigner un numéro de téléphone valide (10 chiffres, commence par 0)");
+            }
+            else if (!new Regex("\\S+\\@\\S+\\.\\S+").IsMatch(Address.Text))
+            {
+                MessageBox.Show("Veuillez renseigner une adresse mail valide (exemple@ex.fr)");           
             }
 
                 else
@@ -66,6 +71,7 @@ namespace PT4_Grp_2
                     s.Start_date = DateTime.Now.ToString("yyyy-MM-dd");
                     s.End_date = date.Value.ToString("yyyy-MM-dd");
                     int sal;
+                    
                     if (Int32.TryParse(salary.Text, out sal))
                     {
                         s.Salary = sal;

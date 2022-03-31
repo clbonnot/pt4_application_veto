@@ -89,7 +89,18 @@ namespace PT4_Grp_2
             String[] vStaff = { s.IdRole.ToString(), s.Identify, s.Salary.ToString(), s.Start_date.ToString(), s.End_date.ToString(), IdStaff.ToString() };
             String[] vPeople = { s.Lastname, s.Firstname, s.Mail, s.Phone, Id.ToString() };
 
-
+            IdRole = s.IdRole;
+            Identify = s.Identify;
+            Salary = s.Salary;
+            Start_date = s.Start_date;
+            End_date = s.End_date;
+            IdStaff = s.IdStaff;
+            Lastname = s.Lastname;
+            Firstname = s.Firstname;
+            Mail = s.Mail;
+            Phone = s.Phone;
+            Id = s.Id;
+            Role = s.Role;
             db.nonSelect("UPDATE Personnel " +
                 "SET code_role = ?," +
                 "identifiant = ?," +
@@ -113,20 +124,18 @@ namespace PT4_Grp_2
             db.openConnection();
             
             
-            String[] v = { IdStaff.ToString() };
+            String[] v = { Id.ToString(), IdStaff.ToString() };
+            String[] v2 = { IdStaff.ToString() };
+            OleDbDataReader reader = db.select("select code_facture from facture where code_personne = ? or code_personnel = ?", v);
+            while (reader.Read())
+            {
+                new Invoice(reader.GetInt32(0), db, false).Delete(db);
+            }
             //TODO ajouter la suppression du rendez vous.
-            db.nonSelect("DELETE FROM personnel where code_personnel = ?", v);
-      
-            String[] v2 = { Id.ToString() };
-            try
-            {
-                
-                db.nonSelect("DELETE FROM personne where code_personne = ?", v2);
-            }
-            catch
-            {
-
-            }
+            db.nonSelect("DELETE FROM rendez_vous where code_personnel = ?", v2);
+            db.nonSelect("DELETE FROM congé where code_personnel = ?", v2);
+            db.nonSelect("DELETE FROM personnel where code_personnel = ?", v2);
+            
             db.closeConnection();
         }
 

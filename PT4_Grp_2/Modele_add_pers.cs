@@ -150,9 +150,6 @@ namespace PT4_Grp_2
 
         }
 
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

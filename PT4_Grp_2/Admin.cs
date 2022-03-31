@@ -23,6 +23,7 @@ namespace PT4_Grp_2
 
             InitializeComponent();
             this.DBCon = new DB("info-joyeux", "PT4_E2");
+            allStaff = makeListStaff();
             makeListBox();
 
 
@@ -53,7 +54,7 @@ namespace PT4_Grp_2
         private void makeListBox()
         {
             
-            allStaff = makeListStaff();
+            
          
             foreach (Staff s in allStaff)
             {
@@ -74,10 +75,14 @@ namespace PT4_Grp_2
         {
 
             Modele_add_pers formAdd = new Admin_add_pers(DBCon);
-      
-            if(formAdd.ShowDialog() == DialogResult.OK)
+           
+            formAdd.SetName(this.GetName());
+
+            formAdd.SetRole(this.GetRole());
+            if (formAdd.ShowDialog() == DialogResult.OK)
             {
                 listbox.Items.Clear();
+                allStaff = makeListStaff();
                 this.makeListBox();
             }
         }
@@ -92,10 +97,14 @@ namespace PT4_Grp_2
             if (listbox.Items.Count > 0)
             {
                 Admin_detail_pers formDet = new Admin_detail_pers(allStaff.ToArray()[listbox.SelectedIndex], DBCon);
+                formDet.SetIdStaff(this.GetIdStaff());
+                formDet.SetName(this.GetName());
+                
+                formDet.SetRole(this.GetRole());
                 if (formDet.ShowDialog() == DialogResult.OK)
                 {
                     listbox.Items.Clear();
-                    this.makeListBox();
+                    makeListBox();
                 }
             }
 

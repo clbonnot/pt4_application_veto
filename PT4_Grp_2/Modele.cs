@@ -14,6 +14,7 @@ namespace PT4_Grp_2
 	public partial class Modele : Form
 	{
 		public string roleUser;
+		public int idStaff;
 		public int id;
 		public Boolean admin;
 		public string nameUser;
@@ -28,11 +29,18 @@ namespace PT4_Grp_2
 		}
 
 		/**
-		 * Set the db id of the current user
+		 * Set the id of the current user
 		 */
 		public void SetId(int id)
         {
 			this.id = id;
+        }
+		/**
+		 * Set the db id of the current user
+		 */
+		public void SetIdStaff(int id)
+        {
+			this.idStaff = id;
         }
 		/*
 		 * Set the role of the current user
@@ -41,6 +49,7 @@ namespace PT4_Grp_2
         {
 			this.roleUser = role;
 			RoleName.Text = role;
+			RoleName.Refresh();
 		}
 		/*
 		 * Set the rights of the current user
@@ -63,11 +72,15 @@ namespace PT4_Grp_2
 		{
 			this.nameUser = name;
 			Person.Text = name;
+			Person.Refresh();
 		}
 
-		public int GetId()
+		/*
+		 * Get the staff id of the current user
+		 */
+		public int GetIdStaff()
         {
-			return id;
+			return idStaff;
         }
 		/*
 		 * Get the role of the current user
@@ -76,6 +89,14 @@ namespace PT4_Grp_2
         {
 			
 			return roleUser;
+        }
+
+		/*
+		 * Get the id of the current user
+		 */
+		public int GetId()
+        {
+			return id;
         }
 		/*
 		 * Get the rights of the current user

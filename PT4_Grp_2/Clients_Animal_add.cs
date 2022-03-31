@@ -24,6 +24,8 @@ namespace PT4_Grp_2
             InitializeComponent();
             client = c;
             makeAge();
+            date.MaxDate = DateTime.Now;
+            date.Refresh();
         }
 
 
@@ -33,7 +35,14 @@ namespace PT4_Grp_2
         private void add_Click(object sender, EventArgs e)
         {
             Animal a = validateAnimal();
-            a.Owner = client;
+            if (a != null)
+            {
+                a.Owner = client;
+            }
+            else
+            {
+                MessageBox.Show("Veuillez remplir tous les champs.");
+            }
             try
             {
                 a.Flush(db);
