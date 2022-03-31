@@ -99,7 +99,7 @@ namespace PT4_Grp_2
          */
         private void Delete_Click(object sender, EventArgs e)
         {
-            if (selectedIndex != -1)
+            if (listbox.SelectedIndex != -1)
             {
                 Client c = allClients.ToArray()[listbox.SelectedIndex];
                 if (this.GetId() != c.Id)
