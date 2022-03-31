@@ -12,9 +12,20 @@ namespace PT4_Grp_2
 {
     public partial class Statistiques : Modele
     {
+        DB db;
         public Statistiques()
         {
             InitializeComponent();
+            db = new DB("info-joyeux", "PT4_E2");
+
+        }
+
+        private void sales_Click(object sender, EventArgs e)
+        {
+            db.openConnection();
+
+            
+            db.closeConnection();  
         }
     }
 }
