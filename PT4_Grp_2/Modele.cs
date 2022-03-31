@@ -14,6 +14,7 @@ namespace PT4_Grp_2
 	public partial class Modele : Form
 	{
 		public string roleUser;
+		public int id;
 		public Boolean admin;
 		public string nameUser;
 		/*
@@ -25,6 +26,14 @@ namespace PT4_Grp_2
 			this.RoleName.ForeColor = SystemColors.ControlLightLight;
 			this.Person.ForeColor = SystemColors.ControlLightLight;
 		}
+
+		/**
+		 * Set the db id of the current user
+		 */
+		public void SetId(int id)
+        {
+			this.id = id;
+        }
 		/*
 		 * Set the role of the current user
 		 */
@@ -55,6 +64,11 @@ namespace PT4_Grp_2
 			this.nameUser = name;
 			Person.Text = name;
 		}
+
+		public int GetId()
+        {
+			return id;
+        }
 		/*
 		 * Get the role of the current user
 		 */

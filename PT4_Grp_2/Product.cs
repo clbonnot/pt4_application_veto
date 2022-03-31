@@ -68,19 +68,6 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Function that add e a sale in the database.
-         * 
-         */
-        public void SetSale(DB db, Client c, int q)
-        {
-            db.openConnection();
-            String[] values = { c.Id.ToString(), Id.ToString(), q.ToString() };
-            db.nonSelect("insert into vente (code_personne, code_produit, quantite_vendue) values (?,?,?)", values);
-            db.closeConnection();
-      
-        }
-
-        /**
          * Function that add a supplier to the product, to the current instance and in the database.
          * 
          * @Param db the database

@@ -69,6 +69,7 @@ namespace PT4_Grp_2
 				client.Items.Add(c.ToString());
             }
 			db.closeConnection();
+			client.SelectedIndex = 0;
 			client.Refresh();
         }
 
@@ -224,63 +225,35 @@ namespace PT4_Grp_2
         }
 
 		/**
-		 * Function that generate and launch an invoice in a pdf format with all the products in the cart, and other informations. 
+		 * Function that generate and launch an invoice in a pdf format with all the products in the cart, and push it in the database.
 		 */
         private void validate_Click(object sender, EventArgs e)
         {
+			Invoice invoice = new Invoice();
+
 			Client selectedClient;
-			if (client.SelectedIndex != 0) {
+			if (client.SelectedIndex > 0) {
 				 selectedClient = allClients.ToArray()[client.SelectedIndex - 1];
+				invoice.Client = selectedClient;
 			}
             else
             {
 				selectedClient = null;
             }
-			//string outputTempFile = Path.Combine(Application.StartupPath, "facture_temp.pdf");
-			string outputFile = "facture.pdf";
-			Document document = new Document();
-			Stream output = new FileStream(outputFile, FileMode.Create, FileAccess.Write, FileShare.None);
-			PdfWriter.GetInstance(document, output);
-			document.Open();
-			document.Add(new Paragraph("Facture du " + DateTime.Now.ToString("dd/MM/yyyy") + " à " + DateTime.Now.ToString("HH:mm"), FontFactory.GetFont(FontFactory.COURIER, 20)));
-			Paragraph p = new Paragraph("--------------------------------");
-			p.Alignment = Element.ALIGN_CENTER;
-			document.Add(p);
-			document.Add(new Paragraph("\n\n      Vendeu.r.se : Mr/Mme " + nameUser + "\n" , FontFactory.GetFont(FontFactory.COURIER, 12)));
-			if(selectedClient != null)
-            {
-				document.Add(new Paragraph("      Client.e : Mr/Mme " + selectedClient.Lastname, FontFactory.GetFont(FontFactory.COURIER, 12)));
-            }
-			document.Add(p);
+
+			invoice.Staff = new Staff(this.GetId(), db);
+			invoice.Date = DateTime.Now.ToString("yyyy-MM-dd");
 			foreach(KeyValuePair<Product, int> kvp in cart)
             {
-				Product prod = kvp.Key;
-				document.Add(new Paragraph(prod.Name, FontFactory.GetFont(FontFactory.COURIER, 10)));
-				Paragraph price = new Paragraph((prod.Price * kvp.Value).ToString() + "€", FontFactory.GetFont(FontFactory.COURIER_OBLIQUE, 10));
-				price.Alignment = Element.ALIGN_RIGHT;
-				document.Add(price);
-				prod.UpdateQuantity(db, kvp.Value);
-				if (selectedClient != null)
-				{
-					prod.SetSale(db, selectedClient, kvp.Value);
-				}
+				invoice.AddSale(kvp.Key, kvp.Value, kvp.Key.Price);
             }
-			document.Add(p);
-			Paragraph tva = new Paragraph("TVA : 20%", FontFactory.GetFont(FontFactory.COURIER, 12));
-			Paragraph t = new Paragraph("Prix total :", FontFactory.GetFont(FontFactory.COURIER, 12));
-			Paragraph tprice = new Paragraph(tPrice.ToString() + " euros TTC", FontFactory.GetFont(FontFactory.COURIER, 12));
-			tva.Alignment = Element.ALIGN_RIGHT;
-			t.Alignment = Element.ALIGN_RIGHT;
-			tprice.Alignment = Element.ALIGN_RIGHT;
-			document.Add(tva);
-			document.Add(t);
-			document.Add(tprice);
-			document.Close();
-			
+
+			invoice.generatePdf(db);
 			MessageBox.Show("Vente effectuée avec succés ! ");
 			clearListArticles();
-			
+			invoice.Flush(db);
 			Process.Start("facture.pdf");
+			
 
 
 
