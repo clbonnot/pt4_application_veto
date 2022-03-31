@@ -40,6 +40,8 @@
             this.total = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.add = new System.Windows.Forms.Button();
+            this.client = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Deconnexion
@@ -130,7 +132,7 @@
             // products
             // 
             this.products.FormattingEnabled = true;
-            this.products.Location = new System.Drawing.Point(12, 267);
+            this.products.Location = new System.Drawing.Point(12, 245);
             this.products.Name = "products";
             this.products.Size = new System.Drawing.Size(121, 21);
             this.products.TabIndex = 48;
@@ -155,7 +157,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(12, 225);
+            this.add.Location = new System.Drawing.Point(12, 203);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(108, 36);
             this.add.TabIndex = 52;
@@ -163,11 +165,30 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
+            // client
+            // 
+            this.client.FormattingEnabled = true;
+            this.client.Location = new System.Drawing.Point(507, 411);
+            this.client.Name = "client";
+            this.client.Size = new System.Drawing.Size(159, 21);
+            this.client.TabIndex = 53;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(504, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Client (facultatif)";
+            // 
             // Paniers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.client);
             this.Controls.Add(this.add);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.total);
@@ -195,6 +216,8 @@
             this.Controls.SetChildIndex(this.total, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.add, 0);
+            this.Controls.SetChildIndex(this.client, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +237,7 @@
         private System.Windows.Forms.Label total;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button add;
+        private System.Windows.Forms.ComboBox client;
+        private System.Windows.Forms.Label label1;
     }
 }

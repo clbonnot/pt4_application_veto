@@ -105,15 +105,16 @@ namespace PT4_Grp_2
         {
             string id = identifiant.Text;
             string password = pwd.Text;
-            string sqlSet = "Select Identifiant, Mot_de_passe from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
+            string sqlSet = "Select  Identifiant, Mot_de_passe, Code_Personnel from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
             OleDbCommand cmd = new OleDbCommand(sqlSet, DBcon.dbConnection);
             string motDePasseBDD = "";
             string motDePasse = pwd.Text.Trim(' ');
-
+            int idStaff = 0;
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 motDePasseBDD = reader.GetString(1).Trim(' ');
+                idStaff = reader.GetInt32(2);
             }
             //string a = DecryptageDeMotDePasse(motDePasseBDD);
             if (motDePasse.Equals(motDePasseBDD) && !motDePasseBDD.Equals(""))
@@ -137,14 +138,18 @@ namespace PT4_Grp_2
 
                 OleDbDataReader readerName = cmdName.ExecuteReader();
                 string name = "";
+                
                 while (readerName.Read())
                 {
                     name = Utils.manageSingleQuote(readerName.GetString(0));
+                   
                 }
                 readerName.Close();
                 DBcon.closeConnection();
                 
                 Modele Mod = new Paniers();
+                Mod.SetId(idStaff);
+                MessageBox.Show(idStaff.ToString());
                 Mod.SetRole(role);
                 Mod.SetRights(rights);   
                 Mod.SetName(name);
