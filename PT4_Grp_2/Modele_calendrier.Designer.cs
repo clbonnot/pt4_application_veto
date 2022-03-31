@@ -33,7 +33,13 @@
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.update = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
+            this.control_secretaire1 = new PT4_Grp_2.Control_secretaire();
+            this.control_veto1 = new PT4_Grp_2.Control_veto();
             this.SuspendLayout();
+            // 
+            // Deconnexion
+            // 
+            this.Deconnexion.FlatAppearance.BorderSize = 0;
             // 
             // monthCalendar1
             // 
@@ -85,11 +91,29 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
+            // control_secretaire1
+            // 
+            this.control_secretaire1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.control_secretaire1.Location = new System.Drawing.Point(11, 142);
+            this.control_secretaire1.Name = "control_secretaire1";
+            this.control_secretaire1.Size = new System.Drawing.Size(114, 169);
+            this.control_secretaire1.TabIndex = 81;
+            // 
+            // control_veto1
+            // 
+            this.control_veto1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.control_veto1.Location = new System.Drawing.Point(15, 142);
+            this.control_veto1.Name = "control_veto1";
+            this.control_veto1.Size = new System.Drawing.Size(115, 137);
+            this.control_veto1.TabIndex = 82;
+            // 
             // Modele_calendrier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.control_veto1);
+            this.Controls.Add(this.control_secretaire1);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.update);
             this.Controls.Add(this.add);
@@ -97,11 +121,14 @@
             this.Controls.Add(this.monthCalendar1);
             this.Name = "Modele_calendrier";
             this.Text = "Modele_calendrier";
+            this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.monthCalendar1, 0);
             this.Controls.SetChildIndex(this.label6, 0);
             this.Controls.SetChildIndex(this.add, 0);
             this.Controls.SetChildIndex(this.update, 0);
             this.Controls.SetChildIndex(this.progressBar2, 0);
+            this.Controls.SetChildIndex(this.control_secretaire1, 0);
+            this.Controls.SetChildIndex(this.control_veto1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +140,7 @@
 		private System.Windows.Forms.Button update;
 		private System.Windows.Forms.Button add;
         public System.Windows.Forms.MonthCalendar monthCalendar1;
+        private Control_secretaire control_secretaire1;
+        private Control_veto control_veto1;
     }
 }

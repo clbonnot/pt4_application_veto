@@ -157,6 +157,11 @@ namespace PT4_Grp_2
                 {
                     this.Hide();
                     Admin admin = new Admin();
+                    admin.SetId(idStaff);
+
+                    admin.SetRole(role);
+                    admin.SetRights(rights);
+                    admin.SetName(name);
                     admin.StartPosition = FormStartPosition.CenterScreen;
                     admin.FormClosed += (s, args) => this.Close();
                    
@@ -180,8 +185,6 @@ namespace PT4_Grp_2
 
                 Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
-            this.Dispose();
-            this.Close();
         }
 
         private void pwd_TextChanged(object sender, EventArgs e)

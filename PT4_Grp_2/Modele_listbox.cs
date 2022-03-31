@@ -15,6 +15,14 @@ namespace PT4_Grp_2
 		public Modele_listbox()
 		{
 			InitializeComponent();
+            if (this.RoleName.Text.Equals("Vétérinaire"))
+            {
+				this.control_secretaire1.Hide();
+            }
+            else
+            {
+				this.control_veto1.Hide();
+            }
 		}
 
 
