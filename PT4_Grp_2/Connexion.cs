@@ -34,12 +34,12 @@ namespace PT4_Grp_2
             //Text Box
             //id text box
             this.pwd.Enter += new System.EventHandler(this.setCurrent_pwd);
-            this.pwd.Enter += new System.EventHandler(this.text_Enter);      
+            this.pwd.Enter += new System.EventHandler(this.text_Enter);
             this.pwd.Leave += new System.EventHandler(this.text_Leave);
             this.pwd.ForeColor = SystemColors.GrayText;
             //password text box
             this.identifiant.Enter += new System.EventHandler(this.setCurrent_identifiant);
-            this.identifiant.Enter += new System.EventHandler(this.text_Enter);         
+            this.identifiant.Enter += new System.EventHandler(this.text_Enter);
             this.identifiant.Leave += new System.EventHandler(this.text_Leave);
             this.identifiant.ForeColor = SystemColors.GrayText;
         }
@@ -77,7 +77,7 @@ namespace PT4_Grp_2
                 identifiant.Clear();
                 identifiant.ForeColor = SystemColors.WindowText;
             }
-           
+
         }
 
         /**
@@ -110,7 +110,7 @@ namespace PT4_Grp_2
             string motDePasseBDD = "";
             string motDePasse = pwd.Text.Trim(' ');
             int idStaff = 0;
-            int idPeople = 0; 
+            int idPeople = 0;
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -166,28 +166,17 @@ namespace PT4_Grp_2
                 Mod.SetRole(role);
                 Mod.SetRights(rights);
                 Mod.SetName(name);
-                if (Mod.GetAdmin())
-                {
-                    this.Hide();
-                    Admin admin = new Admin();
-                    admin.StartPosition = FormStartPosition.CenterScreen;
-                    admin.FormClosed += (s, args) => this.Close();
+
+                this.Hide();
+                Mod.StartPosition = FormStartPosition.CenterScreen;
+                Mod.FormClosed += (s, args) => this.Close();
 
 
-                    admin.ShowDialog();
-                }
-                else
-                {
-                    this.Hide();
-                    Mod.StartPosition = FormStartPosition.CenterScreen;
-                    Mod.FormClosed += (s, args) => this.Close();
+                Mod.ShowDialog();
+                this.Dispose();
+                this.Close();
 
 
-                    Mod.ShowDialog();
-                    this.Dispose();
-                    this.Close();
-
-                }
             }
             else
             {
@@ -195,8 +184,7 @@ namespace PT4_Grp_2
 
                 Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
-            this.Dispose();
-            this.Close();
+
         }
 
         private void pwd_TextChanged(object sender, EventArgs e)
