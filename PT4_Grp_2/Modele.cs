@@ -108,7 +108,7 @@ namespace PT4_Grp_2
 			connexion.FormClosed += (s, args) => this.Close();
 			
 
-			connexion.Show();
+			connexion.ShowDialog();
 		}
     }
 } 
