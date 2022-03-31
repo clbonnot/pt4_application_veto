@@ -39,14 +39,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // Deconnexion
+            // 
+            this.Deconnexion.FlatAppearance.BorderSize = 0;
+            // 
             // role
             // 
+            this.role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role.FormattingEnabled = true;
             this.role.Location = new System.Drawing.Point(276, 251);
             this.role.Name = "role";
             this.role.Size = new System.Drawing.Size(121, 21);
             this.role.TabIndex = 30;
-            this.role.Text = "Rôle";
             // 
             // Identify
             // 

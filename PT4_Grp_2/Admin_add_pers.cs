@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,6 +54,10 @@ namespace PT4_Grp_2
             {
                     MessageBox.Show("Veuillez renseigner un numéro de téléphone valide");
             }
+            else if (new Regex("\\S+@\\S+\\.\\S+").IsMatch(Address.Text))
+            {
+                
+            }
 
                 else
                 {
@@ -66,6 +71,7 @@ namespace PT4_Grp_2
                     s.Start_date = DateTime.Now.ToString("yyyy-MM-dd");
                     s.End_date = date.Value.ToString("yyyy-MM-dd");
                     int sal;
+                    
                     if (Int32.TryParse(salary.Text, out sal))
                     {
                         s.Salary = sal;

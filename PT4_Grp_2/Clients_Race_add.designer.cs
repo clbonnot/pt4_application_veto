@@ -52,6 +52,7 @@ namespace PT4_Grp_2
             // 
             // species
             // 
+            this.species.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.species.FormattingEnabled = true;
             resources.ApplyResources(this.species, "species");
             this.species.Name = "species";

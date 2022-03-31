@@ -169,6 +169,7 @@
             // 
             // roles
             // 
+            this.roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roles.FormattingEnabled = true;
             this.roles.Location = new System.Drawing.Point(32, 204);
             this.roles.Name = "roles";

@@ -197,6 +197,7 @@ namespace PT4_Grp_2
             // 
             // races
             // 
+            this.races.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.races.FormattingEnabled = true;
             this.races.Location = new System.Drawing.Point(88, 289);
             this.races.Name = "races";
@@ -205,6 +206,7 @@ namespace PT4_Grp_2
             // 
             // species
             // 
+            this.species.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.species.FormattingEnabled = true;
             this.species.Location = new System.Drawing.Point(88, 226);
             this.species.Name = "species";
@@ -250,6 +252,7 @@ namespace PT4_Grp_2
             // 
             // sexe
             // 
+            this.sexe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sexe.FormattingEnabled = true;
             this.sexe.Items.AddRange(new object[] {
             "m",
