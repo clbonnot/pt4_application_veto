@@ -44,6 +44,30 @@ namespace PT4_Grp_2
         }
 
         /**
+        * Constructor of an invoice which create it in the database without other attribute than id and sales.
+        * 
+        * @Param id the id of the staff
+        * @db the database
+        * * @param b paramater to recognize this constructor
+        */
+        public Invoice(int id, DB db, bool b)
+        {
+            db.openConnection();
+            Sales = new List<Sale>();
+
+            Id = id;
+
+            String[] arg = { id.ToString() };
+            OleDbDataReader readerSales = db.select("select * from vente where code_facture = ?", arg);
+            db.openConnection();
+            while (readerSales.Read())
+            {
+                this.AddSale(new Product(readerSales.GetInt32(1), db), readerSales.GetInt32(2), readerSales.GetDecimal(3));
+            }
+            db.closeConnection();
+
+        }
+        /**
          * Constructor of an invoice which create it in the database
          * 
          * @Param id the id of the staff
@@ -76,9 +100,10 @@ namespace PT4_Grp_2
                 }
               
                 Date = reader.GetString(3);
+                db.closeConnection();
             }
 
-            db.closeConnection();
+            
             db.closeConnection();
         }
 
@@ -154,7 +179,7 @@ namespace PT4_Grp_2
             {
                 Product prod = s.Product;
                 decimal priceMultiplied = prod.Price * s.Quantity;
-                document.Add(new Paragraph(prod.Name + "      x" + s.Quantity, FontFactory.GetFont(FontFactory.COURIER, 10)));
+                document.Add(new Paragraph(prod.Name + "      x" + s.Quantity + "                   (" + s.Price + "€/u)", FontFactory.GetFont(FontFactory.COURIER, 10)));
                 Paragraph price = new Paragraph(priceMultiplied.ToString() + "€", FontFactory.GetFont(FontFactory.COURIER_OBLIQUE, 10));
                 price.Alignment = Element.ALIGN_RIGHT;
                 document.Add(price);
@@ -183,7 +208,7 @@ namespace PT4_Grp_2
             String s = this.Date;
             if (Client == null)
             {
-                return s;
+                return s + " | Aucun client renseigné";
             }
             return s + " | " + this.Client.Lastname + " | " + this.Client.Firstname;
         }

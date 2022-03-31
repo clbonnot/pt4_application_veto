@@ -49,6 +49,7 @@ namespace PT4_Grp_2
 
         }
 
+      
         /**
         * Function that add the current instance in the database
          * 
@@ -71,6 +72,12 @@ namespace PT4_Grp_2
         {
             db.openConnection();
             String[] v = { this.Id.ToString() };
+            db.nonSelect("delete from personnel where code_personne = ?", v);
+            OleDbDataReader reader = db.select("select code_facture from facture where code_personne = ?", v);
+            while (reader.Read())
+            {
+                new Invoice(reader.GetInt32(0),db,false).Delete(db);
+            }
             db.nonSelect("delete from personne where code_personne = ?", v);
             db.nonSelect("delete from animal where code_personne = ?",v);
             db.closeConnection();
