@@ -158,7 +158,6 @@
             this.Controls.Add(this.menuStrip2);
             this.Name = "Modele";
             this.Text = "Modele";
-            this.Click += new System.EventHandler(this.Deconnexion_Click);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
