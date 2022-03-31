@@ -70,6 +70,7 @@ namespace PT4_Grp_2
             {
                 pwd.Clear();
                 pwd.ForeColor = SystemColors.WindowText;
+                pwd.PasswordChar = '*';
             }
             if (identifiant.Text.Equals("Identifiant") && current.Equals("Identifiant"))
             {
@@ -88,6 +89,7 @@ namespace PT4_Grp_2
             {
                 pwd.Text = "Mot de passe";
                 pwd.ForeColor = SystemColors.GrayText;
+                pwd.PasswordChar = '\0';
             }
             if (identifiant.Text.Length == 0)
             {
