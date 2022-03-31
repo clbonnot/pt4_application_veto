@@ -149,7 +149,7 @@ namespace PT4_Grp_2
                 
                 Modele Mod = new Paniers();
                 Mod.SetId(idStaff);
-                MessageBox.Show(idStaff.ToString());
+                
                 Mod.SetRole(role);
                 Mod.SetRights(rights);   
                 Mod.SetName(name);
