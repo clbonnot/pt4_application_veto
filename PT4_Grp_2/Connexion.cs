@@ -155,13 +155,23 @@ namespace PT4_Grp_2
                 Mod.SetName(name);
                 if (Mod.GetAdmin())
                 {
+                    this.Hide();
                     Admin admin = new Admin();
                     admin.StartPosition = FormStartPosition.CenterScreen;
+                    admin.FormClosed += (s, args) => this.Close();
+                   
+
+                    admin.ShowDialog();
+                }
+                else
+                {
+                    this.Hide();
+                    Mod.StartPosition = FormStartPosition.CenterScreen;
+                    Mod.FormClosed += (s, args) => this.Close();
+
+
                     Mod.ShowDialog();
                 }
-                Mod.StartPosition = FormStartPosition.CenterScreen;
-                Mod.ShowDialog();
-                this.Close();
                 
             }
             else
@@ -170,7 +180,8 @@ namespace PT4_Grp_2
 
                 Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
-            
+            this.Dispose();
+            this.Close();
         }
 
         private void pwd_TextChanged(object sender, EventArgs e)

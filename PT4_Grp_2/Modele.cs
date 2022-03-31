@@ -47,7 +47,7 @@ namespace PT4_Grp_2
 		 */
 		public void SetRights(string right)
 		{
-			if(right.Equals("adimistrateur"))
+			if(right.Equals("administrateur"))
             {
 				this.admin = true;	
             }
@@ -74,6 +74,7 @@ namespace PT4_Grp_2
 		 */
 		public string GetRole()
         {
+			
 			return roleUser;
         }
 		/*
@@ -81,7 +82,7 @@ namespace PT4_Grp_2
 		 */
 		public Boolean GetAdmin()
         {
-			return admin;	
+			return admin;
         }
 		/*
 		 * Get the name of the current user
@@ -95,16 +96,19 @@ namespace PT4_Grp_2
 		 */
 		private void Deconnexion_Click(object sender, System.EventArgs e)
         {
+			
 			this.roleUser = null;
 			this.admin = false;
 			this.nameUser=null;
-			
+			this.Hide();
+
 			Connexion connexion = new Connexion();
+			
 			connexion.StartPosition = FormStartPosition.CenterScreen;
-			connexion.ShowDialog();
-			this.Close();
+			connexion.FormClosed += (s, args) => this.Close();
+			
 
-
+			connexion.Show();
 		}
     }
 } 
