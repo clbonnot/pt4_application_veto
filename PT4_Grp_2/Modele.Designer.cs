@@ -146,9 +146,9 @@
             // control_veto1
             // 
             this.control_veto1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.control_veto1.Location = new System.Drawing.Point(15, 147);
+            this.control_veto1.Location = new System.Drawing.Point(16, 147);
             this.control_veto1.Name = "control_veto1";
-            this.control_veto1.Size = new System.Drawing.Size(115, 137);
+            this.control_veto1.Size = new System.Drawing.Size(115, 263);
             this.control_veto1.TabIndex = 17;
             // 
             // Modele

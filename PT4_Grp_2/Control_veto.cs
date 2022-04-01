@@ -74,5 +74,59 @@ namespace PT4_Grp_2
 			cal.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
 			cal.ShowDialog();
 		}
+
+        private void stock_Click(object sender, EventArgs e)
+        {
+			((Form)this.TopLevelControl).Hide();
+			Stocks stocks = new Stocks();
+			stocks.StartPosition = FormStartPosition.CenterScreen;
+			stocks.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			stocks.SetName(((Modele)this.TopLevelControl).GetName());
+			stocks.SetRights(((Modele)this.TopLevelControl).GetAdmin());
+			stocks.SetRole(((Modele)this.TopLevelControl).GetRole());
+			stocks.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
+			stocks.ShowDialog();
+
+		}
+
+		private void panier_Click(object sender, EventArgs e)
+        {
+			((Form)this.TopLevelControl).Hide();
+			Paniers panier = new Paniers();
+			panier.StartPosition = FormStartPosition.CenterScreen;
+			panier.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			panier.SetName(((Modele)this.TopLevelControl).GetName());
+			panier.SetRights(((Modele)this.TopLevelControl).GetAdmin());
+			panier.SetRole(((Modele)this.TopLevelControl).GetRole());
+			panier.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
+			panier.ShowDialog();
+		}
+
+        private void stats_Click(object sender, EventArgs e)
+        {
+			((Form)this.TopLevelControl).Hide();
+			Statistiques stats = new Statistiques();
+			stats.StartPosition = FormStartPosition.CenterScreen;
+			stats.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			stats.SetName(((Modele)this.TopLevelControl).GetName());
+			stats.SetRights(((Modele)this.TopLevelControl).GetAdmin());
+			stats.SetRole(((Modele)this.TopLevelControl).GetRole());
+			stats.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
+			stats.ShowDialog();
+		}
+
+        private void admin_Click(object sender, EventArgs e)
+        {
+			((Form)this.TopLevelControl).Hide();
+			Admin admin = new Admin();
+			admin.StartPosition = FormStartPosition.CenterScreen;
+			admin.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			admin.SetName(((Modele)this.TopLevelControl).GetName());
+			admin.SetRights(((Modele)this.TopLevelControl).GetAdmin());
+			admin.SetRole(((Modele)this.TopLevelControl).GetRole());
+			admin.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
+			admin.ShowDialog();
+
+		}
 	}
 }
