@@ -19,11 +19,12 @@ namespace PT4_Grp_2
 		/*
 		 * Create a new model for all the other forms
 		*/
-		public Modele()
+		public Modele(Form f)
 		{
 			InitializeComponent();
 			this.RoleName.ForeColor = SystemColors.ControlLightLight;
 			this.Person.ForeColor = SystemColors.ControlLightLight;
+			f.Close();
 		}
 		/*
 		 * Set the role of the current user
@@ -75,6 +76,11 @@ namespace PT4_Grp_2
 		public string GetName()
         {
 			return name;	
+        }
+
+		public void CloseForm(Form f)
+        {
+			f.Close();
         }
 		/*
 		 * Disconnect the user and start the connection page

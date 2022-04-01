@@ -12,6 +12,7 @@ namespace PT4_Grp_2
 {
     public partial class Soins : Modele_listbox
     {
+        Soins_add SA;
         public Soins()
         {
             InitializeComponent();
@@ -24,7 +25,8 @@ namespace PT4_Grp_2
 
         private void Soins_Load(object sender, EventArgs e)
         {
-
+            SA = new Soins_add();
+            
         }
     }
 }

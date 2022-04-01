@@ -142,7 +142,7 @@ namespace PT4_Grp_2
                 readerName.Close();
                 DBcon.closeConnection();
                 
-                Modele Mod = new Modele();
+                Modele Mod = new Modele(this);
                 Mod.SetRole(role);
                 Mod.SetRights(rights);   
                 Mod.SetName(name);
@@ -154,7 +154,6 @@ namespace PT4_Grp_2
                 }
                 Mod.StartPosition = FormStartPosition.CenterScreen;
                 Mod.ShowDialog();
-                this.Close();
                 
             }
             else

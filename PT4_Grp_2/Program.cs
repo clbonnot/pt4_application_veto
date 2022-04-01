@@ -17,7 +17,7 @@ namespace PT4_Grp_2
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Soins_add());
+            Application.Run(new Connexion());
         }
     }
 }
