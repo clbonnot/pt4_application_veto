@@ -15,8 +15,6 @@ namespace PT4_Grp_2
     {
         List<Medic> allProduct;
         DB db;
-
-        Soins_add SA;
         public Soins()
         {
             InitializeComponent();

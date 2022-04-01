@@ -13,7 +13,7 @@ namespace PT4_Grp_2
     public partial class Soins_modifier : Modele_modifier
     {
         DB db;
-        Product product;
+        Medic medic;
 
         /**
          * Constructor of the class.
@@ -40,7 +40,7 @@ namespace PT4_Grp_2
         {
             try
             {
-                product.Delete(db);
+                medic.Delete(db);
                 MessageBox.Show("Produit supprimé avec succés ! ");
                 this.DialogResult = DialogResult.Yes;
                 Close();
@@ -61,13 +61,13 @@ namespace PT4_Grp_2
                 MessageBox.Show("Veuillez renseigner tout les champs");
                 return;
             }
-            Product p = new Product();
+            Medic s = new Medic();
 
-            p.Name = name.Text;
-            p.Description = description.Text;
+            s.Name = name.Text;
+            s.Description = description.Text;
             if (int.TryParse(quantity.Text, out int q))
             {
-                p.Quantity = q;
+                s.Quantity = q;
             }
             else
             {
@@ -75,11 +75,11 @@ namespace PT4_Grp_2
                 return;
 
             }
-            p.Brand = brand.Text;
+            s.Brand = brand.Text;
 
             if (Decimal.TryParse(price.Text, out decimal pr))
             {
-                p.Price = pr;
+                s.Price = pr;
             }
             else
             {
@@ -89,7 +89,7 @@ namespace PT4_Grp_2
 
             try
             {
-                product.Update(db, p);
+                medic.Update(db, s);
             }
             catch (Exception exc)
             {

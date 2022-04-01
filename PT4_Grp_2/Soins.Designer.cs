@@ -84,7 +84,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button Deconnexion;
+		private System.Windows.Forms.Button Deconnexion2;
 		private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listMedic;
     }

@@ -26,11 +26,6 @@ namespace PT4_Grp_2
             // Chaîne de connexion (SQL Server local)
             dataSource = ds;
             dbName = dbN;
-
-
-
-
-            return cmd.ExecuteReader();
         }
 
         /**
