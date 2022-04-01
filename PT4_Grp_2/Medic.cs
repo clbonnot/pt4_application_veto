@@ -32,18 +32,19 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Constructor of the class that create a product from the database.
+         * Constructor of the class that create a drug from the database.
          * 
-         * @param int i the id of the product in the database
+         * @param int i the id of the drug in the database
          * @param db the database
          */
-        public Product(int i, DB db)
+        public Medic(int i, DB db)
         {
             db.openConnection();
             Id = i;
             String[] arg = { id.ToString() };
             AllSuppliers = new List<Supplier>();
-            OleDbDataReader reader = db.select("select * from produit where code_produit = ?", arg);
+            OleDbDataReader reader = db.select("select * from produit Inner join Medicament on Medicament.code_produit = PRODUIT.code_produit " +
+                "Inner Join traitement on traitement.code_traitement=Medicament.code_traitement where code_produit = ?", arg);
             if (reader.Read())
             {
                 Name = reader.GetString(1);
@@ -60,7 +61,9 @@ namespace PT4_Grp_2
                 {
                     Brand = "uknown";
                 }
-                OleDbDataReader readerSupplier = db.select("select code_fournisseur from fournisseurProduit where code_produit = ?", arg);
+                OleDbDataReader readerSupplier = db.select("select code_fournisseur from fournisseurProduit" +
+                    " Inner join Medicament on Medicament.code_produit = PRODUIT.code_produit " +
+                    "Inner Join traitement on traitement.code_traitement=Medicament.code_traitement where code_produit = ?", arg);
                 while (readerSupplier.Read())
                 {
                     AllSuppliers.Add(new Supplier(readerSupplier.GetInt32(0), db));
@@ -72,7 +75,7 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Function that add a supplier to the product, to the current instance and in the database.
+         * Function that add a supplier to the drug, to the current instance and in the database.
          * 
          * @Param db the database
          * @Param supplier the supplier to add
@@ -103,23 +106,27 @@ namespace PT4_Grp_2
         }
 
         /**
-        * Function that update the current instance in the database with the attribute of an another product
+        * Function that update the current instance in the database with the attribute of an another drug
         * 
         * @param db the databse
         * @param p the another product
         */
-        public void Update(DB db, Product p)
+        public void Update(DB db, Medic p)
         {
             db.openConnection();
-            String[] values = { p.Name, p.Description, p.Quantity.ToString(), p.Price.ToString(CultureInfo.InvariantCulture), p.Brand, Id.ToString() };
-
+            String[] values1 = { p.Name, p.Description, Id.ToString() };
+            String[] values2 = { p.Name, p.Description, p.Quantity.ToString(), p.Price.ToString(CultureInfo.InvariantCulture), p.Brand, Id.ToString() };
+            db.nonSelect("update traitement " +
+                "set nom = ?, " +
+                "descrip = ?, " +
+                "where code_produit = ?", values1);
             db.nonSelect("update produit " +
                 "set nom = ?, " +
                 "descrip = ?, " +
                 "quantite = ?, " +
                 "prix = ?, " +
                 "marque = ? " +
-                "where code_produit = ?", values);
+                "where code_produit = ?", values2);
             Name = p.Name;
             Quantity = p.Quantity;
             Description = p.Description;
@@ -129,7 +136,7 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Function that updates the quantity of a product in the database and to the current instance.
+         * Function that updates the quantity of a drug in the database and to the current instance.
          * 
          * @Param db the database
          * @Param q the number to remove to the quantity
@@ -163,6 +170,8 @@ namespace PT4_Grp_2
             String[] v = { Id.ToString() };
             db.nonSelect("Delete from fournisseurproduit where code_produit = ?", v);
             db.nonSelect("DELETE FROM produit where code_produit = ?", v);
+            db.nonSelect("DELETE FROM traitement inner Join Medicament on traitement.code_traitement=Medicament.code_traitement where code_produit = ?", v);
+            db.nonSelect("DELETE FROM Medicament where code_produit = ?", v);
             db.closeConnection();
         }
 
@@ -173,10 +182,29 @@ namespace PT4_Grp_2
          */
         public void Flush(DB db)
         {
+            string idP = "";
+            string idT = "";
             db.openConnection();
-            String[] v = { Name, Description, Quantity.ToString(), Price.ToString(CultureInfo.InvariantCulture), Brand };
-
-            db.nonSelect("insert into produit (nom, descrip, quantite, prix, marque) values (?,?,?,?,?)", v);
+            String[] v1 = { Name, Description};
+            String[] v2 = { Name, Description, Quantity.ToString(), Price.ToString(CultureInfo.InvariantCulture), Brand };
+            db.nonSelect("insert into traitement (nom, descrip) values (?,?)", v1);
+            db.nonSelect("insert into produit (nom, descrip, quantite, prix, marque) values (?,?,?,?,?)", v2);
+            OleDbDataReader reader = db.select("select code_produit from produit");
+            OleDbDataReader reader2 = db.select("select code_traitement from traitement");
+            while (reader.Read())
+            {
+                idP = reader.GetString(1).Trim(' ');
+            }
+            while (reader2.Read())
+            {
+                idT = reader.GetString(2).Trim(' ');
+            }
+            if (!idP.Equals("") && idT.Equals(""))
+            {
+                String[] v3 = {idT , idP };
+                db.nonSelect("insert into Medicament (code_traitement, code_produit) values (?,?)", v3);
+            }
+            
             db.closeConnection();
         }
 

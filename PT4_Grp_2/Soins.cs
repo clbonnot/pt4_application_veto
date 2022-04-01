@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace PT4_Grp_2
 {
     public partial class Soins : Modele_listbox
     {
-        List<Product> allProduct;
+        List<Medic> allProduct;
         DB db;
 
         Soins_add SA;
@@ -36,34 +37,73 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Function that fills the list of products with all the product in the database ordered by their name.
+         * Function that fills the list of drugs with all the drugs in the database ordered by their name.
          */
         private void makeAllProduct()
         {
-            allProduct = new List<Product>();
+            allProduct = new List<Medic>();
             db.openConnection();
-            OleDbDataReader reader = db.select("select code_produit from produit order by nom asc", null);
+            OleDbDataReader reader = db.select("select code_produit from produit Inner join Medicament on Medicament.code_produit = PRODUIT.code_produit " +
+                "Inner Join traitement on traitement.code_traitement=Medicament.code_traitement", null);
             while (reader.Read())
             {
-                allProduct.Add(new Product(reader.GetInt32(0), db));
+                allProduct.Add(new Medic(reader.GetInt32(0), db));
             }
             db.closeConnection();
 
         }
 
         /**
-       * Function that fills the listbox with all the product 
+       * Function that fills the listbox with all the drugs
        */
         private void makeListBox()
         {
-            listbox.Items.Clear();
+            listMedic.Items.Clear();
             makeAllProduct();
-            foreach (Product p in allProduct)
+            foreach (Medic p in allProduct)
             {
-                listbox.Items.Add(p.ToString());
+                listMedic.Items.Add(p.ToString());
             }
-            listbox.Refresh();
+            listMedic.Refresh();
         }
+
+        /**
+        * Function that launches a form to see the details of a drugs.
+        */
+        public override void detail_Click(object sender, EventArgs e)
+        {
+            if (listMedic.Items.Count > 0 && listMedic.SelectedIndex != -1)
+            {
+                Stocks_detail s = new Soins_detail(db, allProduct.ToArray()[listMedic.SelectedIndex]);
+                if (s.ShowDialog() == DialogResult.OK)
+                {
+                    makeListBox();
+                }
+            }
+
+        }
+
+        /**
+         * Function that launches a form to add a product in the database.
+         */
+        public override void add_Click(object sender, EventArgs e)
+        {
+            Soins_add form = new Soins_add();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                makeListBox();
+            }
+        }
+
+        /**
+         * Function that launches detail_Click
+         */
+        private void listbox_DoubleClick(object sender, EventArgs e)
+        {
+            detail_Click(sender, e);
+        }
+    }
+}
 
     }
 }

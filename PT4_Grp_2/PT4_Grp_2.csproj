@@ -285,6 +285,7 @@
     <Compile Include="Stocks_modifier.Designer.cs">
       <DependentUpon>Stocks_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Supplier.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>

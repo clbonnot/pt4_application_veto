@@ -30,7 +30,7 @@
 		{
 			this.detail = new System.Windows.Forms.Button();
 			this.add = new System.Windows.Forms.Button();
-			this.listbox = new System.Windows.Forms.ListBox();
+			this.listMedic = new System.Windows.Forms.ListBox();
 			this.progressBar2 = new System.Windows.Forms.ProgressBar();
 			this.SuspendLayout();
 			// 
@@ -55,12 +55,12 @@
 			// 
 			// listbox
 			// 
-			this.listbox.BackColor = System.Drawing.SystemColors.Info;
-			this.listbox.FormattingEnabled = true;
-			this.listbox.Location = new System.Drawing.Point(167, 70);
-			this.listbox.Name = "listbox";
-			this.listbox.Size = new System.Drawing.Size(621, 368);
-			this.listbox.TabIndex = 22;
+			this.listMedic.BackColor = System.Drawing.SystemColors.Info;
+			this.listMedic.FormattingEnabled = true;
+			this.listMedic.Location = new System.Drawing.Point(167, 70);
+			this.listMedic.Name = "listbox";
+			this.listMedic.Size = new System.Drawing.Size(621, 368);
+			this.listMedic.TabIndex = 22;
 			// 
 			// progressBar2
 			// 
@@ -79,10 +79,10 @@
 			this.Controls.Add(this.progressBar2);
 			this.Controls.Add(this.detail);
 			this.Controls.Add(this.add);
-			this.Controls.Add(this.listbox);
+			this.Controls.Add(this.listMedic);
 			this.Name = "Modele_listbox";
 			this.Text = "Modèle_listbox";
-			this.Controls.SetChildIndex(this.listbox, 0);
+			this.Controls.SetChildIndex(this.listMedic, 0);
 			this.Controls.SetChildIndex(this.add, 0);
 			this.Controls.SetChildIndex(this.detail, 0);
 			this.Controls.SetChildIndex(this.progressBar2, 0);
@@ -95,7 +95,7 @@
 
 		private System.Windows.Forms.Button detail;
 		private System.Windows.Forms.Button add;
-		private System.Windows.Forms.ListBox listbox;
+		private System.Windows.Forms.ListBox listMedic;
 		private System.Windows.Forms.ProgressBar progressBar2;
 	}
 }
