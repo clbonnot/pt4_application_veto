@@ -151,13 +151,13 @@ namespace PT4_Grp_2
 			if (comboBox1.SelectedItem.ToString().Equals("Rendez-Vous"))
 			{
 				this.Hide();
-				Modele_calendrier calC = new Calendrier_conge();
-				calC.SetId(this.GetId());
-				calC.SetName(this.GetName());
-				calC.SetRights(this.GetAdmin());
-				calC.SetRole(this.GetRole());
-				calC.FormClosed += (s, args) => this.Close();
-				calC.ShowDialog();
+				Modele_calendrier calR = new Calendrier_rdv();
+				calR.SetId(this.GetId());
+				calR.SetName(this.GetName());
+				calR.SetRights(this.GetAdmin());
+				calR.SetRole(this.GetRole());
+				calR.FormClosed += (s, args) => this.Close();
+				calR.ShowDialog();
 			}
 		}
     }
