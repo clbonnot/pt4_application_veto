@@ -104,6 +104,7 @@ namespace PT4_Grp_2
                 if (formDet.ShowDialog() == DialogResult.OK)
                 {
                     listbox.Items.Clear();
+                    allStaff = makeListStaff();
                     makeListBox();
                 }
             }
