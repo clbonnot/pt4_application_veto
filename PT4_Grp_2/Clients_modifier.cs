@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -40,9 +41,21 @@ namespace PT4_Grp_2
         public override void update_Click(object sender, EventArgs e)
         {
 			Client c = new Client();
-			if(name.Text == null || firstname.Text == null || phone.Text ==null || mail.Text == null)
+			Regex rgx = new Regex("^[A-Z]{1}\\D+");
+			if (name.Text == null || firstname.Text == null || phone.Text ==null || mail.Text == null)
             {
 				MessageBox.Show("Veuillez rentrer tous les champs.");
+				return;
+			}
+			else if (!new Regex("\\S+\\@\\S+\\.\\S+").IsMatch(mail.Text))
+			{
+				MessageBox.Show("Veuillez renseigner une adresse mail valide (exemple@ex.fr)");
+				return;
+			}
+
+			else if (!rgx.IsMatch(firstname.Text) || !rgx.IsMatch(name.Text))
+			{
+				MessageBox.Show("Veuillez renseigner un prénom et nom valide (Commence par une majuscule ");
 				return;
 			}
 			c.Lastname = name.Text;

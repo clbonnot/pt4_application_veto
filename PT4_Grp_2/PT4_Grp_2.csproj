@@ -314,11 +314,11 @@
     <Compile Include="Stocks_detail.Designer.cs">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stocks_Formulaire_new.cs">
+    <Compile Include="Stocks_Fournisseur_new.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stocks_Formulaire_new.Designer.cs">
-      <DependentUpon>Stocks_Formulaire_new.cs</DependentUpon>
+    <Compile Include="Stocks_Fournisseur_new.Designer.cs">
+      <DependentUpon>Stocks_Fournisseur_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Stocks_Fournisseur_add.cs">
       <SubType>Form</SubType>
@@ -469,8 +469,8 @@
     <EmbeddedResource Include="Stocks_detail.resx">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stocks_Formulaire_new.resx">
-      <DependentUpon>Stocks_Formulaire_new.cs</DependentUpon>
+    <EmbeddedResource Include="Stocks_Fournisseur_new.resx">
+      <DependentUpon>Stocks_Fournisseur_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks_Fournisseur_add.resx">
       <DependentUpon>Stocks_Fournisseur_add.cs</DependentUpon>

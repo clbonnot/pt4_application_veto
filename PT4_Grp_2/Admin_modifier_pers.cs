@@ -111,6 +111,7 @@ namespace PT4_Grp_2
 			Staff s = new Staff();
 			s.Firstname = firstnameTV.Text;
 			s.Lastname = nameTV.Text;
+			Regex rgx = new Regex("^[A-Z]{1}\\D+");
 			if (idTV.Text == "" || nameTV.Text == "" || firstnameTV.Text == "")
 			{
 				MessageBox.Show("Veuillez renseigner tous les attributs obligatoires.");
@@ -119,10 +120,19 @@ namespace PT4_Grp_2
 			else if (phoneTV.Text.Length != 10 || !int.TryParse(phoneTV.Text, out int d) || phoneTV.Text[0] != '0')
 			{
 				MessageBox.Show("Veuillez renseigner un numéro de téléphone valide (10 chiffres, commence par 0)");
+				return;
 			}
+
 			else if (!new Regex("\\S+\\@\\S+\\.\\S+").IsMatch(addressTV.Text))
 			{
 				MessageBox.Show("Veuillez renseigner une adresse mail valide (exemple@ex.fr)");
+				return;
+			}
+			
+			else if (!rgx.IsMatch(firstnameTV.Text) || !rgx.IsMatch(nameTV.Text))
+			{
+				MessageBox.Show("Veuillez renseigner un prénom et nom valide (Commence par une majuscule ");
+				return;
 			}
 			s.Phone = phoneTV.Text;
 			s.Mail = addressTV.Text;

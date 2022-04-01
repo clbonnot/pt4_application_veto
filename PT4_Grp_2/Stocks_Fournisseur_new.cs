@@ -5,12 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PT4_Grp_2
 {
-    public partial class Stocks_Formulaire_new : Form
+    public partial class Stocks_Fournisseur_new : Form
     {
         DB db;
 
@@ -19,7 +20,7 @@ namespace PT4_Grp_2
          * 
          * @param db the database
          */
-        public Stocks_Formulaire_new(DB db)
+        public Stocks_Fournisseur_new(DB db)
         {
             InitializeComponent();
             this.db = db;
@@ -35,6 +36,12 @@ namespace PT4_Grp_2
             s.Name = name.Text;
             s.Phone = phone.Text;
             s.Web = web.Text;
+            Regex rgx = new Regex("^[A-Z]{1}\\D+");
+            if (!rgx.IsMatch(name.Text))
+            {
+                MessageBox.Show("Veuillez renseigner un nom valide.");
+                return;
+            }
             try
             {
                 s.Flush(db);

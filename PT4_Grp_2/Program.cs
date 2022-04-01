@@ -20,7 +20,7 @@ namespace PT4_Grp_2
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Statistiques());
+            Application.Run(new Admin());
       
 
         }
