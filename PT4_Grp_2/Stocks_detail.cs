@@ -94,8 +94,11 @@ namespace PT4_Grp_2
 		 */
         private void delete_Click(object sender, EventArgs e)
         {
-			product.RemoveSupplier(db, product.AllSuppliers.ToArray()[listSupplier.SelectedIndex]);
-			makeListSupplier();
+			if (listSupplier.SelectedIndex != -1)
+			{
+				product.RemoveSupplier(db, product.AllSuppliers.ToArray()[listSupplier.SelectedIndex]);
+				makeListSupplier();
+			}
 		}
     }
 }

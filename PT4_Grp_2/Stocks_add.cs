@@ -67,7 +67,7 @@ namespace PT4_Grp_2
                 MessageBox.Show("Veuillez renseigner un prix valide");
                 return;
             }
-            MessageBox.Show(p.Price.ToString(CultureInfo.InvariantCulture));
+          
             try
             {
                 p.Flush(db);
