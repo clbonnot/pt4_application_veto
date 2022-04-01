@@ -126,6 +126,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Connexion";
             this.Text = "Connexion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
