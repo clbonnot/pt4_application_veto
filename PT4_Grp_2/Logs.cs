@@ -22,6 +22,8 @@ namespace PT4_Grp_2
             InitializeComponent();
             this.db = new DB("info-joyeux", "PT4_E2");
             makeListBox();
+            Refresh();
+            
         }
 
         /**
@@ -32,13 +34,15 @@ namespace PT4_Grp_2
             allInvoices = new List<Invoice>();
             listbox.Items.Clear();
             db.openConnection();
-            OleDbDataReader reader = db.select("select code_facture from facture inner join personne on facture.code_personne = personne.code_personne order by date_facture, personne.nom asc", null);
+            OleDbDataReader reader = db.select("select code_facture from facture left outer join personne on facture.code_personne = personne.code_personne order by date_facture, personne.nom asc", null);
             while (reader.Read())
             {
+                
                 Invoice i = new Invoice(reader.GetInt32(0), db);
                 allInvoices.Add(i);
                 listbox.Items.Add(i.ToString());
             }
+            db.closeConnection();
             listbox.Refresh();
         }
 
