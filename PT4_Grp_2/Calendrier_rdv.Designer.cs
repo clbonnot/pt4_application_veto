@@ -53,9 +53,9 @@
             this.date.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date.Location = new System.Drawing.Point(376, 77);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(217, 31);
+            this.date.Size = new System.Drawing.Size(232, 31);
             this.date.TabIndex = 84;
-            this.date.Text = "Date selectionée";
+            this.date.Text = "Date sélectionnée";
             this.date.Click += new System.EventHandler(this.label1_Click);
             // 
             // listRDV

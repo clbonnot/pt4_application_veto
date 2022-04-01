@@ -92,10 +92,9 @@ namespace PT4_Grp_2
             string mois = dateStart.Value.ToString().Substring(dateStart.Value.ToString().IndexOf('/') + 1, 2).Trim();
             string annee = dateStart.Value.ToString().Substring(dateStart.Value.ToString().LastIndexOf('/') + 1, 4).Trim();
             string date = annee + "-" + mois + "-" + jour + " ";
-
             if (labelrdv.Text.Length > 0 && textBox2.Text != string.Empty && textBox3.Text != string.Empty && labelnom.Text.Length > 1
-                && Convert.ToInt32(textBox3.Text.Trim()) < 25 && Convert.ToInt32(textBox3.Text.Trim()) >= 0 
-                && Convert.ToInt32(textBox2.Text.Trim()) < 60 && Convert.ToInt32(textBox2.Text.Trim()) >= 0)
+                && Convert.ToInt32(textBox3.Text.Trim()) < 60 && Convert.ToInt32(textBox3.Text.Trim()) >= 0 
+                && Convert.ToInt32(textBox2.Text.Trim()) < 25 && Convert.ToInt32(textBox2.Text.Trim()) >= 0)
             {
                 string heure = "";
                 string minutes = "";
