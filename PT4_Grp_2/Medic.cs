@@ -189,8 +189,8 @@ namespace PT4_Grp_2
             String[] v2 = { Name, Description, Quantity.ToString(), Price.ToString(CultureInfo.InvariantCulture), Brand };
             db.nonSelect("insert into traitement (nom, descrip) values (?,?)", v1);
             db.nonSelect("insert into produit (nom, descrip, quantite, prix, marque) values (?,?,?,?,?)", v2);
-            OleDbDataReader reader = db.select("select code_produit from produit");
-            OleDbDataReader reader2 = db.select("select code_traitement from traitement");
+            OleDbDataReader reader = db.select("select code_produit from produit", null);
+            OleDbDataReader reader2 = db.select("select code_traitement from traitement", null);
             while (reader.Read())
             {
                 idP = reader.GetString(1).Trim(' ');
