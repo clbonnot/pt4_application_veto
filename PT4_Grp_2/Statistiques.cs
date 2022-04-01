@@ -15,19 +15,18 @@ namespace PT4_Grp_2
     public partial class Statistiques : Modele
     {
         DB db;
+
+        /**
+         * Constructor of the class that generate a chart of the top 3 sales
+         */
         public Statistiques()
         {
             InitializeComponent();
             this.db = new DB("info-joyeux", "PT4_E2");
-        }
-
-
-        private void sales_Click(object sender, EventArgs e)
-        {
             chart.Series.Clear();
             chart.Titles.Clear();
             db.openConnection();
-            OleDbDataReader reader = db.select("select produit.nom, SUM(vente.quantite) from vente" +
+            OleDbDataReader reader = db.select("select top 3 produit.nom, SUM(vente.quantite) from vente" +
                 " inner join produit on vente.code_produit = produit.code_produit " +
                 "group by produit.code_produit, produit.nom order by sum(vente.quantite) desc", null);
             List<string> salesSeries = new List<string>();
@@ -42,7 +41,7 @@ namespace PT4_Grp_2
 
             string[] tabS = salesSeries.ToArray();
             int[] tabValues = salesValues.ToArray();
-            for(int i = 0; i< tabS.Length; i++)
+            for (int i = 0; i < tabS.Length; i++)
             {
                 Series series = chart.Series.Add(tabS[i]);
                 series.Points.Add(tabValues[i]);
@@ -50,5 +49,7 @@ namespace PT4_Grp_2
             db.closeConnection();
             chart.Refresh();
         }
+
+
     }
 }
