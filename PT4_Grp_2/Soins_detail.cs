@@ -82,7 +82,9 @@ namespace PT4_Grp_2
 		 */
 		private void addSup_Click(object sender, EventArgs e)
 		{
-			Stocks_Fournisseur_add form = new Stocks_Fournisseur_add(db, medic);
+			int id = medic.Id;
+			Product product = new Product(id, db);
+			Stocks_Fournisseur_add form = new Stocks_Fournisseur_add(db, product);
 			if (form.ShowDialog() == DialogResult.OK)
 			{
 				makeListSupplier();
