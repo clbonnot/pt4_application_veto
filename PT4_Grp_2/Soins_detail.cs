@@ -63,7 +63,7 @@ namespace PT4_Grp_2
 		 */
 		private void update_Click(object sender, EventArgs e)
 		{
-			Stocks_modifier form = new Soins_modifier(db, medic);
+			Soins_modifier form = new Soins_modifier(db, medic);
 			DialogResult result = form.ShowDialog();
 			if (result == DialogResult.OK)
 			{
