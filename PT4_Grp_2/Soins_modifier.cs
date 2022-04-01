@@ -13,7 +13,7 @@ namespace PT4_Grp_2
     public partial class Soins_modifier : Modele_modifier
     {
         DB db;
-        Product product;
+        Medic medic;
 
         /**
          * Constructor of the class.
@@ -25,9 +25,9 @@ namespace PT4_Grp_2
         {
             InitializeComponent();
             this.db = db;
-            soins = s;
+            medic = s;
             name.Text = s.Name;
-            description.Text = s.Description;
+            desc.Text = s.Description;
             quantity.Text = s.Quantity.ToString();
             price.Text = s.Price.ToString();
             brand.Text = s.Brand.ToString();
@@ -40,7 +40,7 @@ namespace PT4_Grp_2
         {
             try
             {
-                product.Delete(db);
+                medic.Delete(db);
                 MessageBox.Show("Produit supprimé avec succés ! ");
                 this.DialogResult = DialogResult.Yes;
                 Close();
@@ -56,18 +56,18 @@ namespace PT4_Grp_2
          */
         public override void update_Click(object sender, EventArgs e)
         {
-            if (name.Text == null || description.Text == null || quantity.Text == null || price.Text == null || brand.Text == null)
+            if (name.Text == null || desc.Text == null || quantity.Text == null || price.Text == null || brand.Text == null)
             {
                 MessageBox.Show("Veuillez renseigner tout les champs");
                 return;
             }
-            Product p = new Product();
+            Medic s = new Medic();
 
-            p.Name = name.Text;
-            p.Description = description.Text;
+            s.Name = name.Text;
+            s.Description = desc.Text;
             if (int.TryParse(quantity.Text, out int q))
             {
-                p.Quantity = q;
+                s.Quantity = q;
             }
             else
             {
@@ -75,11 +75,11 @@ namespace PT4_Grp_2
                 return;
 
             }
-            p.Brand = brand.Text;
+            s.Brand = brand.Text;
 
             if (Decimal.TryParse(price.Text, out decimal pr))
             {
-                p.Price = pr;
+                s.Price = pr;
             }
             else
             {
@@ -89,7 +89,7 @@ namespace PT4_Grp_2
 
             try
             {
-                product.Update(db, p);
+                medic.Update(db, s);
             }
             catch (Exception exc)
             {

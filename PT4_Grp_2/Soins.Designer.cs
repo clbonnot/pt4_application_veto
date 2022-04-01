@@ -28,20 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Deconnexion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.listMedic = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Deconnexion
             // 
             this.Deconnexion.FlatAppearance.BorderSize = 0;
-            this.Deconnexion.Location = new System.Drawing.Point(692, 12);
-            this.Deconnexion.Name = "Deconnexion";
-            this.Deconnexion.Size = new System.Drawing.Size(81, 24);
-            this.Deconnexion.TabIndex = 10;
-            this.Deconnexion.Text = "Deconnexion";
-            this.Deconnexion.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -63,20 +57,34 @@
             this.listMedic.Size = new System.Drawing.Size(621, 277);
             this.listMedic.TabIndex = 68;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 340);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 31);
+            this.button1.TabIndex = 69;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Soins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listMedic);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Deconnexion);
             this.Name = "Soins";
             this.Text = "Soins";
+            this.Controls.SetChildIndex(this.RoleName, 0);
+            this.Controls.SetChildIndex(this.listbox, 0);
+            this.Controls.SetChildIndex(this.add, 0);
+            this.Controls.SetChildIndex(this.detail, 0);
             this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.listMedic, 0);
+            this.Controls.SetChildIndex(this.button1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +95,6 @@
 		private System.Windows.Forms.Button Deconnexion;
 		private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listMedic;
+        private System.Windows.Forms.Button button1;
     }
 }

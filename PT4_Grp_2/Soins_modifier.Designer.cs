@@ -29,14 +29,16 @@
 		private void InitializeComponent()
 		{
             this.name_medic = new System.Windows.Forms.Label();
-            this.description = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.brand = new System.Windows.Forms.TextBox();
+            this.quantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.desc = new System.Windows.Forms.TextBox();
+            this.price = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.description = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // name_medic
@@ -48,16 +50,6 @@
             this.name_medic.Size = new System.Drawing.Size(59, 26);
             this.name_medic.TabIndex = 50;
             this.name_medic.Text = "Nom";
-            // 
-            // description
-            // 
-            this.description.AutoSize = true;
-            this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description.Location = new System.Drawing.Point(73, 410);
-            this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(79, 17);
-            this.description.TabIndex = 51;
-            this.description.Text = "Description";
             // 
             // label4
             // 
@@ -79,71 +71,102 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "Informations";
             // 
-            // textBox1
+            // name
             // 
-            this.textBox1.Location = new System.Drawing.Point(65, 200);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 60;
+            this.name.Location = new System.Drawing.Point(65, 200);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(100, 20);
+            this.name.TabIndex = 60;
             // 
-            // textBox2
+            // brand
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 304);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 61;
+            this.brand.Location = new System.Drawing.Point(76, 304);
+            this.brand.Name = "brand";
+            this.brand.Size = new System.Drawing.Size(209, 20);
+            this.brand.TabIndex = 61;
             // 
-            // textBox4
+            // quantity
             // 
-            this.textBox4.Location = new System.Drawing.Point(76, 440);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(209, 20);
-            this.textBox4.TabIndex = 63;
+            this.quantity.Location = new System.Drawing.Point(76, 502);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(209, 20);
+            this.quantity.TabIndex = 67;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 349);
+            this.label2.Location = new System.Drawing.Point(73, 482);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Allergies";
+            this.label2.TabIndex = 66;
+            this.label2.Text = "Quantité";
             // 
-            // textBox3
+            // desc
             // 
-            this.textBox3.Location = new System.Drawing.Point(76, 369);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(209, 20);
-            this.textBox3.TabIndex = 62;
+            this.desc.Location = new System.Drawing.Point(76, 440);
+            this.desc.Name = "desc";
+            this.desc.Size = new System.Drawing.Size(209, 20);
+            this.desc.TabIndex = 65;
+            // 
+            // price
+            // 
+            this.price.Location = new System.Drawing.Point(76, 369);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(209, 20);
+            this.price.TabIndex = 64;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(73, 349);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 17);
+            this.label3.TabIndex = 63;
+            this.label3.Text = "Prix";
+            // 
+            // description
+            // 
+            this.description.AutoSize = true;
+            this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.Location = new System.Drawing.Point(73, 410);
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(79, 17);
+            this.description.TabIndex = 62;
+            this.description.Text = "Description";
             // 
             // Soins_modifier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 638);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.quantity);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.desc);
+            this.Controls.Add(this.price);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.description);
+            this.Controls.Add(this.brand);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.description);
             this.Controls.Add(this.name_medic);
             this.Name = "Soins_modifier";
             this.Text = "Soins_modifier";
             this.Controls.SetChildIndex(this.name_medic, 0);
-            this.Controls.SetChildIndex(this.description, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.textBox2, 0);
-            this.Controls.SetChildIndex(this.textBox3, 0);
-            this.Controls.SetChildIndex(this.textBox4, 0);
+            this.Controls.SetChildIndex(this.name, 0);
+            this.Controls.SetChildIndex(this.brand, 0);
             this.Controls.SetChildIndex(this.Delete, 0);
             this.Controls.SetChildIndex(this.update, 0);
+            this.Controls.SetChildIndex(this.description, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.price, 0);
+            this.Controls.SetChildIndex(this.desc, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.quantity, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,13 +175,15 @@
         #endregion
 
         private System.Windows.Forms.Label name_medic;
-        private System.Windows.Forms.Label description;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.TextBox brand;
+        private System.Windows.Forms.TextBox quantity;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox desc;
+        private System.Windows.Forms.TextBox price;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label description;
     }
 }
