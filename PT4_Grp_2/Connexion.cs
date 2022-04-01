@@ -159,7 +159,7 @@ namespace PT4_Grp_2
                 }
                 else
                 {
-                    Mod = new Clients();
+                    Mod = new Paniers();
                 }
                 Mod.SetIdStaff(idStaff);
                 Mod.SetId(idPeople);
