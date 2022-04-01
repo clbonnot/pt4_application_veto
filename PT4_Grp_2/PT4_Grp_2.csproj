@@ -223,6 +223,7 @@
     <Compile Include="Modele_modifier.Designer.cs">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
     </Compile>

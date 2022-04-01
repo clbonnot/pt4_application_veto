@@ -13,89 +13,123 @@ namespace PT4_Grp_2
 {
 	public partial class Modele : Form
 	{
-		string role;
-		Boolean admin;
-		string name;
+		public string roleUser;
+		public int idStaff;
+		public int id;
+		public Boolean admin;
+		public string nameUser;
 		/*
 		 * Create a new model for all the other forms
 		*/
-		public Modele(Form f)
+		public Modele()
 		{
 			InitializeComponent();
 			this.RoleName.ForeColor = SystemColors.ControlLightLight;
 			this.Person.ForeColor = SystemColors.ControlLightLight;
-			f.Close();
+		}
+
+		/**
+		 * Set the id of the current user
+		 */
+		public void SetId(int id)
+		{
+			this.id = id;
+		}
+		/**
+		 * Set the db id of the current user
+		 */
+		public void SetIdStaff(int id)
+		{
+			this.idStaff = id;
 		}
 		/*
 		 * Set the role of the current user
 		 */
 		public void SetRole(string role)
-        {
-			this.role = role;
+		{
+			this.roleUser = role;
 			RoleName.Text = role;
+			RoleName.Refresh();
 		}
 		/*
 		 * Set the rights of the current user
 		 */
 		public void SetRights(string right)
 		{
-			if(right.Equals("adimistrateur"))
-            {
-				this.admin = true;	
-            }
+			if (right.Equals("administrateur"))
+			{
+				this.admin = true;
+			}
 			else
-            {
-				this.admin = false;	
-            }
+			{
+				this.admin = false;
+			}
 		}
 		/*
 		 * Set the name of the current user
 		 */
 		public void SetName(string name)
 		{
-			this.name = name;
+			this.nameUser = name;
 			Person.Text = name;
+			Person.Refresh();
+		}
+
+		/*
+		 * Get the staff id of the current user
+		 */
+		public int GetIdStaff()
+		{
+			return idStaff;
 		}
 		/*
 		 * Get the role of the current user
 		 */
 		public string GetRole()
-        {
-			return role;
-        }
+		{
+
+			return roleUser;
+		}
+
+		/*
+		 * Get the id of the current user
+		 */
+		public int GetId()
+		{
+			return id;
+		}
 		/*
 		 * Get the rights of the current user
 		 */
 		public Boolean GetAdmin()
-        {
-			return admin;	
-        }
+		{
+			return admin;
+		}
 		/*
 		 * Get the name of the current user
 		 */
 		public string GetName()
-        {
-			return name;	
-        }
-
-		public void CloseForm(Form f)
-        {
-			f.Close();
-        }
+		{
+			return nameUser;
+		}
 		/*
 		 * Disconnect the user and start the connection page
 		 */
 		private void Deconnexion_Click(object sender, System.EventArgs e)
-        {
-			this.role = null;
-			this.admin = false;
-			this.name=null;
-			
-			Connexion connexion = new Connexion();
-			connexion.StartPosition = FormStartPosition.CenterScreen;
-			connexion.ShowDialog();
-			this.Close();
+		{
 
+			this.roleUser = null;
+			this.admin = false;
+			this.nameUser = null;
+			this.Hide();
+
+			Connexion connexion = new Connexion();
+
+			connexion.StartPosition = FormStartPosition.CenterScreen;
+			connexion.FormClosed += (s, args) => this.Close();
+
+
+			connexion.ShowDialog();
 		}
-    }
+	}
 }

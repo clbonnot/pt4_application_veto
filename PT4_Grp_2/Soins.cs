@@ -32,7 +32,6 @@ namespace PT4_Grp_2
 
         private void Soins_Load(object sender, EventArgs e)
         {
-            SA = new Soins_add();
             
         }
 
@@ -74,7 +73,7 @@ namespace PT4_Grp_2
         {
             if (listMedic.Items.Count > 0 && listMedic.SelectedIndex != -1)
             {
-                Stocks_detail s = new Soins_detail(db, allProduct.ToArray()[listMedic.SelectedIndex]);
+                Soins_detail s = new Soins_detail(db, allProduct.ToArray()[listMedic.SelectedIndex]);
                 if (s.ShowDialog() == DialogResult.OK)
                 {
                     makeListBox();
@@ -84,7 +83,7 @@ namespace PT4_Grp_2
         }
 
         /**
-         * Function that launches a form to add a product in the database.
+         * Function that launches a form to add a drug in the database.
          */
         public override void add_Click(object sender, EventArgs e)
         {

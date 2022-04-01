@@ -91,7 +91,7 @@ namespace PT4_Grp_2
                 {
 					
 					string sql = "Insert Into Produit(Nom, Descrip, Quantite, Prix, Marque) values('" + name + "','" + desc + "'," + quantity + "," + price + ",'" + mark + "')";
-					OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.getDbConnection());
+					OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.dbConnection);
 					cmdSet.ExecuteNonQuery();
 					HintBox.Text = "Produit ajouté avec succès";
                 }
