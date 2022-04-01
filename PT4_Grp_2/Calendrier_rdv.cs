@@ -102,7 +102,7 @@ namespace PT4_Grp_2
 				Modele_calendrier calC = new Calendrier_conge();
 				calC.SetId(this.GetId());
 				calC.SetName(this.GetName());
-				calC.SetRights(this.roleUser);
+				calC.SetRights(this.GetAdmin());
 				calC.SetRole(this.GetRole());
 				calC.FormClosed += (s, args) => this.Close();
 				calC.ShowDialog();

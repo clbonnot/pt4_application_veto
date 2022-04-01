@@ -19,7 +19,7 @@ namespace PT4_Grp_2
 
         public virtual void button1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         public virtual void update_Click(object sender, EventArgs e)
