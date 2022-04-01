@@ -23,6 +23,8 @@ namespace PT4_Grp_2
 			DBcon.openConnection();
 			rdv.Clear();
 			listRDV.Items.Clear();
+			personnel.Items.Add("Congé");
+			personnel.Items.Add("Rendez-Vous");
 		}
 
 		private void label1_Click(object sender, EventArgs e)
@@ -90,6 +92,21 @@ namespace PT4_Grp_2
         {
 			Modele_modifier edit = new Calendrier_modifier_rdv();
 			edit.ShowDialog();
+        }
+
+        private void personnel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (personnel.SelectedItem.ToString().Equals("Congé"))
+            {
+				this.Hide();
+				Modele_calendrier calC = new Calendrier_conge();
+				calC.SetId(this.GetId());
+				calC.SetName(this.GetName());
+				calC.SetRights(this.roleUser);
+				calC.SetRole(this.GetRole());
+				calC.FormClosed += (s, args) => this.Close();
+				calC.ShowDialog();
+			}
         }
     }
 }

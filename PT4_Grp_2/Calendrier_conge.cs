@@ -23,6 +23,8 @@ namespace PT4_Grp_2
 			DBcon.openConnection();
 			congesAffichage.Clear();
 			personnel.Clear();
+			comboBox1.Items.Add("Congé");
+			comboBox1.Items.Add("Rendez-Vous");
 		}
 
         public override void add_Click(object sender, EventArgs e)
@@ -87,55 +89,76 @@ namespace PT4_Grp_2
 
 			if (listConges.Items.Count > 0)
 			{
-				int codePerso=-1, codeHoraire =-1;
-				string item = listConges.SelectedItem.ToString();
-				string datedebut = item.Substring(item.IndexOf('/') - 2, 10).Trim();
-				string datefin = item.Substring(item.LastIndexOf('/') - 5).Trim();
-
-				string jD = datedebut.Substring(0, datedebut.IndexOf('/'));
-				string mD = datedebut.Substring(datedebut.IndexOf('/') + 1, 2);
-				string aD = datedebut.Substring(datedebut.LastIndexOf('/') + 1, 4);
-
-				string jE = datefin.Substring(0, datefin.IndexOf('/'));
-				string mE = datefin.Substring(datefin.IndexOf('/') + 1, 2);
-				string aE = datefin.Substring(datefin.LastIndexOf('/') + 1, 4);
-
-				Console.WriteLine(datedebut + " " + datefin);
-				string sqlPerso = "select code_personnel from personnel inner join personne on personnel.code_personne = personne.code_personne" +
-					" where personne.prenom ='" + item.Substring(0, item.IndexOf(' ')).Trim()+"'";
-
-				string sqlHoraire = "select code_horaire from horaire where debut = '" + aD + "-" + mD + "-" + jD + "'" + " and fin ='" + aE + "-" + mE + "-" + jE + "'";
-
-				OleDbCommand cmdRead = new OleDbCommand(sqlPerso, DBcon.dbConnection);
-				OleDbDataReader reader = cmdRead.ExecuteReader();
-
-				while (reader.Read())
+				try
 				{
-					codePerso = reader.GetInt32(0);
+					int codePerso = -1, codeHoraire = -1;
+					string item = listConges.SelectedItem.ToString();
+					string datedebut = item.Substring(item.IndexOf('/') - 2, 10).Trim();
+					string datefin = item.Substring(item.LastIndexOf('/') - 5).Trim();
+
+					string jD = datedebut.Substring(0, datedebut.IndexOf('/'));
+					string mD = datedebut.Substring(datedebut.IndexOf('/') + 1, 2);
+					string aD = datedebut.Substring(datedebut.LastIndexOf('/') + 1, 4);
+
+					string jE = datefin.Substring(0, datefin.IndexOf('/'));
+					string mE = datefin.Substring(datefin.IndexOf('/') + 1, 2);
+					string aE = datefin.Substring(datefin.LastIndexOf('/') + 1, 4);
+
+					Console.WriteLine(datedebut + " " + datefin);
+					string sqlPerso = "select code_personnel from personnel inner join personne on personnel.code_personne = personne.code_personne" +
+						" where personne.prenom ='" + item.Substring(0, item.IndexOf(' ')).Trim() + "'";
+
+					string sqlHoraire = "select code_horaire from horaire where debut = '" + aD + "-" + mD + "-" + jD + "'" + " and fin ='" + aE + "-" + mE + "-" + jE + "'";
+
+					OleDbCommand cmdRead = new OleDbCommand(sqlPerso, DBcon.dbConnection);
+					OleDbDataReader reader = cmdRead.ExecuteReader();
+
+					while (reader.Read())
+					{
+						codePerso = reader.GetInt32(0);
+					}
+
+					OleDbCommand cmdHoraire = new OleDbCommand(sqlHoraire, DBcon.dbConnection);
+					OleDbDataReader readerHoraire = cmdHoraire.ExecuteReader();
+
+					while (readerHoraire.Read())
+					{
+						codeHoraire = readerHoraire.GetInt32(0);
+					}
+
+					if (codePerso > 0 && codeHoraire > 0)
+					{
+						Modele_modifier edit = new Calendrier_modifier_conge(codeHoraire, codePerso);
+						edit.Show();
+					}
+					else
+					{
+						MessageBox.Show("Erreur lors de la tentative de modification du congé !");
+					}
 				}
-
-				OleDbCommand cmdHoraire = new OleDbCommand(sqlHoraire, DBcon.dbConnection);
-				OleDbDataReader readerHoraire = cmdHoraire.ExecuteReader();
-
-				while (readerHoraire.Read())
-				{
-					codeHoraire = readerHoraire.GetInt32(0);
-				}
-
-				if(codePerso > 0 && codeHoraire > 0)
+                catch (System.NullReferenceException)
                 {
-					Modele_modifier edit = new Calendrier_modifier_conge(codeHoraire, codePerso);
-					edit.Show();		
-                }
-                else
-                {
-					MessageBox.Show("Erreur lors de la tentative de modification du congé !");
-                }
 
+                }
 			} else
             {
 				MessageBox.Show("Impossible de modifier un congé si la liste est vide !");
             }
+		}
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			if (comboBox1.SelectedItem.ToString().Equals("Rendez-Vous"))
+			{
+				this.Hide();
+				Modele_calendrier calC = new Calendrier_conge();
+				calC.SetId(this.GetId());
+				calC.SetName(this.GetName());
+				calC.SetRights(this.roleUser);
+				calC.SetRole(this.GetRole());
+				calC.FormClosed += (s, args) => this.Close();
+				calC.ShowDialog();
+			}
 		}
     }
 }

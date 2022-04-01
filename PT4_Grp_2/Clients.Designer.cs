@@ -43,7 +43,7 @@
             // 
             this.Delete.BackColor = System.Drawing.Color.DarkRed;
             this.Delete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Delete.Location = new System.Drawing.Point(21, 178);
+            this.Delete.Location = new System.Drawing.Point(16, 322);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(108, 36);
             this.Delete.TabIndex = 30;
@@ -59,6 +59,7 @@
             this.Controls.Add(this.Delete);
             this.Name = "Clients";
             this.Text = "Clients";
+            this.Controls.SetChildIndex(this.RoleName, 0);
             this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.listbox, 0);
             this.Controls.SetChildIndex(this.add, 0);

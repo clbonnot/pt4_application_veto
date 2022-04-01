@@ -73,7 +73,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button Deconnexion;
+		//private System.Windows.Forms.Button Deconnexion;
 		private System.Windows.Forms.Label label1;
 	}
 }
