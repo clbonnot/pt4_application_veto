@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -62,7 +63,12 @@ namespace PT4_Grp_2
                 return;
             }
             Product p = new Product();
-
+            Regex rgx = new Regex("^[A-Z]{1}\\D+");
+            if (!rgx.IsMatch(name.Text))
+            {
+                MessageBox.Show("Veuillez renseigner un nom valide.");
+                return;
+            }
             p.Name = name.Text;
             p.Description = description.Text;
             if (int.TryParse(quantity.Text, out int q))

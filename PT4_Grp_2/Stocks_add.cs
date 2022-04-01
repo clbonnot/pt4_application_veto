@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,7 +37,13 @@ namespace PT4_Grp_2
                 MessageBox.Show("Veuillez renseigner tout les champs");
                 return;
             }
-            Product p = new Product();
+            Regex rgx = new Regex("^[A-Z]{1}\\D+");
+            if (!rgx.IsMatch(name.Text))
+            {
+                MessageBox.Show("Veuillez renseigner un nom valide.");
+                return;
+            }
+                Product p = new Product();
 
             p.Name = name.Text;
             p.Description = description.Text;

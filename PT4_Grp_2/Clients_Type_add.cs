@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -38,6 +39,12 @@ namespace PT4_Grp_2
             
             String[] values = { name.Text, description.Text };
             int id;
+            Regex rgx = new Regex("^[A-Z]{1}\\D+");
+            if (!rgx.IsMatch(name.Text))
+            {
+                MessageBox.Show("Veuillez choisir un nom de race correct.");
+                return;
+            }
             try
             {
                 id = db.insert("Insert into espèce (nomespèce, descrip) values (? , ?)", values);

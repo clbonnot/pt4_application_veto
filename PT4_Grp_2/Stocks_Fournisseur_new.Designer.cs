@@ -1,7 +1,7 @@
 ﻿
 namespace PT4_Grp_2
 {
-    partial class Stocks_Formulaire_new
+    partial class Stocks_Fournisseur_new
     {
         /// <summary>
         /// Required designer variable.

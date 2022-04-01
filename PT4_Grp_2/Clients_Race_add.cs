@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -68,6 +69,12 @@ namespace PT4_Grp_2
         {
             db.openConnection();
             int idType = allIndexes.ToArray()[species.SelectedIndex];
+            Regex rgx = new Regex("^[A-Z]{1}\\D+");
+            if (!rgx.IsMatch(name.Text))
+            {
+                MessageBox.Show("Veuillez choisir un nom de race correct.");
+                return;
+            }
             String[] values = { idType.ToString(), name.Text, description.Text };
             try
             {

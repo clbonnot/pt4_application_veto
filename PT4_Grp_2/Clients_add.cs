@@ -32,6 +32,7 @@ namespace PT4_Grp_2
 		public override void valider_Click(object sender, EventArgs e)
         {
 			Client c = new Client();
+			Regex rgx = new Regex("^[A-Z]{1}\\D+");
 			if (LastName.Text == "" || FirstName.Text == "" || Phone.Text == "" || Address.Text == "")
 			{
 				MessageBox.Show("Veuillez rentrer tous les champs.");
@@ -45,6 +46,18 @@ namespace PT4_Grp_2
 			else if (!new Regex("\\S+\\@\\S+\\.\\S+").IsMatch(Address.Text))
 			{
 				MessageBox.Show("Veuillez renseigner une adresse mail valide (exemple@ex.fr)");
+				return;
+			}
+			
+			else if (!new Regex("\\S+\\@\\S+\\.\\S+").IsMatch(Address.Text))
+			{
+				MessageBox.Show("Veuillez renseigner une adresse mail valide (exemple@ex.fr)");
+				return;
+			}
+
+			else if (!rgx.IsMatch(FirstName.Text) || !rgx.IsMatch(LastName.Text))
+			{
+				MessageBox.Show("Veuillez renseigner un prénom et nom valide (Commence par une majuscule ");
 				return;
 			}
 			c.Lastname = LastName.Text;

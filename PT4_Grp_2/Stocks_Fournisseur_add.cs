@@ -104,7 +104,7 @@ namespace PT4_Grp_2
 
         private void adddb_Click(object sender, EventArgs e)
         {
-			Stocks_Formulaire_new form = new Stocks_Formulaire_new(db);
+			Stocks_Fournisseur_new form = new Stocks_Fournisseur_new(db);
 			if(form.ShowDialog() == DialogResult.OK)
             {
 				makeComboBox();

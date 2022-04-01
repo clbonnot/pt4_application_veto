@@ -73,7 +73,7 @@
             // 
             // remove
             // 
-            this.remove.Location = new System.Drawing.Point(15, 149);
+            this.remove.Location = new System.Drawing.Point(576, 275);
             this.remove.Name = "remove";
             this.remove.Size = new System.Drawing.Size(108, 36);
             this.remove.TabIndex = 32;
@@ -132,7 +132,7 @@
             // products
             // 
             this.products.FormattingEnabled = true;
-            this.products.Location = new System.Drawing.Point(12, 245);
+            this.products.Location = new System.Drawing.Point(394, 275);
             this.products.Name = "products";
             this.products.Size = new System.Drawing.Size(121, 21);
             this.products.TabIndex = 48;
@@ -157,7 +157,7 @@
             // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(12, 203);
+            this.add.Location = new System.Drawing.Point(394, 302);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(108, 36);
             this.add.TabIndex = 52;
@@ -203,6 +203,7 @@
             this.Controls.Add(this.progressBar1);
             this.Name = "Paniers";
             this.Text = "Paniers";
+            this.Controls.SetChildIndex(this.RoleName, 0);
             this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.progressBar1, 0);
             this.Controls.SetChildIndex(this.remove, 0);
