@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.maladie = new System.Windows.Forms.Button();
             this.soin = new System.Windows.Forms.Button();
             this.Calendrier = new System.Windows.Forms.Button();
             this.client = new System.Windows.Forms.Button();
@@ -39,19 +38,9 @@
             this.logs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // maladie
-            // 
-            this.maladie.Enabled = false;
-            this.maladie.Location = new System.Drawing.Point(3, 69);
-            this.maladie.Name = "maladie";
-            this.maladie.Size = new System.Drawing.Size(107, 27);
-            this.maladie.TabIndex = 63;
-            this.maladie.Text = "Maladies";
-            this.maladie.UseVisualStyleBackColor = true;
-            this.maladie.Click += new System.EventHandler(this.maladie_Click);
-            // 
             // soin
             // 
+            this.soin.Enabled = false;
             this.soin.Location = new System.Drawing.Point(3, 36);
             this.soin.Name = "soin";
             this.soin.Size = new System.Drawing.Size(107, 27);
@@ -126,7 +115,7 @@
             // logs
             // 
             this.logs.AllowDrop = true;
-            this.logs.Location = new System.Drawing.Point(3, 266);
+            this.logs.Location = new System.Drawing.Point(3, 69);
             this.logs.Name = "logs";
             this.logs.Size = new System.Drawing.Size(107, 27);
             this.logs.TabIndex = 69;
@@ -145,17 +134,15 @@
             this.Controls.Add(this.panier);
             this.Controls.Add(this.stock);
             this.Controls.Add(this.client);
-            this.Controls.Add(this.maladie);
             this.Controls.Add(this.soin);
             this.Controls.Add(this.Calendrier);
             this.Name = "Control_veto";
-            this.Size = new System.Drawing.Size(115, 297);
+            this.Size = new System.Drawing.Size(115, 269);
             this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		private System.Windows.Forms.Button maladie;
 		private System.Windows.Forms.Button soin;
 		private System.Windows.Forms.Button Calendrier;
 		private System.Windows.Forms.Button client;

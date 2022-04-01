@@ -38,8 +38,8 @@
             this.Person = new System.Windows.Forms.Label();
             this.RoleName = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.control_veto1 = new PT4_Grp_2.Control_veto();
             this.control_secretaire1 = new PT4_Grp_2.Control_secretaire();
+            this.control_veto1 = new PT4_Grp_2.Control_veto();
             this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,14 +136,6 @@
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // control_veto1
-            // 
-            this.control_veto1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.control_veto1.Location = new System.Drawing.Point(16, 147);
-            this.control_veto1.Name = "control_veto1";
-            this.control_veto1.Size = new System.Drawing.Size(115, 263);
-            this.control_veto1.TabIndex = 17;
-            // 
             // control_secretaire1
             // 
             this.control_secretaire1.BackColor = System.Drawing.Color.MediumAquamarine;
@@ -151,6 +143,14 @@
             this.control_secretaire1.Name = "control_secretaire1";
             this.control_secretaire1.Size = new System.Drawing.Size(114, 169);
             this.control_secretaire1.TabIndex = 16;
+            // 
+            // control_veto1
+            // 
+            this.control_veto1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.control_veto1.Location = new System.Drawing.Point(15, 147);
+            this.control_veto1.Name = "control_veto1";
+            this.control_veto1.Size = new System.Drawing.Size(115, 262);
+            this.control_veto1.TabIndex = 17;
             // 
             // Modele
             // 

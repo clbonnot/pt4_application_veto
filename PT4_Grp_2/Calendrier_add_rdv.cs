@@ -179,8 +179,18 @@ namespace PT4_Grp_2
                 cmdRequest.Parameters.Add("Code_Animal", OleDbType.Integer).Value = codeAnimal;
                 cmdRequest.Parameters.Add("Code_Personne", OleDbType.Integer).Value = codePersonne;
                 cmdRequest.Parameters.Add("Code_Personnel", OleDbType.Integer).Value = codePersonnel;
+                DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment ajouter ce RDV ?", "Ajout RDV", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    cmdRequest.ExecuteNonQuery();
+                    MessageBox.Show("Le RDV a bien été crée.");
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
 
-                cmdRequest.ExecuteNonQuery();
+                }
+                
             }
             else
             {
