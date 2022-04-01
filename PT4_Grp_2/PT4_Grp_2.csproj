@@ -162,6 +162,7 @@
       <DependentUpon>Maladie_modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
+    <Compile Include="Medic.cs" />
     <Compile Include="Modele_add_pers.cs">
       <SubType>Form</SubType>
     </Compile>
