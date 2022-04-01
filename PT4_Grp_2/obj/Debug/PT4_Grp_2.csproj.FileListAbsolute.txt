@@ -99,3 +99,10 @@ C:\Users\rapha\Desktop\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Gr
 \\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.GenerateResource.cache
 \\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.CoreCompileInputs.cache
 \\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.csproj.AssemblyReference.cache
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Clients_Animal.resources
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Clients_Race_add.resources
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Clients_Type_add.resources
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Logs.resources
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Paniers.resources
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Stocks_add.resources
+\\iut.bx1\Etudiants\Home\thalley\Documents\S4\PT4\pt4_kahloul_rakotoarisoa_halley_bonnot_bailhet\PT4_Grp_2\obj\Debug\PT4_Grp_2.Stocks_Formulaire_new.resources
