@@ -78,8 +78,9 @@ namespace PT4_Grp_2
             {
                 new Invoice(reader.GetInt32(0),db,false).Delete(db);
             }
+            db.nonSelect("delete from animal where code_personne = ?", v);
             db.nonSelect("delete from personne where code_personne = ?", v);
-            db.nonSelect("delete from animal where code_personne = ?",v);
+           
             db.closeConnection();
         }
 
