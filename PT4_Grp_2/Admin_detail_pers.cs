@@ -55,13 +55,19 @@ namespace PT4_Grp_2
                 amp = new Admin_modifier_pers(staff, DBCon, false);
               
             }
-            if (amp.ShowDialog() == DialogResult.OK)
+            DialogResult dr = amp.ShowDialog();
+            if (dr == DialogResult.OK)
             {
                 if (b)
                 {
                     this.SetName(staff.Lastname);
                     this.SetRole(staff.Role);
                 }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else if(dr == DialogResult.Yes)
+            {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

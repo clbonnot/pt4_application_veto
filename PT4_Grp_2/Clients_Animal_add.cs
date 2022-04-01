@@ -42,6 +42,7 @@ namespace PT4_Grp_2
             else
             {
                 MessageBox.Show("Veuillez remplir tous les champs.");
+                return;
             }
             try
             {

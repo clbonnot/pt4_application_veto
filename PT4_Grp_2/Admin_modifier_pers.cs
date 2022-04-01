@@ -86,7 +86,7 @@ namespace PT4_Grp_2
 				{
 					staff.Delete(db);
 					MessageBox.Show("Suppression effectuée avec succés.");
-					this.DialogResult = DialogResult.OK;
+					this.DialogResult = DialogResult.Yes;
 					this.Close();
 				}
 				catch (Exception ex)
