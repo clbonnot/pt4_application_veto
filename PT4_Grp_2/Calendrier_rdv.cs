@@ -100,6 +100,7 @@ namespace PT4_Grp_2
             {
 				this.Hide();
 				Modele_calendrier calC = new Calendrier_conge();
+				calC.StartPosition = FormStartPosition.CenterScreen;
 				calC.SetId(this.GetId());
 				calC.SetName(this.GetName());
 				calC.SetRights(this.GetAdmin());

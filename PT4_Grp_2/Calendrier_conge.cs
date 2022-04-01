@@ -152,6 +152,7 @@ namespace PT4_Grp_2
 			{
 				this.Hide();
 				Modele_calendrier calR = new Calendrier_rdv();
+				calR.StartPosition = FormStartPosition.CenterScreen;
 				calR.SetId(this.GetId());
 				calR.SetName(this.GetName());
 				calR.SetRights(this.GetAdmin());

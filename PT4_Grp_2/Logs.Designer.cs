@@ -61,7 +61,7 @@ namespace PT4_Grp_2
             // 
             // delete
             // 
-            this.delete.Location = new System.Drawing.Point(22, 83);
+            this.delete.Location = new System.Drawing.Point(22, 416);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(107, 33);
             this.delete.TabIndex = 27;
@@ -78,6 +78,7 @@ namespace PT4_Grp_2
             this.Controls.Add(this.generate);
             this.Name = "Logs";
             this.Text = "Logs";
+            this.Controls.SetChildIndex(this.RoleName, 0);
             this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.listbox, 0);
             this.Controls.SetChildIndex(this.add, 0);

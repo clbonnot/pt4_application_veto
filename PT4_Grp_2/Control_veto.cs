@@ -137,5 +137,19 @@ namespace PT4_Grp_2
 			admin.ShowDialog();
 
 		}
-	}
+
+        private void logs_Click(object sender, EventArgs e)
+        {
+			((Form)this.TopLevelControl).Hide();
+			Logs log = new Logs();
+			log.StartPosition = FormStartPosition.CenterScreen;
+			log.SetId(((Modele)this.TopLevelControl).GetId());
+			log.SetIdStaff(((Modele)this.TopLevelControl).GetIdStaff());
+			log.SetName(((Modele)this.TopLevelControl).GetName());
+			log.SetRights(((Modele)this.TopLevelControl).GetAdmin());
+			log.SetRole(((Modele)this.TopLevelControl).GetRole());
+			log.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
+			log.ShowDialog();
+		}
+    }
 }

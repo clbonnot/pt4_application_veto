@@ -36,6 +36,7 @@
             this.panier = new System.Windows.Forms.Button();
             this.stats = new System.Windows.Forms.Button();
             this.admin = new System.Windows.Forms.Button();
+            this.logs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // maladie
@@ -122,11 +123,23 @@
             this.admin.UseVisualStyleBackColor = true;
             this.admin.Click += new System.EventHandler(this.admin_Click);
             // 
+            // logs
+            // 
+            this.logs.AllowDrop = true;
+            this.logs.Location = new System.Drawing.Point(3, 266);
+            this.logs.Name = "logs";
+            this.logs.Size = new System.Drawing.Size(107, 27);
+            this.logs.TabIndex = 69;
+            this.logs.Text = "Logs";
+            this.logs.UseVisualStyleBackColor = true;
+            this.logs.Click += new System.EventHandler(this.logs_Click);
+            // 
             // Control_veto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.Controls.Add(this.logs);
             this.Controls.Add(this.admin);
             this.Controls.Add(this.stats);
             this.Controls.Add(this.panier);
@@ -136,7 +149,7 @@
             this.Controls.Add(this.soin);
             this.Controls.Add(this.Calendrier);
             this.Name = "Control_veto";
-            this.Size = new System.Drawing.Size(115, 263);
+            this.Size = new System.Drawing.Size(115, 297);
             this.ResumeLayout(false);
 
 		}
@@ -150,5 +163,6 @@
         private System.Windows.Forms.Button panier;
         private System.Windows.Forms.Button stats;
         private System.Windows.Forms.Button admin;
+        private System.Windows.Forms.Button logs;
     }
 }
