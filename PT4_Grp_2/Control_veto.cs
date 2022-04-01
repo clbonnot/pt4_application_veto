@@ -24,6 +24,10 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Clients clients = new Clients();
 			clients.StartPosition = FormStartPosition.CenterScreen;
+			clients.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			clients.SetName(((Modele)this.TopLevelControl).GetName());
+			clients.SetRights(((Modele)this.TopLevelControl).roleUser);
+			clients.SetRole(((Modele)this.TopLevelControl).GetRole());
 			clients.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
 			clients.ShowDialog();
 		}
@@ -33,6 +37,10 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Maladies maladies = new Maladies();
 			maladies.StartPosition = FormStartPosition.CenterScreen;
+			maladies.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			maladies.SetName(((Modele)this.TopLevelControl).GetName());
+			maladies.SetRights(((Modele)this.TopLevelControl).roleUser);
+			maladies.SetRole(((Modele)this.TopLevelControl).GetRole());
 			maladies.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
 			maladies.ShowDialog();
 		}
@@ -42,6 +50,10 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Soins soins = new Soins();
 			soins.StartPosition = FormStartPosition.CenterScreen;
+			soins.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			soins.SetName(((Modele)this.TopLevelControl).GetName());
+			soins.SetRights(((Modele)this.TopLevelControl).roleUser);
+			soins.SetRole(((Modele)this.TopLevelControl).GetRole());
 			soins.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
 			soins.ShowDialog();
 		}
@@ -51,6 +63,10 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Calendrier_rdv cal = new Calendrier_rdv();
 			cal.StartPosition = FormStartPosition.CenterScreen;
+			cal.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			cal.SetName(((Modele)this.TopLevelControl).GetName());
+			cal.SetRights(((Modele)this.TopLevelControl).roleUser);
+			cal.SetRole(((Modele)this.TopLevelControl).GetRole());
 			cal.FormClosed += (s, args) => ((Form)this.TopLevelControl).Close();
 			cal.ShowDialog();
 		}

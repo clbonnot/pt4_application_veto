@@ -32,8 +32,6 @@
             this.add = new System.Windows.Forms.Button();
             this.listbox = new System.Windows.Forms.ListBox();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.control_secretaire1 = new PT4_Grp_2.Control_secretaire();
-            this.control_veto1 = new PT4_Grp_2.Control_veto();
             this.SuspendLayout();
             // 
             // Deconnexion
@@ -78,42 +76,23 @@
             this.progressBar2.Size = new System.Drawing.Size(129, 3);
             this.progressBar2.TabIndex = 25;
             // 
-            // control_secretaire1
-            // 
-            this.control_secretaire1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.control_secretaire1.Location = new System.Drawing.Point(15, 145);
-            this.control_secretaire1.Name = "control_secretaire1";
-            this.control_secretaire1.Size = new System.Drawing.Size(114, 169);
-            this.control_secretaire1.TabIndex = 26;
-            // 
-            // control_veto1
-            // 
-            this.control_veto1.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.control_veto1.Location = new System.Drawing.Point(14, 145);
-            this.control_veto1.Name = "control_veto1";
-            this.control_veto1.Size = new System.Drawing.Size(115, 137);
-            this.control_veto1.TabIndex = 27;
-            // 
             // Modele_listbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.control_veto1);
-            this.Controls.Add(this.control_secretaire1);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.detail);
             this.Controls.Add(this.add);
             this.Controls.Add(this.listbox);
             this.Name = "Modele_listbox";
             this.Text = "Modèle_listbox";
+            this.Controls.SetChildIndex(this.RoleName, 0);
             this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.listbox, 0);
             this.Controls.SetChildIndex(this.add, 0);
             this.Controls.SetChildIndex(this.detail, 0);
             this.Controls.SetChildIndex(this.progressBar2, 0);
-            this.Controls.SetChildIndex(this.control_secretaire1, 0);
-            this.Controls.SetChildIndex(this.control_veto1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +103,5 @@
         public System.Windows.Forms.Button add;
         public System.Windows.Forms.ListBox listbox;
         public System.Windows.Forms.Button detail;
-        private Control_secretaire control_secretaire1;
-        private Control_veto control_veto1;
     }
 }

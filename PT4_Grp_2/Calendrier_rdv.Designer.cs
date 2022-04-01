@@ -43,6 +43,10 @@
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
+            // Deconnexion
+            // 
+            this.Deconnexion.FlatAppearance.BorderSize = 0;
+            // 
             // date
             // 
             this.date.AutoSize = true;
@@ -103,6 +107,7 @@
             this.personnel.Name = "personnel";
             this.personnel.Size = new System.Drawing.Size(121, 21);
             this.personnel.TabIndex = 89;
+            this.personnel.SelectedIndexChanged += new System.EventHandler(this.personnel_SelectedIndexChanged);
             // 
             // Calendrier_rdv
             // 
@@ -116,6 +121,8 @@
             this.Name = "Calendrier_rdv";
             this.Text = "Calendrier_rdv";
             this.Click += new System.EventHandler(this.add_Click);
+            this.Controls.SetChildIndex(this.RoleName, 0);
+            this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.monthCalendar1, 0);
             this.Controls.SetChildIndex(this.listRDV, 0);
             this.Controls.SetChildIndex(this.date, 0);

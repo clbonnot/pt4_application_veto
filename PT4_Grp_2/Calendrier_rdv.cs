@@ -91,5 +91,10 @@ namespace PT4_Grp_2
 			Modele_modifier edit = new Calendrier_modifier_rdv();
 			edit.ShowDialog();
         }
+
+        private void personnel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

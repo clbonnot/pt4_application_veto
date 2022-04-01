@@ -36,6 +36,9 @@
             this.LRole = new System.Windows.Forms.Label();
             this.Person = new System.Windows.Forms.Label();
             this.RoleName = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.control_secretaire1 = new PT4_Grp_2.Control_secretaire();
+            this.control_veto1 = new PT4_Grp_2.Control_veto();
             this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,16 +56,16 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(16, 20);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(0, 24);
+            this.menuStrip3.Location = new System.Drawing.Point(0, 48);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(151, 426);
+            this.menuStrip3.Size = new System.Drawing.Size(151, 402);
             this.menuStrip3.TabIndex = 10;
             this.menuStrip3.Text = "menuStrip3";
             // 
             // Deconnexion
             // 
             this.Deconnexion.FlatAppearance.BorderSize = 0;
-            this.Deconnexion.Location = new System.Drawing.Point(692, 12);
+            this.Deconnexion.Location = new System.Drawing.Point(693, 12);
             this.Deconnexion.Name = "Deconnexion";
             this.Deconnexion.Size = new System.Drawing.Size(81, 24);
             this.Deconnexion.TabIndex = 7;
@@ -86,7 +89,7 @@
             this.menuStrip2.BackColor = System.Drawing.Color.DarkGreen;
             this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(16, 20);
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 24);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(800, 24);
             this.menuStrip2.TabIndex = 9;
@@ -121,12 +124,41 @@
             this.RoleName.Size = new System.Drawing.Size(0, 13);
             this.RoleName.TabIndex = 14;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkGreen;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 5, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(16, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // control_secretaire1
+            // 
+            this.control_secretaire1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.control_secretaire1.Location = new System.Drawing.Point(16, 147);
+            this.control_secretaire1.Name = "control_secretaire1";
+            this.control_secretaire1.Size = new System.Drawing.Size(114, 169);
+            this.control_secretaire1.TabIndex = 16;
+            // 
+            // control_veto1
+            // 
+            this.control_veto1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.control_veto1.Location = new System.Drawing.Point(15, 147);
+            this.control_veto1.Name = "control_veto1";
+            this.control_veto1.Size = new System.Drawing.Size(115, 137);
+            this.control_veto1.TabIndex = 17;
+            // 
             // Modele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.control_veto1);
+            this.Controls.Add(this.control_secretaire1);
             this.Controls.Add(this.RoleName);
             this.Controls.Add(this.Person);
             this.Controls.Add(this.LRole);
@@ -134,10 +166,9 @@
             this.Controls.Add(this.Deconnexion);
             this.Controls.Add(this.menuStrip3);
             this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "Modele";
             this.Text = "Modele";
-            
-            
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
             this.ResumeLayout(false);
@@ -154,5 +185,8 @@
         private System.Windows.Forms.Label Person;
 		public System.Windows.Forms.Button Deconnexion;
         public System.Windows.Forms.Label RoleName;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private Control_secretaire control_secretaire1;
+        private Control_veto control_veto1;
     }
 }

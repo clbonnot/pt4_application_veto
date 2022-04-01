@@ -58,11 +58,13 @@ namespace PT4_Grp_2
 		{
 			if(right.Equals("administrateur"))
             {
-				this.admin = true;	
+				this.admin = true;
+				this.control_secretaire1.Hide();
             }
 			else
             {
-				this.admin = false;	
+				this.admin = false;
+				this.control_veto1.Hide();
             }
 		}
 		/*
@@ -131,5 +133,6 @@ namespace PT4_Grp_2
 
 			connexion.ShowDialog();
 		}
+
     }
 } 
