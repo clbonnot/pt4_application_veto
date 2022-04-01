@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -65,6 +71,7 @@
     <Compile Include="Admin_modifier_pers.Designer.cs">
       <DependentUpon>Admin_modifier_pers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Animal.cs" />
     <Compile Include="Calendrier_add_conge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,23 +108,30 @@
     <Compile Include="Calendrier_rdv.Designer.cs">
       <DependentUpon>Calendrier_rdv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Client.cs" />
     <Compile Include="Clients_add.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clients_add.Designer.cs">
       <DependentUpon>Clients_add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients_Animal_add.cs">
+    <Compile Include="Clients_Animal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clients_Animal_add.Designer.cs">
-      <DependentUpon>Clients_Animal_add.cs</DependentUpon>
+    <Compile Include="Clients_Animal.Designer.cs">
+      <DependentUpon>Clients_Animal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients_Animal_modifier.cs">
+    <Compile Include="Clients_Animal_Add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clients_Animal_modifier.Designer.cs">
-      <DependentUpon>Clients_Animal_modifier.cs</DependentUpon>
+    <Compile Include="Clients_Animal_Add.Designer.cs">
+      <DependentUpon>Clients_Animal_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_Animal_Modifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Animal_Modifier.Designer.cs">
+      <DependentUpon>Clients_Animal_Modifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Clients_details.cs">
       <SubType>Form</SubType>
@@ -131,6 +145,18 @@
     <Compile Include="Clients_modifier.Designer.cs">
       <DependentUpon>Clients_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clients_Race_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Race_add.designer.cs">
+      <DependentUpon>Clients_Race_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clients_Type_add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients_Type_add.designer.cs">
+      <DependentUpon>Clients_Type_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control_secretaire.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +168,13 @@
     </Compile>
     <Compile Include="Control_veto.Designer.cs">
       <DependentUpon>Control_veto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs" />
+    <Compile Include="Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
     </Compile>
     <Compile Include="Maladie_add.cs">
       <SubType>Form</SubType>
@@ -223,6 +256,13 @@
     <Compile Include="Modele_modifier.Designer.cs">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paniers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Paniers.Designer.cs">
+      <DependentUpon>Paniers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Soins.cs">
       <SubType>Form</SubType>
@@ -248,6 +288,7 @@
     <Compile Include="Soins_modifier.Designer.cs">
       <DependentUpon>Soins_modifier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Staff.cs" />
     <Compile Include="Statistiques.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,17 +303,23 @@
     <Compile Include="Stocks.Designer.cs">
       <DependentUpon>Stocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stockss_add.cs">
+    <Compile Include="Stocks_add.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stockss_add.Designer.cs">
-      <DependentUpon>Stockss_add.cs</DependentUpon>
+    <Compile Include="Stocks_add.Designer.cs">
+      <DependentUpon>Stocks_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Stocks_detail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Stocks_detail.Designer.cs">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stocks_Formulaire_new.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stocks_Formulaire_new.Designer.cs">
+      <DependentUpon>Stocks_Formulaire_new.cs</DependentUpon>
     </Compile>
     <Compile Include="Stocks_Fournisseur_add.cs">
       <SubType>Form</SubType>
@@ -318,11 +365,14 @@
     <EmbeddedResource Include="Clients_add.resx">
       <DependentUpon>Clients_add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clients_Animal_add.resx">
-      <DependentUpon>Clients_Animal_add.cs</DependentUpon>
+    <EmbeddedResource Include="Clients_Animal.resx">
+      <DependentUpon>Clients_Animal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clients_Animal_modifier.resx">
-      <DependentUpon>Clients_Animal_modifier.cs</DependentUpon>
+    <EmbeddedResource Include="Clients_Animal_Add.resx">
+      <DependentUpon>Clients_Animal_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Animal_Modifier.resx">
+      <DependentUpon>Clients_Animal_Modifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clients_details.resx">
       <DependentUpon>Clients_details.cs</DependentUpon>
@@ -330,11 +380,20 @@
     <EmbeddedResource Include="Clients_modifier.resx">
       <DependentUpon>Clients_modifier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Race_add.resx">
+      <DependentUpon>Clients_Race_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients_Type_add.resx">
+      <DependentUpon>Clients_Type_add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control_secretaire.resx">
       <DependentUpon>Control_secretaire.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control_veto.resx">
       <DependentUpon>Control_veto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logs.resx">
+      <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maladie_add.resx">
       <DependentUpon>Maladie_add.cs</DependentUpon>
@@ -375,6 +434,9 @@
     <EmbeddedResource Include="Modele_modifier.resx">
       <DependentUpon>Modele_modifier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Paniers.resx">
+      <DependentUpon>Paniers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -402,11 +464,14 @@
     <EmbeddedResource Include="Stocks.resx">
       <DependentUpon>Stocks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stockss_add.resx">
-      <DependentUpon>Stockss_add.cs</DependentUpon>
+    <EmbeddedResource Include="Stocks_add.resx">
+      <DependentUpon>Stocks_add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks_detail.resx">
       <DependentUpon>Stocks_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stocks_Formulaire_new.resx">
+      <DependentUpon>Stocks_Formulaire_new.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stocks_Fournisseur_add.resx">
       <DependentUpon>Stocks_Fournisseur_add.cs</DependentUpon>
@@ -414,6 +479,7 @@
     <EmbeddedResource Include="Stocks_modifier.resx">
       <DependentUpon>Stocks_modifier.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

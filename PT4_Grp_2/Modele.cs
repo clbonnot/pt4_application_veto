@@ -32,21 +32,21 @@ namespace PT4_Grp_2
 		 * Set the id of the current user
 		 */
 		public void SetId(int id)
-		{
+        {
 			this.id = id;
-		}
+        }
 		/**
 		 * Set the db id of the current user
 		 */
 		public void SetIdStaff(int id)
-		{
+        {
 			this.idStaff = id;
-		}
+        }
 		/*
 		 * Set the role of the current user
 		 */
 		public void SetRole(string role)
-		{
+        {
 			this.roleUser = role;
 			RoleName.Text = role;
 			RoleName.Refresh();
@@ -56,10 +56,10 @@ namespace PT4_Grp_2
 		 */
 		public void SetRights(string right)
 		{
-			if (right.Equals("administrateur"))
-			{
-				this.admin = true;
-			}
+			if(right.Equals("administrateur"))
+            {
+				this.admin = true;	
+            }
 			else
 			{
 				this.admin = false;
@@ -79,57 +79,57 @@ namespace PT4_Grp_2
 		 * Get the staff id of the current user
 		 */
 		public int GetIdStaff()
-		{
+        {
 			return idStaff;
-		}
+        }
 		/*
 		 * Get the role of the current user
 		 */
 		public string GetRole()
-		{
-
+        {
+			
 			return roleUser;
-		}
+        }
 
 		/*
 		 * Get the id of the current user
 		 */
 		public int GetId()
-		{
+        {
 			return id;
-		}
+        }
 		/*
 		 * Get the rights of the current user
 		 */
 		public Boolean GetAdmin()
-		{
+        {
 			return admin;
-		}
+        }
 		/*
 		 * Get the name of the current user
 		 */
 		public string GetName()
-		{
-			return nameUser;
-		}
+        {
+			return nameUser;	
+        }
 		/*
 		 * Disconnect the user and start the connection page
 		 */
 		private void Deconnexion_Click(object sender, System.EventArgs e)
-		{
-
+        {
+			
 			this.roleUser = null;
 			this.admin = false;
-			this.nameUser = null;
+			this.nameUser=null;
 			this.Hide();
 
 			Connexion connexion = new Connexion();
-
+			
 			connexion.StartPosition = FormStartPosition.CenterScreen;
 			connexion.FormClosed += (s, args) => this.Close();
-
+			
 
 			connexion.ShowDialog();
 		}
-	}
-}
+    }
+} 

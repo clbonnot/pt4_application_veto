@@ -11,7 +11,7 @@ namespace PT4_Grp_2
 {
     public class Product
     {
-
+     
 
         int id;
         string name;
@@ -46,11 +46,10 @@ namespace PT4_Grp_2
                 Name = reader.GetString(1);
                 Description = reader.GetString(2);
                 Quantity = reader.GetInt32(3);
-
+               
                 Price = reader.GetDecimal(4);
 
-                try
-                {
+                try { 
                     Brand = reader.GetString(5);
                 }
                 catch
@@ -109,7 +108,7 @@ namespace PT4_Grp_2
         {
             db.openConnection();
             String[] values = { p.Name, p.Description, p.Quantity.ToString(), p.Price.ToString(CultureInfo.InvariantCulture), p.Brand, Id.ToString() };
-
+        
             db.nonSelect("update produit " +
                 "set nom = ?, " +
                 "descrip = ?, " +
@@ -133,21 +132,21 @@ namespace PT4_Grp_2
          * @Return the new quantity
          */
         public int UpdateQuantity(DB db, int q)
-        {
-            if (Quantity - q < 0)
+        {    
+            if(Quantity - q < 0)
             {
                 return -1;
             }
             Quantity = Quantity - q;
             db.openConnection();
-            String[] values = { Quantity.ToString(), Id.ToString() };
+            String[] values = { Quantity.ToString() , Id.ToString() };
             db.nonSelect("update produit set quantite = ? where code_produit = ?", values);
             db.closeConnection();
             return Quantity;
-
+           
         }
 
-
+       
 
         /**
          * Function that deletes the current instance from the database.
@@ -172,11 +171,11 @@ namespace PT4_Grp_2
         {
             db.openConnection();
             String[] v = { Name, Description, Quantity.ToString(), Price.ToString(CultureInfo.InvariantCulture), Brand };
-
+            
             db.nonSelect("insert into produit (nom, descrip, quantite, prix, marque) values (?,?,?,?,?)", v);
             db.closeConnection();
         }
-
+        
         public override string ToString()
         {
             return Name + " | " + Quantity.ToString() + " en stock";
@@ -192,6 +191,6 @@ namespace PT4_Grp_2
         internal List<Supplier> AllSuppliers { get => allSuppliers; set => allSuppliers = value; }
     }
 
-
+ 
 }
 

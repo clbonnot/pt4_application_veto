@@ -39,7 +39,7 @@ namespace PT4_Grp_2
                 Name = reader.GetString(1);
                 Phone = reader.GetString(2);
                 Web = reader.GetString(3);
-
+        
             }
             db.closeConnection();
         }
@@ -57,7 +57,7 @@ namespace PT4_Grp_2
         public void Flush(DB db)
         {
             db.openConnection();
-            String[] v = { Name, Phone, Web };
+            String[] v = { Name, Phone, Web};
             db.nonSelect("insert into fournisseur (nom, telephone, lens_web) values (?,?,?)", v);
             db.closeConnection();
         }
@@ -66,7 +66,7 @@ namespace PT4_Grp_2
         public string Name { get => name; set => name = value; }
         public string Phone { get => phone; set => phone = value; }
         public string Web { get => web; set => web = value; }
-
+    
     }
 }
 

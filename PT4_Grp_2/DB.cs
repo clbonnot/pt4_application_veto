@@ -30,6 +30,7 @@ namespace PT4_Grp_2
 
 
 
+            return cmd.ExecuteReader();
         }
 
         /**
@@ -55,7 +56,7 @@ namespace PT4_Grp_2
             return cmd.ExecuteReader();
         }
 
-
+   
 
 
         /**
@@ -63,7 +64,7 @@ namespace PT4_Grp_2
          * 
          * @param request the request
          * @param values the values of the request
-         */
+         */ 
         public void nonSelect(string request, String[] values)
         {
             OleDbCommand cmd = new OleDbCommand(request, this.dbConnection);
@@ -98,7 +99,7 @@ namespace PT4_Grp_2
 
             return id;
         }
-
+   
         /**
          * Function that open the connection of the database 
          */

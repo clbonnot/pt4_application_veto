@@ -34,12 +34,12 @@ namespace PT4_Grp_2
             //Text Box
             //id text box
             this.pwd.Enter += new System.EventHandler(this.setCurrent_pwd);
-            this.pwd.Enter += new System.EventHandler(this.text_Enter);      
+            this.pwd.Enter += new System.EventHandler(this.text_Enter);
             this.pwd.Leave += new System.EventHandler(this.text_Leave);
             this.pwd.ForeColor = SystemColors.GrayText;
             //password text box
             this.identifiant.Enter += new System.EventHandler(this.setCurrent_identifiant);
-            this.identifiant.Enter += new System.EventHandler(this.text_Enter);         
+            this.identifiant.Enter += new System.EventHandler(this.text_Enter);
             this.identifiant.Leave += new System.EventHandler(this.text_Leave);
             this.identifiant.ForeColor = SystemColors.GrayText;
         }
@@ -70,13 +70,14 @@ namespace PT4_Grp_2
             {
                 pwd.Clear();
                 pwd.ForeColor = SystemColors.WindowText;
+                pwd.PasswordChar = '*';
             }
             if (identifiant.Text.Equals("Identifiant") && current.Equals("Identifiant"))
             {
                 identifiant.Clear();
                 identifiant.ForeColor = SystemColors.WindowText;
             }
-           
+
         }
 
         /**
@@ -88,6 +89,7 @@ namespace PT4_Grp_2
             {
                 pwd.Text = "Mot de passe";
                 pwd.ForeColor = SystemColors.GrayText;
+                pwd.PasswordChar = '\0';
             }
             if (identifiant.Text.Length == 0)
             {
@@ -103,15 +105,18 @@ namespace PT4_Grp_2
         {
             string id = identifiant.Text;
             string password = pwd.Text;
-            string sqlSet = "Select Identifiant, Mot_de_passe from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
+            string sqlSet = "Select  Identifiant, Mot_de_passe, Code_Personnel, code_personne from Personnel where identifiant = '" + Utils.manageSingleQuote(id) + "'";
             OleDbCommand cmd = new OleDbCommand(sqlSet, DBcon.dbConnection);
             string motDePasseBDD = "";
             string motDePasse = pwd.Text.Trim(' ');
-
+            int idStaff = 0;
+            int idPeople = 0;
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
                 motDePasseBDD = reader.GetString(1).Trim(' ');
+                idStaff = reader.GetInt32(2);
+                idPeople = reader.GetInt32(3);
             }
             //string a = DecryptageDeMotDePasse(motDePasseBDD);
             if (motDePasse.Equals(motDePasseBDD) && !motDePasseBDD.Equals(""))
@@ -119,7 +124,7 @@ namespace PT4_Grp_2
                 string sql = "select nom_role, droit from Rôle inner join Personnel on Personnel.CODE_ROLE = Rôle.CODE_ROLE " +
                 "WHERE Personnel.IDENTIFIANT = '" + Utils.manageSingleQuote(id) + "'";
                 OleDbCommand cmdSet = new OleDbCommand(sql, DBcon.dbConnection);
-                
+
                 OleDbDataReader readerSet = cmdSet.ExecuteReader();
                 string role = "";
                 string rights = "";
@@ -127,6 +132,7 @@ namespace PT4_Grp_2
                 {
                     role = Utils.manageSingleQuote(readerSet.GetString(0));
                     rights = Utils.manageSingleQuote(readerSet.GetString(1));
+
                 }
                 readerSet.Close();
                 string sqlName = "select NOM from Personne inner join Personnel on Personnel.CODE_Personne = Personne.CODE_Personne " +
@@ -135,26 +141,42 @@ namespace PT4_Grp_2
 
                 OleDbDataReader readerName = cmdName.ExecuteReader();
                 string name = "";
+
                 while (readerName.Read())
                 {
                     name = Utils.manageSingleQuote(readerName.GetString(0));
+
+
                 }
                 readerName.Close();
                 DBcon.closeConnection();
-                
-                Modele Mod = new Modele(this);
-                Mod.SetRole(role);
-                Mod.SetRights(rights);   
-                Mod.SetName(name);
-                if (Mod.GetAdmin())
+
+                Modele Mod;
+
+                if (rights == "administrateur")
                 {
-                    Admin admin = new Admin();
-                    admin.StartPosition = FormStartPosition.CenterScreen;
-                    Mod.ShowDialog();
+                    Mod = new Admin();
                 }
+                else
+                {
+                    Mod = new Clients();
+                }
+                Mod.SetIdStaff(idStaff);
+                Mod.SetId(idPeople);
+                Mod.SetRole(role);
+                Mod.SetRights(rights);
+                Mod.SetName(name);
+
+                this.Hide();
                 Mod.StartPosition = FormStartPosition.CenterScreen;
+                Mod.FormClosed += (s, args) => this.Close();
+
+
                 Mod.ShowDialog();
-                
+                this.Dispose();
+                this.Close();
+
+
             }
             else
             {
@@ -162,7 +184,7 @@ namespace PT4_Grp_2
 
                 Console.WriteLine(motDePasse + "     " /*+ DecryptageDeMotDePasse(motDePasseBDD)*/);
             }
-            
+
         }
 
         private void pwd_TextChanged(object sender, EventArgs e)

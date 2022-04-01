@@ -43,6 +43,7 @@
 			this.stats.TabIndex = 70;
 			this.stats.Text = "Statistiques";
 			this.stats.UseVisualStyleBackColor = true;
+			this.stats.Click += new System.EventHandler(this.stats_Click);
 			// 
 			// client
 			// 
@@ -52,6 +53,7 @@
 			this.client.TabIndex = 69;
 			this.client.Text = "Clients";
 			this.client.UseVisualStyleBackColor = true;
+			this.client.Click += new System.EventHandler(this.client_Click);
 			// 
 			// shop
 			// 
@@ -62,6 +64,7 @@
 			this.shop.TabIndex = 68;
 			this.shop.Text = "Panier";
 			this.shop.UseVisualStyleBackColor = true;
+			this.shop.Click += new System.EventHandler(this.shop_Click);
 			// 
 			// stock
 			// 
@@ -71,6 +74,7 @@
 			this.stock.TabIndex = 67;
 			this.stock.Text = "Stocks";
 			this.stock.UseVisualStyleBackColor = true;
+			this.stock.Click += new System.EventHandler(this.stock_Click);
 			// 
 			// Calendrier
 			// 
@@ -80,6 +84,7 @@
 			this.Calendrier.TabIndex = 66;
 			this.Calendrier.Text = "Calendrier";
 			this.Calendrier.UseVisualStyleBackColor = true;
+			this.Calendrier.Click += new System.EventHandler(this.Calendrier_Click);
 			// 
 			// Control_secretaire
 			// 
