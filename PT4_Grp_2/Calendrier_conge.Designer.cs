@@ -34,12 +34,17 @@
             this.listConges = new System.Windows.Forms.ListBox();
             this.listPersonnel = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(564, 57);
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged_1);
+            // 
+            // Deconnexion
+            // 
+            this.Deconnexion.FlatAppearance.BorderSize = 0;
             // 
             // label1
             // 
@@ -100,11 +105,21 @@
             this.label2.TabIndex = 92;
             this.label2.Text = "Liste du personnel";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(154, 48);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 93;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Calendrier_conge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listPersonnel);
             this.Controls.Add(this.label1);
@@ -113,6 +128,8 @@
             this.Controls.Add(this.listConges);
             this.Name = "Calendrier_conge";
             this.Text = "Calendrier_conge";
+            this.Controls.SetChildIndex(this.RoleName, 0);
+            this.Controls.SetChildIndex(this.Deconnexion, 0);
             this.Controls.SetChildIndex(this.monthCalendar1, 0);
             this.Controls.SetChildIndex(this.listConges, 0);
             this.Controls.SetChildIndex(this.date, 0);
@@ -120,6 +137,7 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.listPersonnel, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +151,6 @@
 		private System.Windows.Forms.ListBox listConges;
 		private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listPersonnel;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

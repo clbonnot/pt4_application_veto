@@ -67,6 +67,20 @@ namespace PT4_Grp_2
 				this.control_veto1.Hide();
             }
 		}
+
+		public void SetRights(bool isAdmin)
+        {
+            if (isAdmin)
+            {
+				this.admin = true;
+				this.control_secretaire1.Hide();
+			}
+            else
+            {
+				this.admin = false;
+				this.control_veto1.Hide();
+			}
+        }
 		/*
 		 * Set the name of the current user
 		 */
