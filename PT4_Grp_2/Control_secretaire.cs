@@ -21,7 +21,8 @@ namespace PT4_Grp_2
 		{
 			((Form)this.TopLevelControl).Hide();
 			Calendrier_rdv cal = new Calendrier_rdv();
-			cal.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			cal.SetId(((Modele)this.TopLevelControl).GetId());
+			cal.SetIdStaff(((Modele)this.TopLevelControl).GetIdStaff());
 			cal.SetName(((Modele)this.TopLevelControl).GetName());
 			cal.SetRights(((Modele)this.TopLevelControl).GetAdmin());
 			cal.SetRole(((Modele)this.TopLevelControl).GetRole());
@@ -36,7 +37,8 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Stocks stocks = new Stocks();
 			stocks.StartPosition = FormStartPosition.CenterScreen;
-			stocks.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			stocks.SetId(((Modele)this.TopLevelControl).GetId());
+			stocks.SetIdStaff(((Modele)this.TopLevelControl).GetIdStaff());
 			stocks.SetName(((Modele)this.TopLevelControl).GetName());
 			stocks.SetRights(((Modele)this.TopLevelControl).GetAdmin());
 			stocks.SetRole(((Modele)this.TopLevelControl).GetRole());
@@ -50,7 +52,8 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Paniers panier = new Paniers();
 			panier.StartPosition = FormStartPosition.CenterScreen;
-			panier.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			panier.SetId(((Modele)this.TopLevelControl).GetId());
+			panier.SetIdStaff(((Modele)this.TopLevelControl).GetIdStaff());
 			panier.SetName(((Modele)this.TopLevelControl).GetName());
 			panier.SetRights(((Modele)this.TopLevelControl).GetAdmin());
 			panier.SetRole(((Modele)this.TopLevelControl).GetRole());
@@ -64,7 +67,8 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Clients clients = new Clients();
 			clients.StartPosition = FormStartPosition.CenterScreen;
-			clients.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			clients.SetId(((Modele)this.TopLevelControl).GetId());
+			clients.SetIdStaff(((Modele)this.TopLevelControl).GetIdStaff());
 			clients.SetName(((Modele)this.TopLevelControl).GetName());
 			clients.SetRights(((Modele)this.TopLevelControl).GetAdmin());
 			clients.SetRole(((Modele)this.TopLevelControl).GetRole());
@@ -78,7 +82,8 @@ namespace PT4_Grp_2
 			((Form)this.TopLevelControl).Hide();
 			Statistiques stats = new Statistiques();
 			stats.StartPosition = FormStartPosition.CenterScreen;
-			stats.SetId(((Modele)this.TopLevelControl).GetIdStaff());
+			stats.SetId(((Modele)this.TopLevelControl).GetId());
+			stats.SetIdStaff(((Modele)this.TopLevelControl).GetIdStaff());
 			stats.SetName(((Modele)this.TopLevelControl).GetName());
 			stats.SetRights(((Modele)this.TopLevelControl).GetAdmin());
 			stats.SetRole(((Modele)this.TopLevelControl).GetRole());

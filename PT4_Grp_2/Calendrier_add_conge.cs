@@ -71,6 +71,7 @@ namespace PT4_Grp_2
 			int indexSdSpaceStart = dateStart.Text.IndexOf(' ', dateStart.Text.IndexOf(' ') + 1);
 			int indexSdSpaceEnd = dateEnd.Text.IndexOf(' ', dateEnd.Text.IndexOf(' ') + 1);
 
+			
 			string jStart = dateStart.Text.Substring(dateStart.Text.IndexOf(' ')+1,2).Trim();
 			string mStart = convertMonthToNumber(dateStart.Text.Substring(indexSdSpaceStart,dateStart.Text.LastIndexOf(' ')-indexSdSpaceStart).Trim());
 			string yStart = dateStart.Text.Substring(dateStart.Text.LastIndexOf(' ')).Trim();
